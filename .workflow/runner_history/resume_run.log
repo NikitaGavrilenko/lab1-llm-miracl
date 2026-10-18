@@ -1,0 +1,31 @@
+freeze_selection running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py', '--select']}
+freeze_selection passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\freeze_selection.log'}
+analysis_all running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']}
+analysis_all passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\analysis_all.log'}
+search_application running {'command': ['D:\\Anaconda3\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\search_experiment.py']}
+search_application passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\search_application.log'}
+peft_packages running {'command': ['C:\\Users\\Nick\\.local\\bin\\uv.exe', 'pip', 'install', '--python', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', 'transformers==4.51.3', 'peft==0.15.2', 'accelerate==1.6.0', 'numpy==2.2.6', 'psutil==7.0.0', 'requests==2.33.1']}
+peft_packages passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\peft_packages.log'}
+peft_cuda_check running {'command': ['D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', '-c', 'import torch,transformers,peft; assert torch.cuda.is_available(); print(torch.__version__,torch.cuda.get_device_name(0),transformers.__version__,peft.__version__)']}
+peft_cuda_check passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\peft_cuda_check.log'}
+peft_real_training running {'command': ['D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\peft_experiment.py']}
+peft_real_training passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\peft_real_training.log'}
+unit_tests running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'unittest', 'discover', '-s', 'tests', '-v']}
+unit_tests passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\unit_tests.log'}
+compile_all running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'compileall', '-q', 'src']}
+compile_all passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\compile_all.log'}
+independent_numeric_checks running {}
+independent_numeric_checks passed {}
+failed error {'error': "HTTPError('500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat')"}
+Traceback (most recent call last):
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 375, in <module>
+    if __name__=='__main__':main()
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 366, in main
+    if not args.skip_independent_review: independent_review()
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 228, in independent_review
+    answer,elapsed=engine.chat(model,prompt)
+  File "D:\Projects\University_Current\lab1-llm-miracl\src\run_experiment.py", line 118, in chat
+    r.raise_for_status()
+  File "D:\Anaconda3\envs\ml\lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat

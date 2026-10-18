@@ -1,0 +1,28 @@
+validation_remaining running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\run_experiment.py', '--splits', 'validation', '--models', 'phi3.5:3.8b']}
+validation_remaining passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\validation_remaining.log'}
+freeze_selection running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py', '--select']}
+freeze_selection passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\freeze_selection.log'}
+test_all_models running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\run_experiment.py', '--splits', 'test', '--models', 'qwen2.5-coder:1.5b', 'llama3.2:3b', 'gemma3:4b', 'phi3.5:3.8b', 'qwen2.5-coder:14b', 'qwen3:14b', 'qwen3:30b', 'qwen2.5-coder:32b']}
+test_all_models passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\test_all_models.log'}
+application_classification running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\run_experiment.py', '--splits', 'application', '--models', 'qwen3:14b']}
+application_classification passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\application_classification.log'}
+analysis_all running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']}
+analysis_all passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\analysis_all.log'}
+search_application running {'command': ['D:\\Anaconda3\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\search_experiment.py']}
+search_application passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\search_application.log'}
+peft_packages running {'command': ['C:\\Users\\Nick\\.local\\bin\\uv.exe', 'pip', 'install', '--python', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', 'transformers==4.51.3', 'peft==0.15.2', 'accelerate==1.6.0', 'numpy==2.2.6', 'psutil==7.0.0', 'requests==2.33.1']}
+peft_packages passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\peft_packages.log'}
+peft_cuda_check running {'command': ['D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', '-c', 'import torch,transformers,peft; assert torch.cuda.is_available(); print(torch.__version__,torch.cuda.get_device_name(0),transformers.__version__,peft.__version__)']}
+failed error {'error': "CalledProcessError(1, ['D:\\\\Projects\\\\University_Current\\\\lab1-llm-miracl\\\\.venv-peft\\\\Scripts\\\\python.exe', '-c', 'import torch,transformers,peft; assert torch.cuda.is_available(); print(torch.__version__,torch.cuda.get_device_name(0),transformers.__version__,peft.__version__)'])"}
+Traceback (most recent call last):
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 368, in <module>
+    if __name__=='__main__':main()
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 354, in main
+    peft=prepare_peft();run('peft_real_training',[peft,LAB/'src/peft_experiment.py'])
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 90, in prepare_peft
+    run('peft_cuda_check', [py, '-c', 'import torch,transformers,peft; assert torch.cuda.is_available(); print(torch.__version__,torch.cuda.get_device_name(0),transformers.__version__,peft.__version__)'])
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 60, in run
+    subprocess.run([str(x) for x in command], cwd=cwd, env=env, stdout=stream,
+  File "D:\Anaconda3\envs\ml\lib\subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', '-c', 'import torch,transformers,peft; assert torch.cuda.is_available(); print(torch.__version__,torch.cuda.get_device_name(0),transformers.__version__,peft.__version__)']' returned non-zero exit status 1.

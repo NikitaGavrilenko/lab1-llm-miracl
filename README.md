@@ -10,13 +10,16 @@
 ## Полное продолжение
 
 ```powershell
+```powershell
 python src/finish_lab1.py
+```
 ```
 
 Единый скрипт использует кэш, последовательно запускает недостающие измерения, фиксирует выбор, проверяет метрики независимо, выполняет поиск и LoRA, собирает Word, экспортирует и рендерит страницы. Он сохраняет этапы в .workflow/full_run_state.json. Модели не запускаются одновременно. Платные API не используются.
 
 ## Отдельные этапы
 
+```powershell
 ```powershell
 python src/prepare_data.py
 python src/run_experiment.py --splits validation
@@ -28,6 +31,7 @@ python src/search_experiment.py
 python src/analyze_results.py
 python -m unittest discover -s tests -v
 python src/build_report.py
+```
 ```
 
 Основной Python на исходной машине D:/Anaconda3/envs/ml/python.exe; поиск также проверен на D:/Anaconda3/python.exe. Зависимости — requirements.txt; LoRA окружение и версии зафиксированы в results/peft_run_manifest.json. Word авторинг использует bundled python-docx; экспорт для проверки требует установленного Microsoft Word, PNG создаёт bundled Poppler.

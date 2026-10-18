@@ -1,0 +1,38 @@
+freeze_selection running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py', '--select']}
+freeze_selection passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\freeze_selection.log'}
+analysis_all running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']}
+analysis_all passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\analysis_all.log'}
+search_application running {'command': ['D:\\Anaconda3\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\search_experiment.py']}
+search_application passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\search_application.log'}
+unit_tests running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'unittest', 'discover', '-s', 'tests', '-v']}
+unit_tests passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\unit_tests.log'}
+compile_all running {'command': ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'compileall', '-q', 'src']}
+compile_all passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\compile_all.log'}
+independent_numeric_checks running {}
+independent_numeric_checks passed {}
+document_marker running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe', 'C:\\Users\\Nick\\.codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.1015.12040\\skills\\documents\\container_tools\\mark_artifact_operation_started.mjs', '--operation-kind', 'create', '--expected-output-count', '1', '--output-format', 'docx']}
+document_marker passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\document_marker.log'}
+build_report running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\build_report.py']}
+build_report passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\build_report.log'}
+word_export running {'command': ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\export_word_pdf.ps1', '-InputDocx', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\Lab1_MIRACL_final.docx', '-OutputPdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf']}
+word_export passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\word_export.log'}
+render_png running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe', '-r', '120', '-png', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\page']}
+render_png passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\render_png.log'}
+pdf_text running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftotext.exe', '-layout', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.txt']}
+failed error {'error': "FileNotFoundError(2, 'Не удается найти указанный файл', None, 2, None)"}
+Traceback (most recent call last):
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 375, in <module>
+    if __name__=='__main__':main()
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 367, in main
+    patch_report();write_readme();render_report();package()
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 296, in render_report
+    run('pdf_text',[poppler/'pdftotext.exe','-layout',qa/'report.pdf',qa/'report.txt'])
+  File "D:\Projects\University_Current\vkr-agentic-search\.lab1-execution\finish_lab1.py", line 60, in run
+    subprocess.run([str(x) for x in command], cwd=cwd, env=env, stdout=stream,
+  File "D:\Anaconda3\envs\ml\lib\subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "D:\Anaconda3\envs\ml\lib\subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "D:\Anaconda3\envs\ml\lib\subprocess.py", line 1456, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+FileNotFoundError: [WinError 2] Не удается найти указанный файл
