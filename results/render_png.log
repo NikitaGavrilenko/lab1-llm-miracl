@@ -6,3 +6,7 @@ Syntax Error: No display font for 'ArialUnicode'
 RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe', '-r', '120', '-png', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\page']
 Syntax Error: No display font for 'Symbol'
 Syntax Error: No display font for 'ArialUnicode'
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe', '-r', '120', '-png', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\page']
+Syntax Error: No display font for 'Symbol'
+Syntax Error: No display font for 'ArialUnicode'

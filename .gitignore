@@ -9,3 +9,4 @@ results/search_index.npz
 
 *.zip
 .workflow/full_run.lock
+

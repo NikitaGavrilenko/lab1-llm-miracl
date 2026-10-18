@@ -1,0 +1,25 @@
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', 'add', '.']
+warning: in the working copy of 'adapters/qwen25_05b_relevance_lora/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'adapters/qwen25_05b_relevance_lora/merges.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'adapters/qwen25_05b_relevance_lora/tokenizer.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/prepared/application.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/prepared/corpus.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/prepared/test.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/prepared/train.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/prepared/validation.jsonl', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/raw/qrels.miracl-v1.0-ru-dev.tsv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/raw/qrels.miracl-v1.0-ru-train.tsv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/raw/topics.miracl-v1.0-ru-dev.tsv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data/raw/topics.miracl-v1.0-ru-train.tsv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'experiment.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'previous/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'previous/experiment.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'previous/requirements.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'report/literature.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/error_examples.csv', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/git_init.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/peft_packages.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/analyze_results.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/finish_lab1.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_metrics.py', LF will be replaced by CRLF the next time Git touches it
