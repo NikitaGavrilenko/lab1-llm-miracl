@@ -86,28 +86,28 @@ evidence = {
     'R17': 'results/search_trajectories.jsonl; results/search_summary.json; application classification',
     'R18': 'report/Lab1_MIRACL_final.docx sections 9-10: H1, limits, next experiment',
     'R19': 'README.md; src/finish_lab1.py; configs/; raw predictions and data passport',
-    'R20': 'Local Git repository and Lab1_MIRACL_submission.zip; remote URL is not configured',
+    'R20': 'https://github.com/NikitaGavrilenko/lab1-llm-miracl; local Git repository and full submission archive',
     'R21': 'results/unit_tests.log (14); results/search_selftest.json (12); independent numeric audit',
     'R22': 'report/qa/visual_review.json: all 19 pages; tables and figure hashes checked',
 }
 checklist = load('.workflow/requirements_checklist.json')
 checklist.update(audit_stage='final_audit', date='2026-10-18')
 for item in checklist['items']:
-    item['status'] = 'partial_remote_repository_url' if item['id'] == 'R20' else 'passed'
+    item['status'] = 'passed'
     item['expected_evidence'] = evidence[item['id']]
-    item['note'] = ('Public repository URL is the only unfulfilled formal item; complete local Git copy and archive supplied.'
+    item['note'] = ('Published repository: https://github.com/NikitaGavrilenko/lab1-llm-miracl'
                     if item['id'] == 'R20' else 'Verified against completed artifacts; scope limitations are stated in the report.')
 save('.workflow/requirements_checklist.json', checklist)
 
 audit = {
-    'status': 'verified_submission_with_remote_url_exception',
+    'status': 'verified_submission',
     'numeric_checks': True, 'unit_tests_passed': 14, 'search_selftests_passed': 12,
     'independent_audit': 'results/final_independent_audit.json',
     'independent_verdict': 'no_P1_P2_defects_found',
     'word_render': render, 'visual_review': 'passed_all_19_pages',
     'docx_tables_checked': len(expected), 'source_figures_checked': figures,
     'docx_sha256': sha(docx), 'pdf_sha256': sha(pdf),
-    'requirements': {'passed': 21, 'partial': ['R20: remote public repository URL unavailable']},
+    'requirements': {'passed': 22, 'partial': []},
     'scope_limits': ['Judged-pool relevance classification and conditional reranking are not full-corpus retrieval.',
                      'Search uses 41007 historically judged passages and incomplete qrels, not the full MIRACL corpus.',
                      'Separate 0.5B LoRA control uses a different 256-token protocol; 92.1% test passages truncated.',
@@ -116,7 +116,7 @@ audit = {
 save('results/final_audit.json', audit)
 for name in ['.workflow/state.json', '.workflow/full_run_state.json']:
     state = load(name)
-    state.update(status='verified_complete_except_remote_url', stage='final_visual_and_artifact_audit', updated_unix=time.time())
+    state.update(status='verified_complete', stage='final_visual_and_artifact_audit', updated_unix=time.time())
     state['next'] = []
     if 'history' in state:
         state['history'].append({'stage': 'final_visual_and_artifact_audit', 'status': 'passed', 'time_unix': time.time()})
@@ -126,9 +126,9 @@ readme = (ROOT / 'README.md').read_text(encoding='utf-8')
 readme = readme.replace('Визуальная проверка всех PNG остаётся отдельным явно отмеченным этапом, пока первичный агент её не подтвердит.',
     'Все 19 страниц проверены визуально; таблицы Word совпадают с экспортом, встроенные графики — с исходными PNG. '
     'Независимый аудит сырых результатов: results/final_independent_audit.json. Пройдено 14 unit-тестов и 12 проверок поиска.')
-readme = readme.replace('python src/finish_lab1.py\n', '```powershell\npython src/finish_lab1.py\n```\n', 1)
-readme = readme.replace('python src/prepare_data.py\n', '```powershell\npython src/prepare_data.py\n', 1)
-readme = readme.replace('python src/build_report.py\n', 'python src/build_report.py\n```\n', 1)
+readme = readme if '```powershell' in readme else readme.replace('python src/finish_lab1.py\n', '```powershell\npython src/finish_lab1.py\n```\n', 1)
+readme = readme if '```powershell\npython src/prepare_data.py' in readme else readme.replace('python src/prepare_data.py\n', '```powershell\npython src/prepare_data.py\n', 1)
+readme = readme if 'python src/build_report.py\n```' in readme else readme.replace('python src/build_report.py\n', 'python src/build_report.py\n```\n', 1)
 readme = readme.replace('Для нового независимого опыта скопируйте проект без predictions.jsonl, runtime.json, selection.json и search_trajectories.jsonl; сохраните текущие результаты отдельно.',
     'Для нового независимого опыта используйте отдельную копию проекта с пустой results/ и без обученных adapters/; '
     'сохраните текущие результаты отдельно. Сначала выполните prepare_data.py. В конфигурации runner при переносе задайте пути к Python и bundled runtime. '

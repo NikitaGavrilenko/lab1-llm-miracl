@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/NikitaGavrilenko/lab1-llm-miracl",
+  "experimental_artifact_sha256": {
+    "configs/few_shot_examples.json": "c8792a2a4ea1a635dac3415e8638ee997a92cf6c8343b727081e844cce0b3b8e",
+    "configs/model_sources.json": "faad08208616266e475f6f2dfd991d6e1d0fb3ccda9f386d650c104b6da171ac",
+    "configs/peft.json": "e6db22978c0d4e9b34b8f1733c67e86453f1a9e493eb79f9c7dc8171eaec4cf2",
+    "configs/protocol.json": "ac101814edb7d4677cc3111a38f952ef1f7a6ca45d51724077c2e5a231119742",
+    "configs/search_protocol.json": "b62082c18560d105fabfe9d457ec9132bd70d60b77a8beda92b1a01829fb7c5a",
+    "results/peft_adapted_predictions.jsonl": "c594b57d01c0d46c6f2ae53b290cd8d09ec8c8641ccaa601aa9652e8cea60bc2",
+    "results/peft_base_predictions.jsonl": "ce136c25ca9051f10224acf6949210b147f6f1161657b7b6ff9ca74f922e2dc2",
+    "results/predictions.jsonl": "724fa48ed114559dfbf56c31e374151a3a975fc05eee97a33d00c6f88703877a",
+    "results/summary.json": "ef6906e5541ba0148096c97a5f4670fd2eb0705ec2e4e31ff90ff6e104848f45",
+    "results/selection.json": "a6db1c8dbd535a7efbac4c2adfe0dff79085280ec4cf45c9eca5cf60e1e0c791",
+    "results/search_summary.json": "c3875c66b7eb194cad54665c63dc1b0775251b4d9181b715f28dd63fc5584756",
+    "results/search_trajectories.jsonl": "03fcb7bd7590b6d435d2aa5a7f584b81fb5da636cb9b9049dfb6932855d18da0",
+    "results/peft_summary.json": "5794d580d1fec73eb05f6b1e283211b2b6a5d3fa8bf64a64ac11c82e28bc1c6b"
+  },
+  "experimental_artifacts_unchanged": true,
+  "changed_rendered_pages": [
+    "page-17.png",
+    "page-19.png"
+  ],
+  "manual_review_after_update": "passed; pages 17 and 19 re-inspected, all other page image hashes unchanged",
+  "unit_tests_passed_after_update": 14
+}

@@ -1,6 +1,8 @@
 # Лабораторная 1 — MIRACL ru
 
-Итоговый отчёт: report/Lab1_MIRACL_final.docx. Данные: data/prepared/passport.json.
+[Репозиторий проекта](https://github.com/NikitaGavrilenko/lab1-llm-miracl).
+
+Итоговый отчёт: [Word](report/Lab1_MIRACL_final.docx), [PDF](report/Lab1_MIRACL_final.pdf). Данные: data/prepared/passport.json.
 Сырые ответы и метрики: results/. Матрица 15 работ: report/literature_matrix.csv.
 
 Восемь конкретных локальных LLM сравниваются в zero-shot и two-shot на 40 общих запросах / 416 judgments. Это оценка релевантности и условный reranking, не полнокорпусный retrieval. Отдельно выполнены последовательный поиск на 20 новых запросах по 41007 пассажам и настоящая LoRA малой Qwen0.5B.
@@ -10,16 +12,13 @@
 ## Полное продолжение
 
 ```powershell
-```powershell
 python src/finish_lab1.py
-```
 ```
 
 Единый скрипт использует кэш, последовательно запускает недостающие измерения, фиксирует выбор, проверяет метрики независимо, выполняет поиск и LoRA, собирает Word, экспортирует и рендерит страницы. Он сохраняет этапы в .workflow/full_run_state.json. Модели не запускаются одновременно. Платные API не используются.
 
 ## Отдельные этапы
 
-```powershell
 ```powershell
 python src/prepare_data.py
 python src/run_experiment.py --splits validation
@@ -32,7 +31,6 @@ python src/analyze_results.py
 python -m unittest discover -s tests -v
 python src/build_report.py
 ```
-```
 
 Основной Python на исходной машине D:/Anaconda3/envs/ml/python.exe; поиск также проверен на D:/Anaconda3/python.exe. Зависимости — requirements.txt; LoRA окружение и версии зафиксированы в results/peft_run_manifest.json. Word авторинг использует bundled python-docx; экспорт для проверки требует установленного Microsoft Word, PNG создаёт bundled Poppler.
 
@@ -44,4 +42,4 @@ python src/build_report.py
 
 Оригиналы прежней работы сохранены в previous/. Старый корневой Word с незаполненными таблицами не является итоговым отчётом. Пилоты и несовместимость Qwen3-VL сохранены в results/pilot и исключены из основного сравнения. Размеры моделей и квантования различаются; это системный локальный benchmark. LoRA — отдельный контроль на0.5B, не QLoRA и не девятая строка.
 
-Автоматические проверки — results/independent_numeric_checks.json и results/final_audit.json; независимая критика модели — results/independent_model_review.json. Все 19 страниц проверены визуально; таблицы Word совпадают с экспортом, встроенные графики — с исходными PNG. Независимый аудит сырых результатов: results/final_independent_audit.json. Пройдено 14 unit-тестов и 12 проверок поиска. Удалённый репозиторий не настроен; публичная ссылка не выдумывается.
+Автоматические проверки — results/independent_numeric_checks.json и results/final_audit.json; независимая критика модели — results/independent_model_review.json. Все 19 страниц проверены визуально; таблицы Word совпадают с экспортом, встроенные графики — с исходными PNG. Независимый аудит сырых результатов: results/final_independent_audit.json. Пройдено 14 unit-тестов и 12 проверок поиска. Репозиторий опубликован: https://github.com/NikitaGavrilenko/lab1-llm-miracl.
