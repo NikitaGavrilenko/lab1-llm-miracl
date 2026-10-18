@@ -142,7 +142,7 @@ def build():
     for m in config['models']:
         d=runtime['models'][m]['details']
         modelrows.append([m,d['parameter_size'],d['quantization_level'],sources[m]['license'],runtime['models'][m].get('preflight_prompt_tokens')])
-    table(['Ollama ID','Параметры','Квантование','Лицензия','Preflight tokens'],modelrows,[4.5,2,2.5,4.1,2.2])
+    table(['Ollama ID','Размер','Квантование','Лицензия','Preflight tokens'],modelrows,[4.5,2,2.5,4.1,2.2])
     p('Измерения выполнены последовательно на NVIDIA RTX 3090 24 ГБ, Ryzen 7 5700X, Windows 10 и Ollama 0.40.4. Основной Python 3.10.20. Сравниваются конкретные локальные сборки и размеры, а не восемь независимых семейств. Большая доля Qwen обусловлена уже установленными весами. Различия квантования входят в ограничения системного сравнения; контрольная переквантизация всех моделей не выполнялась.')
     p('Проверка совместимости локальной Qwen3-VL показала продолжение рассуждения при think=false и исчерпание 384 токенов до финального JSON. Десять попыток сохранены отдельно; до открытия test модель заменена на Phi-3.5. Алиас claude-local с теми же весами, что Qwen2.5-Coder-14B, отдельной моделью не считается.')
     sub('4.2 Генерация и контроль формата')
@@ -161,11 +161,11 @@ def build():
         for mo in ['zero-shot','few-shot']:
             g=next(g for g in test if g['model']==m and g['mode']==mo)
             rows.append([LABELS[m], 'Z' if mo=='zero-shot' else 'F',fmt(g['macro_f1_operation'])+' '+ci(g['macro_f1_operation_ci95']),fmt(g['mcc_valid']),fmt(g['brier_valid']),fmt(g['ece10_valid']),fmt(100*g['invalid_query_rate'],1)])
-    table(['Модель','Режим','Macro-F1 и 95% ДИ','MCC','Brier','ECE','Invalid %'],rows,[3.2,1,4.8,1.7,1.7,1.7,1.2],9)
+    table(['Модель','Реж.','Macro-F1 и 95% ДИ','MCC','Brier','ECE','Отказ %'],rows,[3.2,1,4.8,1.7,1.7,1.7,1.2],9)
     baselines=[g for g in summary['baselines'] if g['split']=='test' and 'macro_f1_operation' in g]
     table(['Baseline','Macro-F1','Brier','ECE'],[[g['model'],fmt(g['macro_f1_operation']),fmt(g['brier_valid']),fmt(g['ece10_valid'])] for g in baselines],[7,3.4,3.4,3.4])
     fig('figures/comparison_test.png','Рисунок 1 Macro-F1 восьми моделей и 95% интервалы по query_id')
-    table(['Модель','Режим','p50 с','p95 с','Resident VRAM ГиБ','tokens/s'],[[LABELS[g['model']],'Z' if g['mode']=='zero-shot' else 'F',fmt(g['latency_p50_s'],2),fmt(g['latency_p95_s'],2),fmt(g['resident_vram_gib'],2),fmt(g['generation_tokens_per_s_median'],1)] for m in config['models'] for g in sorted([x for x in test if x['model']==m],key=lambda x:x['mode'],reverse=True)],[3.3,1.2,2.5,2.5,4.5,2.8])
+    table(['Модель','Реж.','p50 с','p95 с','Resident VRAM ГиБ','tokens/s'],[[LABELS[g['model']],'Z' if g['mode']=='zero-shot' else 'F',fmt(g['latency_p50_s'],2),fmt(g['latency_p95_s'],2),fmt(g['resident_vram_gib'],2),fmt(g['generation_tokens_per_s_median'],1)] for m in config['models'] for g in sorted([x for x in test if x['model']==m],key=lambda x:x['mode'],reverse=True)],[3.3,1.2,2.5,2.5,4.5,2.8])
     fig('figures/calibration_test.png','Рисунок 2 Калибровка заявленной уверенности моделей на test')
     # Finished artifact tables
     paired=load('results/paired_comparisons.json')
@@ -173,7 +173,7 @@ def build():
     table(['Модель','Few минус zero','95% парный ДИ'], [[LABELS[r['model']],fmt(r['delta']),ci([r['ci95_low'],r['ci95_high']])] for r in pairrows],[5.3,4,8])
     improved=sum(r['delta']>0 for r in pairrows)
     p(f'Few-shot имеет более высокий точечный Macro-F1 у {improved} из 8 моделей. Поэтому универсальное улучшение от двух демонстраций не предполагается. Каждая разность оценивается на парных query_id; отсутствие коррекции множественных сравнений ограничивает выводы.')
-    table(['Модель','Режим','nDCG@10','MRR@10','Recall@3','Recall@10'],[[LABELS[g['model']],'Z' if g['mode']=='zero-shot' else 'F',fmt(g['ndcg10_judged']),fmt(g['mrr10_judged']),fmt(g['recall3_judged']),fmt(g['recall10_judged'])] for g in test],[3.4,1.2,3.1,3.1,3.1,3.4])
+    table(['Модель','Реж.','nDCG@10','MRR@10','Recall@3','Recall@10'],[[LABELS[g['model']],'Z' if g['mode']=='zero-shot' else 'F',fmt(g['ndcg10_judged']),fmt(g['mrr10_judged']),fmt(g['recall3_judged']),fmt(g['recall10_judged'])] for g in test],[3.4,1.2,3.1,3.1,3.1,3.4])
 
     # Table schemas are emitted verbatim to retain every measured field in the artifact bundle.
     p('Парные разности few-shot минус zero-shot и интервалы приведены в results/paired_comparisons.csv. Few-shot не считается улучшением только по росту точечной оценки: учитываются ширина интервала и изменение задержки.')
@@ -204,7 +204,7 @@ def build():
     p('Исходный запрос выполняется BM25. Модель наблюдает пять коротких результатов и выбирает search с новым запросом либо stop. Максимум — три обращения к индексу, два решения LLM. Повтор запроса, ошибка формата или исчерпание бюджета завершают цикл. Финальный список объединяется RRF с k=60. Сравниваются исходный BM25 и детерминированное расширение по заголовкам с тем же максимальным бюджетом.')
     search=load('results/search_summary.json')
     names={'original_bm25':'BM25','lexical_expansion':'Расширение заголовками','winner_feedback':'LLM с обратной связью'}
-    table(['Метод','nDCG@10 и ДИ','Recall@10','MRR','Поисков','LLM','Время с'],[[names[k],fmt(v['ndcg10']['mean'])+' '+ci(v['ndcg10']['ci95']),fmt(v['recall10']['mean']),fmt(v['mrr']['mean']),fmt(v['search_calls']['mean'],2),fmt(v['llm_calls']['mean'],2),fmt(v['latency_s']['mean'],2)] for k,v in search['methods'].items()],[3.5,4.1,2.2,1.8,1.8,1.5,2.4])
+    table(['Метод','nDCG@10 и ДИ','Recall@10','MRR','Поисков','LLM','Время с'],[[names[k],fmt(v['ndcg10']['mean'])+' '+ci(v['ndcg10']['ci95']),fmt(v['recall10']['mean']),fmt(v['mrr']['mean']),fmt(v['search_calls']['mean'],2),fmt(v['llm_calls']['mean'],2),fmt(v['latency_s']['mean'],4)] for k,v in search['methods'].items()],[3.5,4.1,2.2,1.8,1.8,1.5,2.4])
     fig('figures/search_comparison.png','Рисунок 3 Поиск на двадцати новых запросах и 95% интервалы')
     for comparator,diffs in search['feedback_minus_comparator'].items():
         d=diffs['ndcg10']
@@ -212,9 +212,9 @@ def build():
     coverage=search['methods']['winner_feedback']['judged_coverage10']['mean']
     p(f'Доля top-10 с известной оценкой равна {fmt(coverage)}. При подсчёте TREC-метрик неразмеченные документы получают нулевой gain; это техническое соглашение при неполных qrels, а не доказательство их нерелевантности.')
     trajectories=[json.loads(s) for s in (ROOT/'results/search_trajectories.jsonl').read_text(encoding='utf-8').splitlines() if s.strip()]
-    for tr in trajectories[:2]:
+    for tr in sorted(trajectories,key=lambda t:len(t['methods']['winner_feedback']['searches']),reverse=True)[:1]:
         fb=tr['methods']['winner_feedback']
-        p('Пример траектории '+tr['qid']+': '+tr['query']+' Поисковые запросы: '+' → '.join(s['query'] for s in fb['searches'])+'. Завершение: '+fb['status']+'.')
+        p('Пример многошаговой траектории '+tr['qid']+': '+tr['query']+' Поисковые запросы: '+' → '.join(s['query'] for s in fb['searches'])+'. Завершение: '+fb['status']+'.')
 
     p('При интеграции в ВКР сохраняются search → observation → action → stop, версия индекса и бюджет действий. Прототип должен передавать сомнительные случаи на проверку при невалидном ответе, повторении запроса, отсутствии свидетельств или исчерпании бюджета. Поиск не выдаётся за доказанно правильный финальный ответ: MIRACL не содержит необходимых answer labels.')
     h('8 Параметрически эффективная адаптация')

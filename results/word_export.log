@@ -10,3 +10,6 @@ Pages: 19
 
 RUN ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\export_word_pdf.ps1', '-InputDocx', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\Lab1_MIRACL_final.docx', '-OutputPdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf']
 Pages: 19
+
+RUN ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\export_word_pdf.ps1', '-InputDocx', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\Lab1_MIRACL_final.docx', '-OutputPdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf']
+Pages: 19
