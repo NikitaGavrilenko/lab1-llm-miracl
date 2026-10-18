@@ -534,11 +534,76 @@
       "stage": "git_add",
       "status": "running",
       "time_unix": 1792342039.9801462
+    },
+    {
+      "stage": "git_add",
+      "status": "passed",
+      "time_unix": 1792342040.096146
+    },
+    {
+      "stage": "git_commit",
+      "status": "running",
+      "time_unix": 1792342040.1421466
+    },
+    {
+      "stage": "git_commit",
+      "status": "passed",
+      "time_unix": 1792342040.2914522
+    },
+    {
+      "stage": "all_automatic_stages",
+      "status": "complete_visual_review_pending",
+      "time_unix": 1792342049.1628928
+    },
+    {
+      "stage": "build_report",
+      "status": "running",
+      "time_unix": 1792342134.7381387
+    },
+    {
+      "stage": "build_report",
+      "status": "passed",
+      "time_unix": 1792342135.3933456
+    },
+    {
+      "stage": "word_export",
+      "status": "running",
+      "time_unix": 1792342135.3993454
+    },
+    {
+      "stage": "word_export",
+      "status": "passed",
+      "time_unix": 1792342142.7830489
+    },
+    {
+      "stage": "render_png",
+      "status": "running",
+      "time_unix": 1792342142.7928627
+    },
+    {
+      "stage": "render_png",
+      "status": "passed",
+      "time_unix": 1792342147.0703595
+    },
+    {
+      "stage": "pdf_text",
+      "status": "running",
+      "time_unix": 1792342147.0773609
+    },
+    {
+      "stage": "pdf_text",
+      "status": "passed",
+      "time_unix": 1792342147.8901978
+    },
+    {
+      "stage": "git_add",
+      "status": "running",
+      "time_unix": 1792342147.9081972
     }
   ],
   "stage": "git_add",
   "status": "running",
-  "updated_unix": 1792342039.9801462,
+  "updated_unix": 1792342147.9081972,
   "details": {
     "command": [
       "C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe",

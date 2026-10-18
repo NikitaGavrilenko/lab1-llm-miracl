@@ -13,3 +13,6 @@ D:\Projects\University_Current\lab1-llm-miracl\report\Lab1_MIRACL_final.docx
 
 RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\build_report.py']
 D:\Projects\University_Current\lab1-llm-miracl\report\Lab1_MIRACL_final.docx
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\build_report.py']
+D:\Projects\University_Current\lab1-llm-miracl\report\Lab1_MIRACL_final.docx

@@ -161,7 +161,7 @@ def build():
         for mo in ['zero-shot','few-shot']:
             g=next(g for g in test if g['model']==m and g['mode']==mo)
             rows.append([LABELS[m], 'Z' if mo=='zero-shot' else 'F',fmt(g['macro_f1_operation'])+' '+ci(g['macro_f1_operation_ci95']),fmt(g['mcc_valid']),fmt(g['brier_valid']),fmt(g['ece10_valid']),fmt(100*g['invalid_query_rate'],1)])
-    table(['Модель','Реж.','Macro-F1 и 95% ДИ','MCC','Brier','ECE','Отказ %'],rows,[3.2,1,4.8,1.7,1.7,1.7,1.2],9)
+    table(['Модель','Реж.','Macro-F1 и 95% ДИ','MCC','Brier','ECE','Отказ %'],rows,[3,1.4,4.2,1.7,1.7,1.7,1.6],9)
     baselines=[g for g in summary['baselines'] if g['split']=='test' and 'macro_f1_operation' in g]
     table(['Baseline','Macro-F1','Brier','ECE'],[[g['model'],fmt(g['macro_f1_operation']),fmt(g['brier_valid']),fmt(g['ece10_valid'])] for g in baselines],[7,3.4,3.4,3.4])
     fig('figures/comparison_test.png','Рисунок 1 Macro-F1 восьми моделей и 95% интервалы по query_id')

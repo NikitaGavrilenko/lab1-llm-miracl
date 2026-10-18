@@ -8,3 +8,5 @@ RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependenci
 RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\extract_pdf_text.py', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.txt']
 
 RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\extract_pdf_text.py', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.txt']
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\extract_pdf_text.py', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.txt']
