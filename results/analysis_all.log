@@ -1,0 +1,9 @@
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']
+{"groups": 34, "records": 1072, "validation_complete": true, "selection": "existing_selection_preserved"}
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']
+{"groups": 34, "records": 1072, "validation_complete": true, "selection": "existing_selection_preserved"}
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\analyze_results.py']
+{"groups": 34, "records": 1072, "validation_complete": true, "selection": "existing_selection_preserved"}

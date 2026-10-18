@@ -1,0 +1,42 @@
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'unittest', 'discover', '-s', 'tests', '-v']
+test_bm25_uses_positive_idf (test_metrics.MetricTests) ... ok
+test_calibration_includes_endpoints (test_metrics.MetricTests) ... ok
+test_cluster_bootstrap_deterministic_and_pointmass (test_metrics.MetricTests) ... ok
+test_operational_macro_f1_matches_explicit_labels (test_metrics.MetricTests) ... ok
+test_random_expectation_matches_all_permutations (test_metrics.MetricTests) ... ok
+test_ranking_hand_calculation_and_invalid (test_metrics.MetricTests) ... ok
+test_resident_vram_is_specific_to_model (test_metrics.MetricTests) ... ok
+test_ties_preserve_supplied_document_order (test_metrics.MetricTests) ... ok
+test_accepts_independent_binary_scores (test_metrics.ParserTests) ... ok
+test_live_reader_only_ignores_incomplete_final_line (test_metrics.ParserTests) ... ok
+test_rejects_wrong_length_boolean_nan_and_range (test_metrics.ParserTests) ... ok
+test_prior_uses_train_only_and_threshold_point_five (test_metrics.PriorBaselineTests) ... ok
+test_refuses_incomplete_then_preserves_existing_selection (test_metrics.SelectionTests) ... ok
+test_selection_uses_validation_resource_tradeoff_and_rejects_test (test_metrics.SelectionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.048s
+
+OK
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'unittest', 'discover', '-s', 'tests', '-v']
+test_bm25_uses_positive_idf (test_metrics.MetricTests) ... ok
+test_calibration_includes_endpoints (test_metrics.MetricTests) ... ok
+test_cluster_bootstrap_deterministic_and_pointmass (test_metrics.MetricTests) ... ok
+test_operational_macro_f1_matches_explicit_labels (test_metrics.MetricTests) ... ok
+test_random_expectation_matches_all_permutations (test_metrics.MetricTests) ... ok
+test_ranking_hand_calculation_and_invalid (test_metrics.MetricTests) ... ok
+test_resident_vram_is_specific_to_model (test_metrics.MetricTests) ... ok
+test_ties_preserve_supplied_document_order (test_metrics.MetricTests) ... ok
+test_accepts_independent_binary_scores (test_metrics.ParserTests) ... ok
+test_live_reader_only_ignores_incomplete_final_line (test_metrics.ParserTests) ... ok
+test_rejects_wrong_length_boolean_nan_and_range (test_metrics.ParserTests) ... ok
+test_prior_uses_train_only_and_threshold_point_five (test_metrics.PriorBaselineTests) ... ok
+test_refuses_incomplete_then_preserves_existing_selection (test_metrics.SelectionTests) ... ok
+test_selection_uses_validation_resource_tradeoff_and_rejects_test (test_metrics.SelectionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.024s
+
+OK

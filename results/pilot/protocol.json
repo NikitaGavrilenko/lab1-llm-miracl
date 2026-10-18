@@ -1,0 +1,42 @@
+{
+  "protocol_version": "miracl-relevance-v1",
+  "models": [
+    "qwen2.5-coder:1.5b",
+    "llama3.2:3b",
+    "gemma3:4b",
+    "qwen3-vl:8b",
+    "qwen2.5-coder:14b",
+    "qwen3:14b",
+    "qwen3:30b",
+    "qwen2.5-coder:32b"
+  ],
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 384,
+    "top_k": 1,
+    "top_p": 1,
+    "repeat_penalty": 1
+  },
+  "response_constraint": "Ollama format=json, semantic validation without repair or retries",
+  "probability": "self-verbalized confidence, not token posterior",
+  "splits": {
+    "validation": 16,
+    "test": 40,
+    "application": 20
+  },
+  "seed": 42,
+  "text_budget_chars": 14000,
+  "max_passage_chars": 900,
+  "modes": [
+    "zero-shot",
+    "few-shot"
+  ],
+  "robust_query_count": 8,
+  "invalid_policy": "abstain label=2; no BM25 fallback; calibration on valid with coverage",
+  "selection": "validation only: invalid<=0.05 then utility; if none choose highest coverage",
+  "utility": "0.55*MacroF1+0.15*(MCC+1)/2+0.15*(1-Brier)+0.10*(1-p95/max_p95)+0.05*(1-VRAM/max_VRAM)",
+  "bootstrap": "query-cluster percentile 2000 replicates seed42; paired by qid",
+  "ranking": "descending p_relevant, stable order for ties; invalid query ranking empty"
+}

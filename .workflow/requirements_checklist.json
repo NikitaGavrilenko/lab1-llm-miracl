@@ -1,0 +1,161 @@
+{
+  "source": "Лабораторная 1.docx",
+  "audit_stage": "initial_read_only_audit",
+  "date": "2026-10-18",
+  "items": [
+    {
+      "id": "R01",
+      "requirement": "Сформулировать задачу ВКР и систематический поисковый запрос",
+      "expected_evidence": "literature/review.md; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R02",
+      "requirement": "10–15 реальных научных работ с проверяемыми первоисточниками",
+      "expected_evidence": "literature/references.*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R03",
+      "requirement": "Для каждой работы: задача, архитектура, данные, протокол, метрики, код, ограничения, идея репликации",
+      "expected_evidence": "literature/matrix.csv",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R04",
+      "requirement": "PRISMA-подобная реальная схема отбора и исследовательский разрыв",
+      "expected_evidence": "literature/search_log.*; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R05",
+      "requirement": "Источник/лицензия/единица/классы/объем/пропуски/дубликаты/дисбаланс/время",
+      "expected_evidence": "data/passport.json",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R06",
+      "requirement": "Точная и приближенная утечка текстов; train/validation/test до модели",
+      "expected_evidence": "data/splits*; data/quality*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R07",
+      "requirement": "8 реальных LLM на общих объектах и сопоставимом бюджете",
+      "expected_evidence": "configs; results/per_example*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R08",
+      "requirement": "Zero-shot и few-shot для каждой модели, train-only examples",
+      "expected_evidence": "configs/prompts*; results",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R09",
+      "requirement": "PEFT при возможности, честный вывод о доступности/результате",
+      "expected_evidence": "results/peft*; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R10",
+      "requirement": "Доля невалидных ответов отдельно от fallback",
+      "expected_evidence": "results/validity*; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R11",
+      "requirement": "Чувствительность к формулировке инструкции",
+      "expected_evidence": "results/robustness*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R12",
+      "requirement": "95% CI, единый протокол и журнал параметров",
+      "expected_evidence": "results/summary*; configs; results/runtime*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R13",
+      "requirement": "Классификация, калибровка и устойчивость",
+      "expected_evidence": "Macro-F1/MCC/Brier/ECE; reliability plot",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R14",
+      "requirement": "Latency, память или API cost",
+      "expected_evidence": "results/runtime*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R15",
+      "requirement": "Ошибки по классам/длине/языку/типу; адаптация финансового типа пояснена",
+      "expected_evidence": "results/errors*; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R16",
+      "requirement": "Заранее заданное многокритериальное правило выбора на validation",
+      "expected_evidence": "configs/protocol*; results/selection*",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R17",
+      "requirement": "Победитель применен к авторской/новой выборке; интеграция/отказы",
+      "expected_evidence": "results/application*; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R18",
+      "requirement": "Ответ на вопрос/гипотезу, ограничения и следующий опыт ВКР",
+      "expected_evidence": "report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R19",
+      "requirement": "Воспроизводимые матрица/паспорт/модели/конфиги/метрики/ошибки/README",
+      "expected_evidence": "README.md; code; artifacts",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R20",
+      "requirement": "Ссылка на реальный репозиторий студента либо честно обозначенная локальная копия",
+      "expected_evidence": "README.md; report",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R21",
+      "requirement": "Не копировать демонстрационные числа методички; тесты и согласованность",
+      "expected_evidence": "results/verification*; report render",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    },
+    {
+      "id": "R22",
+      "requirement": "Готовый проверенный Word с читаемыми таблицами/графиками",
+      "expected_evidence": "report/*.docx; rendered pages",
+      "status": "pending_final_audit",
+      "note": "Состояние новой реализации нужно проверить после экспериментов; это не отметка выполнения."
+    }
+  ]
+}

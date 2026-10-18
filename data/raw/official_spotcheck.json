@@ -1,0 +1,23 @@
+[
+  {
+    "docid": "7#10",
+    "status": 500,
+    "data": {
+      "error": "the dataset index is loading, this may take longer than usual"
+    }
+  },
+  {
+    "docid": "1358247#10",
+    "status": 500,
+    "data": {
+      "error": "the dataset index is loading, this can take a minute"
+    }
+  },
+  {
+    "docid": "7761118#11",
+    "status": 500,
+    "data": {
+      "error": "the dataset index is loading, this may take longer than usual"
+    }
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "version": "bounded-search-v1",
+  "task": "Bounded feedback retrieval policy; not multi-hop QA",
+  "corpus_file": "data/prepared/corpus.jsonl",
+  "corpus_sha256": "2ce2c5f09feedaee59346a9a4331341554c4f49acb61c16ae2cd3eb725af9e1b",
+  "application_sha256": "4785dd79cd8fc1aebc59a0f2a33092b70d822f1b5a13b8e562bdc08bd5fe7978",
+  "application_queries": 20,
+  "model_selection": "Read frozen results/selection.json; winner chosen solely on validation",
+  "max_search_tool_calls": 3,
+  "max_llm_calls": 2,
+  "retrieval_depth": 20,
+  "observed_snippets": 5,
+  "snippet_max_characters": 450,
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "title_repetitions": 2,
+    "query_tf": "binary",
+    "tokenization": "lowercase latin/cyrillic/digit tokens length>=2; NLTK Russian Snowball without external downloads"
+  },
+  "fusion": "RRF k=60 across top20 for each search; ties docid lexical",
+  "lexical_control": "Same max3 tool-call budget: original, then original+top2 new title terms from last top5; rank-weighted frequency 1/rank; deterministic lexical ties; Russian question stopwords removed.",
+  "modes": [
+    "original_bm25",
+    "lexical_expansion",
+    "winner_feedback"
+  ],
+  "action_schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "enum": [
+          "search",
+          "stop"
+        ]
+      },
+      "query": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "query"
+    ],
+    "additionalProperties": false
+  },
+  "invalid_policy": "stop with explicit status; retain actual previous search results; no repair/retry or per-query positive insertion",
+  "metrics": {
+    "ndcg10": "binary qrels; ideal from all positives for the query",
+    "recall10": "positives retrieved in top10 divided by all judged positives",
+    "mrr": "reciprocal first relevant rank within available returned list (original<=20; fusion<=60)",
+    "mrr10": "reciprocal first relevant rank capped at10",
+    "judged_coverage10": "fraction of top10 hits with an explicit qrel"
+  },
+  "unjudged_policy": "TREC convention: unjudged=0; judgments are incomplete. Report judged coverage; missing labels are not verified negatives.",
+  "bootstrap": {
+    "unit": "query",
+    "replicates": 2000,
+    "seed": 42,
+    "ci": "95% percentile, paired resampling for differences"
+  },
+  "few_shot_examples": [
+    {
+      "qid": "train:2023",
+      "query": "Когда были проведены первые Олимпийские игры?",
+      "rewrite": "первые Олимпийские игры дата проведения"
+    },
+    {
+      "qid": "train:2906",
+      "query": "Кто начал собирать коллекцию Кунсткамеры Санкт-Петербурга??",
+      "rewrite": "основатель коллекции Кунсткамера Санкт-Петербург"
+    }
+  ],
+  "llm_options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 384,
+    "top_k": 1,
+    "top_p": 1,
+    "repeat_penalty": 1
+  },
+  "qrels_in_prompt": false,
+  "limitations": [
+    "Restricted 41007-passage judged-pool corpus; not full-corpus MIRACL.",
+    "The fixed corpus was constructed from official train/dev judgment pools, including application topics.",
+    "MIRACL provides no golden multi-step trajectories; additional calls are not evidence of multi-hop reasoning."
+  ]
+}

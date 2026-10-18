@@ -1,0 +1,338 @@
+{
+  "base": {
+    "metrics": {
+      "validation": {
+        "pairs": 168,
+        "queries": 16,
+        "macro_f1": 0.27813684780646325,
+        "f1_nonrelevant": 0.1793103448275862,
+        "f1_relevant": 0.3769633507853403,
+        "balanced_accuracy": 0.5492424242424242,
+        "mcc": 0.15124119906049122,
+        "brier": 0.47829714674881485,
+        "ece": 0.5591845579800152,
+        "confusion_matrix": [
+          [
+            13,
+            119
+          ],
+          [
+            0,
+            36
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.2109425166082598,
+            0.34869539754463713
+          ],
+          "mcc": [
+            0.10312245856465345,
+            0.20067001862719533
+          ],
+          "brier": [
+            0.41515036497375873,
+            0.5360168997627162
+          ]
+        },
+        "truncated_fraction": 0.9523809523809523
+      },
+      "test": {
+        "pairs": 416,
+        "queries": 40,
+        "macro_f1": 0.24343461286646134,
+        "f1_nonrelevant": 0.07975460122699386,
+        "f1_relevant": 0.40711462450592883,
+        "balanced_accuracy": 0.5113765120195988,
+        "mcc": 0.05301468116606439,
+        "brier": 0.5217418976312664,
+        "ece": 0.5734289219388022,
+        "confusion_matrix": [
+          [
+            13,
+            298
+          ],
+          [
+            2,
+            103
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.2055735303465065,
+            0.2809727954390706
+          ],
+          "mcc": [
+            -0.013338009200908958,
+            0.10587760864722427
+          ],
+          "brier": [
+            0.48240270550424225,
+            0.5621999632335811
+          ]
+        },
+        "truncated_fraction": 0.9206730769230769
+      },
+      "application": {
+        "pairs": 207,
+        "queries": 20,
+        "macro_f1": 0.30055493895671476,
+        "f1_nonrelevant": 0.13836477987421383,
+        "f1_relevant": 0.4627450980392157,
+        "balanced_accuracy": 0.5064484126984127,
+        "mcc": 0.022889594398897324,
+        "brier": 0.45431783952628707,
+        "ece": 0.4855285116295883,
+        "confusion_matrix": [
+          [
+            11,
+            133
+          ],
+          [
+            4,
+            59
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.2320373529137445,
+            0.37416032707313035
+          ],
+          "mcc": [
+            -0.1150834286629987,
+            0.1490788688331215
+          ],
+          "brier": [
+            0.3817837630413,
+            0.5275941201173879
+          ]
+        },
+        "truncated_fraction": 0.9082125603864735
+      }
+    },
+    "runtime": {
+      "validation": {
+        "elapsed_s": 2.5749823999940418,
+        "batch_p50_s": 0.060712500009685755,
+        "batch_p95_s": 0.06376194998447318,
+        "batch_size": 4
+      },
+      "test": {
+        "elapsed_s": 6.3957136000390165,
+        "batch_p50_s": 0.060938349983189255,
+        "batch_p95_s": 0.06281430998351425,
+        "batch_size": 4
+      },
+      "application": {
+        "elapsed_s": 3.316537300008349,
+        "batch_p50_s": 0.061285350035177544,
+        "batch_p95_s": 0.06448412498575636,
+        "batch_size": 4
+      }
+    },
+    "warmup_s": 0.35418520000530407,
+    "rss_observed_peak_bytes": 3226312704
+  },
+  "adapted": {
+    "metrics": {
+      "validation": {
+        "pairs": 168,
+        "queries": 16,
+        "macro_f1": 0.5285796655775514,
+        "f1_nonrelevant": 0.6604651162790698,
+        "f1_relevant": 0.39669421487603307,
+        "balanced_accuracy": 0.6022727272727273,
+        "mcc": 0.16787249296247048,
+        "brier": 0.24401315675068175,
+        "ece": 0.28675986276496024,
+        "confusion_matrix": [
+          [
+            71,
+            61
+          ],
+          [
+            12,
+            24
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.4466660389202762,
+            0.6070006125315585
+          ],
+          "mcc": [
+            0.03662298064814452,
+            0.31291553433313046
+          ],
+          "brier": [
+            0.23273773169365328,
+            0.2550380009940111
+          ]
+        },
+        "truncated_fraction": 0.9523809523809523
+      },
+      "test": {
+        "pairs": 416,
+        "queries": 40,
+        "macro_f1": 0.5090170899820603,
+        "f1_nonrelevant": 0.5798319327731093,
+        "f1_relevant": 0.43820224719101125,
+        "balanced_accuracy": 0.5932935231970602,
+        "mcc": 0.1656828289204754,
+        "brier": 0.25030576306648367,
+        "ece": 0.2633788221014234,
+        "confusion_matrix": [
+          [
+            138,
+            173
+          ],
+          [
+            27,
+            78
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.4479097730904284,
+            0.5661840020438609
+          ],
+          "mcc": [
+            0.0796477478383504,
+            0.2542068536491266
+          ],
+          "brier": [
+            0.24388484646810155,
+            0.2572672251589529
+          ]
+        },
+        "truncated_fraction": 0.9206730769230769
+      },
+      "application": {
+        "pairs": 207,
+        "queries": 20,
+        "macro_f1": 0.5692508710801394,
+        "f1_nonrelevant": 0.6504065040650406,
+        "f1_relevant": 0.4880952380952381,
+        "balanced_accuracy": 0.6031746031746033,
+        "mcc": 0.18991514009553936,
+        "brier": 0.24388059354914968,
+        "ece": 0.1983270519885464,
+        "confusion_matrix": [
+          [
+            80,
+            64
+          ],
+          [
+            22,
+            41
+          ]
+        ],
+        "ci95": {
+          "macro_f1": [
+            0.4746505524601261,
+            0.6466628425686122
+          ],
+          "mcc": [
+            0.05480505273579073,
+            0.317510255399667
+          ],
+          "brier": [
+            0.23427698167846697,
+            0.2538236698325553
+          ]
+        },
+        "truncated_fraction": 0.9082125603864735
+      }
+    },
+    "runtime": {
+      "validation": {
+        "elapsed_s": 4.084998100006487,
+        "batch_p50_s": 0.09668019998935051,
+        "batch_p95_s": 0.12549167998658955,
+        "batch_size": 4
+      },
+      "test": {
+        "elapsed_s": 7.173490600020159,
+        "batch_p50_s": 0.06805760000133887,
+        "batch_p95_s": 0.07256512503954582,
+        "batch_size": 4
+      },
+      "application": {
+        "elapsed_s": 3.446176600002218,
+        "batch_p50_s": 0.06602344999555498,
+        "batch_p95_s": 0.06759176001069137,
+        "batch_size": 4
+      }
+    },
+    "warmup_s": 0.1321470999973826,
+    "rss_observed_peak_bytes": 1706573824
+  },
+  "training": {
+    "steps": 64,
+    "available_examples": 128,
+    "consumed_examples": 128,
+    "elapsed_s": 9.848742400004994,
+    "rss_observed_peak_bytes": 1697968128,
+    "total_parameters": 494573440,
+    "trainable_parameters": 540672,
+    "objective": "binary cross-entropy over next-token logits for 0 and 1; no full-vocabulary LM loss",
+    "method": "unquantized float32 LoRA, not QLoRA; one fixed pass, no checkpoint selection"
+  },
+  "manifest": {
+    "config": {
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "model_dir": "models/Qwen2.5-0.5B-Instruct",
+      "license": "Apache-2.0",
+      "adapter_dir": "adapters/qwen25_05b_relevance_lora",
+      "seed": 42,
+      "cpu_threads": 4,
+      "max_input_tokens": 256,
+      "train_batch_size": 2,
+      "eval_batch_size": 4,
+      "lora_r": 8,
+      "learning_rate": 0.0001,
+      "max_steps": 64,
+      "epochs": 1,
+      "threshold": 0.5,
+      "model_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+      "method_source": "https://huggingface.co/docs/peft/en/quicktour",
+      "purpose": "Separate actual LoRA control, not part of 8-model Ollama ranking; fixed settings without test tuning",
+      "training_selection": "one random judged 0 and one judged 1 per train query; seed42; at most 128 pairs",
+      "probability": "softmax of next-token logits restricted to tokens 0 and 1, no verbalized confidence",
+      "calibration": "raw uncalibrated conditional binary token probability; ECE/Brier descriptive",
+      "device": "cuda"
+    },
+    "config_sha256": "e6db22978c0d4e9b34b8f1733c67e86453f1a9e493eb79f9c7dc8171eaec4cf2",
+    "split_sha256": {
+      "train": "30973be55a8b9cdc5d5c184459ac886b4680defdb67966f1725cb10f3c7f8b55",
+      "validation": "e7f4bdcf9fe3731e2e23b647d938b78e209fc2b98cfe42cddb5238ecefcafbe6",
+      "test": "0ee0d422c8b5bfd12b5468554e2510d476fe0eb37e778eff10df33f51114e55f",
+      "application": "4785dd79cd8fc1aebc59a0f2a33092b70d822f1b5a13b8e562bdc08bd5fe7978"
+    },
+    "counts": {
+      "validation": 168,
+      "test": 416,
+      "application": 207
+    },
+    "train_pairs": 128,
+    "label_token_ids": [
+      15,
+      16
+    ],
+    "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19044-SP0",
+    "versions": {
+      "torch": "2.7.1+cu128",
+      "transformers": "4.51.3",
+      "peft": "0.15.2",
+      "accelerate": "1.6.0",
+      "numpy": "2.2.6",
+      "psutil": "7.0.0"
+    },
+    "device": "cuda",
+    "cuda_available": true,
+    "caveat": "Independent 0.5B LoRA pilot, different 256-token pairwise protocol; not a ninth row in Ollama ranking"
+  },
+  "interpretation": "Actual independent 0.5B binary-logit LoRA; not comparable as a ninth Ollama model."
+}

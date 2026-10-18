@@ -1,0 +1,3 @@
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', 'init', '-b', 'main']
+Initialized empty Git repository in D:/Projects/University_Current/lab1-llm-miracl/.git/

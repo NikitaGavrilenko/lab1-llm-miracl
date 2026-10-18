@@ -1,0 +1,8 @@
+{
+  "replaced": "qwen3-vl:8b",
+  "replacement": "phi3.5:3.8b",
+  "stage": "validation before test",
+  "attempts": 10,
+  "reason": "Local Qwen3-VL keeps generating thinking despite think=false; max384 tokens exhausted before final JSON. No quality metrics used for replacement.",
+  "retained_measurements": "Other models unchanged: identical prompts, data, digest, inference settings and server version. Protocol model set revised before test."
+}

@@ -1,0 +1,41 @@
+
+RUN ['D:\\Projects\\University_Current\\lab1-llm-miracl\\.venv-peft\\Scripts\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\peft_experiment.py']
+Loading CPU float32 Qwen
+Sliding Window Attention is enabled but not implemented for `sdpa`; unexpected results may be encountered.
+base validation 4 / 168
+base validation 68 / 168
+base validation 132 / 168
+base test 4 / 416
+base test 68 / 416
+base test 132 / 416
+base test 196 / 416
+base test 260 / 416
+base test 324 / 416
+base test 388 / 416
+base application 4 / 207
+base application 68 / 207
+base application 132 / 207
+base application 196 / 207
+LoRA step 8 loss 1.626980185508728
+LoRA step 16 loss 0.48343899846076965
+LoRA step 24 loss 0.2720613181591034
+LoRA step 32 loss 0.2114052176475525
+LoRA step 40 loss 0.8766740560531616
+LoRA step 48 loss 0.6167238354682922
+LoRA step 56 loss 0.7412282228469849
+LoRA step 64 loss 0.708488941192627
+adapted validation 4 / 168
+adapted validation 68 / 168
+adapted validation 132 / 168
+adapted test 4 / 416
+adapted test 68 / 416
+adapted test 132 / 416
+adapted test 196 / 416
+adapted test 260 / 416
+adapted test 324 / 416
+adapted test 388 / 416
+adapted application 4 / 207
+adapted application 68 / 207
+adapted application 132 / 207
+adapted application 196 / 207
+PEFT pilot finished

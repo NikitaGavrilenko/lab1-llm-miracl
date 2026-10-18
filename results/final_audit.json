@@ -1,0 +1,34 @@
+{
+  "numeric_checks": true,
+  "unit_tests": "passed; see results/unit_tests.log",
+  "word_render": {
+    "pages": 19,
+    "png_files": [
+      "page-01.png",
+      "page-02.png",
+      "page-03.png",
+      "page-04.png",
+      "page-05.png",
+      "page-06.png",
+      "page-07.png",
+      "page-08.png",
+      "page-09.png",
+      "page-10.png",
+      "page-11.png",
+      "page-12.png",
+      "page-13.png",
+      "page-14.png",
+      "page-15.png",
+      "page-16.png",
+      "page-17.png",
+      "page-18.png",
+      "page-19.png"
+    ],
+    "pdf_sha256": "b050616f772bd54fc54492f23b41f9d97243b1303a523903dc9336b9d0d6fccf",
+    "word_opened_successfully": true,
+    "visual_review": "pending_primary_agent"
+  },
+  "independent_critique": "D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\independent_model_review.json",
+  "visual_review": "pending_primary_agent",
+  "status": "automatic_pipeline_complete_visual_review_pending"
+}

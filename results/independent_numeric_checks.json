@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "groups": [
+    {
+      "model": "gemma3:4b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "gemma3:4b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "gemma3:4b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "gemma3:4b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "llama3.2:3b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "phi3.5:3.8b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "phi3.5:3.8b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "phi3.5:3.8b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "phi3.5:3.8b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:1.5b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:14b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen2.5-coder:32b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "few-shot",
+      "split": "application",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "zero-shot",
+      "split": "application",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen3:14b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen3:30b",
+      "mode": "few-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen3:30b",
+      "mode": "few-shot",
+      "split": "validation",
+      "passed": true
+    },
+    {
+      "model": "qwen3:30b",
+      "mode": "zero-shot",
+      "split": "test",
+      "passed": true
+    },
+    {
+      "model": "qwen3:30b",
+      "mode": "zero-shot",
+      "split": "validation",
+      "passed": true
+    }
+  ],
+  "data_hashes": true,
+  "actual_lora_steps": 64
+}

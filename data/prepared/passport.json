@@ -1,0 +1,489 @@
+{
+  "dataset": "MIRACL-ru judged-passage subset",
+  "language": "Russian",
+  "official_topics_qrels_revision": "5be20db9509754dadad47689368639fcec739c00",
+  "text_mirror": "sohey1024/miracl-ru-corpus",
+  "text_mirror_revision": "1fd7b335ab9be859040f664efb07b9665d4bf8ee",
+  "sources": [
+    {
+      "file": "corpus.parquet",
+      "url": "https://huggingface.co/datasets/sohey1024/miracl-ru-corpus/resolve/1fd7b335ab9be859040f664efb07b9665d4bf8ee/data/train-00000-of-00001.parquet",
+      "bytes": 29012697,
+      "sha256": "b6e16a4c45a50de3eedcde138bd33404591497c696c17f4836c4f3e9fac161ba"
+    },
+    {
+      "file": "topics.miracl-v1.0-ru-train.tsv",
+      "url": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/topics/topics.miracl-v1.0-ru-train.tsv",
+      "bytes": 406366,
+      "sha256": "19c64bbd6cc0a689dbece3a684e8ab87e42e20aa2b0897fdc552235090d95628"
+    },
+    {
+      "file": "qrels.miracl-v1.0-ru-train.tsv",
+      "url": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/qrels/qrels.miracl-v1.0-ru-train.tsv",
+      "bytes": 663142,
+      "sha256": "bf1f737cda0d66bc38fef5f9d91843f7a89428c5c5a8a3dce4764f527ec344ef"
+    },
+    {
+      "file": "topics.miracl-v1.0-ru-dev.tsv",
+      "url": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/topics/topics.miracl-v1.0-ru-dev.tsv",
+      "bytes": 108525,
+      "sha256": "91a7c3b6d21f79a12b5330f0a62811962f9370a0bf539cba8b3fecaa095f0616"
+    },
+    {
+      "file": "qrels.miracl-v1.0-ru-dev.tsv",
+      "url": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/qrels/qrels.miracl-v1.0-ru-dev.tsv",
+      "bytes": 255921,
+      "sha256": "f877b43c7f53b76aab25e406e5a607ef1c5adba4ffaa11e1b252a4326735a19b"
+    }
+  ],
+  "official_text_spotcheck": {
+    "status": "passed",
+    "source": "https://datasets-server.huggingface.co/rows?dataset=miracl/miracl-corpus&config=ru&split=train",
+    "corpus_revision_at_check": "d921ec7e349ce0d28daf30b2da9da5ee698bef0d",
+    "rows_checked": 400,
+    "exact_title_and_text_matches": 16,
+    "log_sha256": "a9646990fd82a0c5e2663fa64edff2277ded4d620d4dbbd23cd875c4d7a7fac1",
+    "matched_docids": [
+      "7#10",
+      "9#0",
+      "9#12",
+      "9#40",
+      "9#54",
+      "9#57",
+      "9#65",
+      "9#66",
+      "9#80",
+      "9#104",
+      "9#130",
+      "9#131",
+      "9#136",
+      "33#4",
+      "493#0",
+      "493#3"
+    ]
+  },
+  "seed": 42,
+  "selection": "Sorted official integer qids, shuffle train seed42 / dev seed43, take first eligible queries. Train and validation from official train; test and application from official dev. Validation is reserved for model selection. Cross-split conflicts discard complete queries. All official judgments for every retained query are preserved.",
+  "eligibility": "At least one positive and one negative judgment; 2..20 total judgments. No filtering by model success, text length or BM25 difficulty.",
+  "qid_namespace": "official_split:official_qid because original train/dev numeric qids overlap",
+  "near_duplicates": {
+    "text_method": "Exhaustive cross-split token 3-shingle Jaccard via inverted index; NFKC casefold whitespace normalization.",
+    "query_method": "Normalized exact text or word-set Jaccard.",
+    "jaccard_threshold": 0.85,
+    "cross_split_near_overlap_after_filter": 0
+  },
+  "official_statistics": {
+    "train": {
+      "queries": 4683,
+      "judgments": 33921,
+      "positives": 10000,
+      "negatives": 23921,
+      "missing_document_queries": [],
+      "covered_judgments": 33921,
+      "judgments_per_query": {
+        "min": 1,
+        "p25": 1,
+        "median": 10,
+        "p75": 11,
+        "p95": 11,
+        "max": 19
+      }
+    },
+    "dev": {
+      "queries": 1252,
+      "judgments": 13100,
+      "positives": 3560,
+      "negatives": 9540,
+      "missing_document_queries": [],
+      "covered_judgments": 13100,
+      "judgments_per_query": {
+        "min": 9,
+        "p25": 10,
+        "median": 10,
+        "p75": 11,
+        "p95": 11,
+        "max": 18
+      }
+    }
+  },
+  "eligible_queries": {
+    "train": 3100,
+    "dev": 1247
+  },
+  "corpus": {
+    "passages": 41007,
+    "unique_docids": 41007,
+    "normalized_duplicate_text_groups": 108,
+    "extra_duplicate_text_passages": 127,
+    "characters": {
+      "min": 7,
+      "p25": 424,
+      "median": 643,
+      "p75": 916,
+      "p95": 1507,
+      "max": 10622
+    },
+    "scope": "Fixed global union of 41007 passages judged for official Russian train/dev. No per-query insertion. NOT the full 22-million-passage MIRACL-ru collection.",
+    "construction_bias": "Corpus inclusion depends on historical relevance-annotation pools, including held-out queries. This makes a closed judged-pool retrieval benchmark easier than full-corpus retrieval. Relevance judgments remain incomplete for other queries."
+  },
+  "splits": {
+    "train": {
+      "queries": 64,
+      "judgments": 671,
+      "positive_judgments": 180,
+      "negative_judgments": 491,
+      "positive_fraction": 0.26825633383010433,
+      "unique_docids": 671,
+      "passage_characters": {
+        "min": 28,
+        "p25": 460,
+        "median": 659,
+        "p75": 894,
+        "p95": 1468,
+        "max": 2782
+      },
+      "query_characters": {
+        "min": 15,
+        "p25": 34,
+        "median": 44,
+        "p75": 51,
+        "p95": 65,
+        "max": 69
+      },
+      "judgments_per_query": {
+        "min": 2,
+        "p25": 10,
+        "median": 11,
+        "p75": 11,
+        "p95": 12,
+        "max": 15
+      },
+      "qids": [
+        "train:2023",
+        "train:2906",
+        "train:197",
+        "train:4518",
+        "train:113",
+        "train:127",
+        "train:2100",
+        "train:1133",
+        "train:5161",
+        "train:1854",
+        "train:4136",
+        "train:3005",
+        "train:1073",
+        "train:2185",
+        "train:482",
+        "train:1297",
+        "train:2252",
+        "train:1336",
+        "train:423",
+        "train:1304",
+        "train:2791",
+        "train:4724",
+        "train:3985",
+        "train:4596",
+        "train:40",
+        "train:2460",
+        "train:3157",
+        "train:4566",
+        "train:3553",
+        "train:4855",
+        "train:1998",
+        "train:2346",
+        "train:1511",
+        "train:1112",
+        "train:3341",
+        "train:1480",
+        "train:4206",
+        "train:1035",
+        "train:3846",
+        "train:3890",
+        "train:6525",
+        "train:3958",
+        "train:1705",
+        "train:4525",
+        "train:4614",
+        "train:1529",
+        "train:4574",
+        "train:2652",
+        "train:2144",
+        "train:1533",
+        "train:1544",
+        "train:3728",
+        "train:3264",
+        "train:4035",
+        "train:3269",
+        "train:3370",
+        "train:2718",
+        "train:2152",
+        "train:1104",
+        "train:4383",
+        "train:2696",
+        "train:4178",
+        "train:2816",
+        "train:3967"
+      ]
+    },
+    "validation": {
+      "queries": 16,
+      "judgments": 168,
+      "positive_judgments": 36,
+      "negative_judgments": 132,
+      "positive_fraction": 0.21428571428571427,
+      "unique_docids": 168,
+      "passage_characters": {
+        "min": 104,
+        "p25": 445,
+        "median": 670,
+        "p75": 894,
+        "p95": 1398,
+        "max": 3304
+      },
+      "query_characters": {
+        "min": 30,
+        "p25": 38,
+        "median": 48,
+        "p75": 51,
+        "p95": 68,
+        "max": 75
+      },
+      "judgments_per_query": {
+        "min": 10,
+        "p25": 10,
+        "median": 10,
+        "p75": 11,
+        "p95": 11,
+        "max": 12
+      },
+      "qids": [
+        "train:1935",
+        "train:399",
+        "train:2784",
+        "train:156",
+        "train:4794",
+        "train:3954",
+        "train:2452",
+        "train:4661",
+        "train:2810",
+        "train:4041",
+        "train:366",
+        "train:17",
+        "train:1068",
+        "train:253",
+        "train:4801",
+        "train:2737"
+      ]
+    },
+    "test": {
+      "queries": 40,
+      "judgments": 416,
+      "positive_judgments": 105,
+      "negative_judgments": 311,
+      "positive_fraction": 0.25240384615384615,
+      "unique_docids": 416,
+      "passage_characters": {
+        "min": 69,
+        "p25": 478,
+        "median": 701,
+        "p75": 973,
+        "p95": 1655,
+        "max": 4310
+      },
+      "query_characters": {
+        "min": 22,
+        "p25": 37,
+        "median": 44,
+        "p75": 52,
+        "p95": 72,
+        "max": 84
+      },
+      "judgments_per_query": {
+        "min": 10,
+        "p25": 10,
+        "median": 10,
+        "p75": 11,
+        "p95": 11,
+        "max": 11
+      },
+      "qids": [
+        "dev:1783",
+        "dev:3483",
+        "dev:5650",
+        "dev:5182",
+        "dev:1177",
+        "dev:4358",
+        "dev:6015",
+        "dev:3859",
+        "dev:4743",
+        "dev:2212",
+        "dev:6111",
+        "dev:4847",
+        "dev:4741",
+        "dev:2769",
+        "dev:3492",
+        "dev:4722",
+        "dev:434",
+        "dev:6643",
+        "dev:2621",
+        "dev:5304",
+        "dev:1910",
+        "dev:6530",
+        "dev:3112",
+        "dev:2495",
+        "dev:1782",
+        "dev:1583",
+        "dev:4559",
+        "dev:2150",
+        "dev:503",
+        "dev:6122",
+        "dev:5555",
+        "dev:1839",
+        "dev:4682",
+        "dev:5350",
+        "dev:5841",
+        "dev:4482",
+        "dev:1015",
+        "dev:3274",
+        "dev:2138",
+        "dev:1711"
+      ]
+    },
+    "application": {
+      "queries": 20,
+      "judgments": 207,
+      "positive_judgments": 63,
+      "negative_judgments": 144,
+      "positive_fraction": 0.30434782608695654,
+      "unique_docids": 207,
+      "passage_characters": {
+        "min": 107,
+        "p25": 473,
+        "median": 705,
+        "p75": 959,
+        "p95": 1554,
+        "max": 1985
+      },
+      "query_characters": {
+        "min": 23,
+        "p25": 33,
+        "median": 40,
+        "p75": 47,
+        "p95": 62,
+        "max": 98
+      },
+      "judgments_per_query": {
+        "min": 10,
+        "p25": 10,
+        "median": 10,
+        "p75": 11,
+        "p95": 11,
+        "max": 12
+      },
+      "qids": [
+        "dev:6729",
+        "dev:1962",
+        "dev:3867",
+        "dev:2762",
+        "dev:445",
+        "dev:5183",
+        "dev:3128",
+        "dev:428",
+        "dev:252",
+        "dev:3360",
+        "dev:3434",
+        "dev:2607",
+        "dev:6343",
+        "dev:1477",
+        "dev:6366",
+        "dev:223",
+        "dev:1997",
+        "dev:5984",
+        "dev:2968",
+        "dev:3537"
+      ]
+    }
+  },
+  "cross_split_checks": [
+    {
+      "splits": [
+        "train",
+        "validation"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    },
+    {
+      "splits": [
+        "train",
+        "test"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    },
+    {
+      "splits": [
+        "train",
+        "application"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    },
+    {
+      "splits": [
+        "validation",
+        "test"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    },
+    {
+      "splits": [
+        "validation",
+        "application"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    },
+    {
+      "splits": [
+        "test",
+        "application"
+      ],
+      "docid_overlap": 0,
+      "normalized_text_overlap": 0
+    }
+  ],
+  "excluded_queries": 54,
+  "exclusion_reasons": {
+    "requires_positive_and_negative_and_at_most_20_judgments": 51,
+    "doc_id": 3
+  },
+  "preprocessing": "Original titles/texts retained verbatim. No truncation in stored data. Normalization used only for leakage checks. Runner separately limits model-visible text.",
+  "limitations": [
+    "MIRACL questions are single-turn retrieval questions, without multi-hop gold trajectories.",
+    "Restricted global corpus uses judged-pool texts; results must not be compared directly to full MIRACL leaderboard.",
+    "Binary qrels have incomplete judgment coverage. Treating unjudged retrieved texts as nonrelevant biases recall/nDCG.",
+    "Text source is a third-party mirror; official docid/qrel coverage is fully checked. Official text spot checks depend on source-server availability."
+  ],
+  "prepared_sha256": {
+    "application.jsonl": "4785dd79cd8fc1aebc59a0f2a33092b70d822f1b5a13b8e562bdc08bd5fe7978",
+    "corpus.jsonl": "2ce2c5f09feedaee59346a9a4331341554c4f49acb61c16ae2cd3eb725af9e1b",
+    "test.jsonl": "0ee0d422c8b5bfd12b5468554e2510d476fe0eb37e778eff10df33f51114e55f",
+    "train.jsonl": "30973be55a8b9cdc5d5c184459ac886b4680defdb67966f1725cb10f3c7f8b55",
+    "validation.jsonl": "e7f4bdcf9fe3731e2e23b647d938b78e209fc2b98cfe42cddb5238ecefcafbe6"
+  },
+  "unit": "query and judged Wikipedia passage; binary relevance 0/1",
+  "license": {
+    "official_card": "Apache-2.0",
+    "mirror_card": "not specified; upstream corpus is MIRACL/Wikipedia",
+    "official_url": "https://huggingface.co/datasets/miracl/miracl",
+    "corpus_url": "https://huggingface.co/datasets/miracl/miracl-corpus"
+  },
+  "temporal_structure": "No per-query event/publication timestamp; random grouped split, not temporal forecasting.",
+  "missing_values": {
+    "empty_text": 0,
+    "empty_title": 0,
+    "empty_selected_query": 0
+  }
+}

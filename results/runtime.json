@@ -1,0 +1,1006 @@
+{
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+  "ollama_version": {
+    "version": "0.40.4"
+  },
+  "gpu_initial": "NVIDIA GeForce RTX 3090, 2668, 24576, 37.90, 17",
+  "models": {
+    "qwen2.5-coder:1.5b": {
+      "tag": {
+        "name": "qwen2.5-coder:1.5b",
+        "model": "qwen2.5-coder:1.5b",
+        "modified_at": "2026-05-11T12:34:00.3643812+03:00",
+        "size": 986062089,
+        "digest": "d7372fd828518a4d38b1eb196c673c31a85f2ed302b3d1e406c4c2d1b64a0668",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "1.5B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 1536,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "insert"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "1.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen2",
+        "general.base_model.0.name": "Qwen2.5 Coder 1.5B",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B",
+        "general.base_model.count": 1,
+        "general.basename": "Qwen2.5-Coder",
+        "general.file_type": 15,
+        "general.finetune": "Instruct",
+        "general.languages": [
+          "en"
+        ],
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct/blob/main/LICENSE",
+        "general.parameter_count": 1543714304,
+        "general.quantization_version": 2,
+        "general.size_label": "1.5B",
+        "general.tags": [
+          "code",
+          "codeqwen",
+          "chat",
+          "qwen",
+          "qwen-coder",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "qwen2.attention.head_count": 12,
+        "qwen2.attention.head_count_kv": 2,
+        "qwen2.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen2.block_count": 28,
+        "qwen2.context_length": 32768,
+        "qwen2.embedding_length": 1536,
+        "qwen2.feed_forward_length": 8960,
+        "qwen2.rope.freq_base": 1000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "insert"
+      ],
+      "preflight_prompt_tokens": 5415,
+      "warmup_s": 2.9406747999601066,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen2.5-coder:1.5b",
+            "model": "qwen2.5-coder:1.5b",
+            "size": 1367059988,
+            "digest": "d7372fd828518a4d38b1eb196c673c31a85f2ed302b3d1e406c4c2d1b64a0668",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "1.5B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:12:03.6486371+03:00",
+            "size_vram": 1367059988,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 2681, 24576, 207.22, 86"
+    },
+    "llama3.2:3b": {
+      "tag": {
+        "name": "llama3.2:3b",
+        "model": "llama3.2:3b",
+        "modified_at": "2026-10-18T13:49:17.0504292+03:00",
+        "size": 2019393189,
+        "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "llama",
+          "families": [
+            "llama"
+          ],
+          "parameter_size": "3.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 3072,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "llama",
+        "general.basename": "Llama-3.2",
+        "general.file_type": 15,
+        "general.finetune": "Instruct",
+        "general.languages": [
+          "en",
+          "de",
+          "fr",
+          "it",
+          "pt",
+          "hi",
+          "es",
+          "th"
+        ],
+        "general.parameter_count": 3212749888,
+        "general.quantization_version": 2,
+        "general.size_label": "3B",
+        "general.tags": [
+          "facebook",
+          "meta",
+          "pytorch",
+          "llama",
+          "llama-3",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "llama.attention.head_count": 24,
+        "llama.attention.head_count_kv": 8,
+        "llama.attention.key_length": 128,
+        "llama.attention.layer_norm_rms_epsilon": 1e-05,
+        "llama.attention.value_length": 128,
+        "llama.block_count": 28,
+        "llama.context_length": 131072,
+        "llama.embedding_length": 3072,
+        "llama.feed_forward_length": 8192,
+        "llama.rope.dimension_count": 128,
+        "llama.rope.freq_base": 500000,
+        "llama.vocab_size": 128256,
+        "tokenizer.ggml.bos_token_id": 128000,
+        "tokenizer.ggml.eos_token_id": 128009,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.pre": "llama-bpe",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ],
+      "preflight_prompt_tokens": 4866,
+      "warmup_s": 5.044242299976759,
+      "loaded": {
+        "models": [
+          {
+            "name": "llama3.2:3b",
+            "model": "llama3.2:3b",
+            "size": 3118863482,
+            "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "llama",
+              "families": [
+                "llama"
+              ],
+              "parameter_size": "3.2B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:13:14.7673554+03:00",
+            "size_vram": 3118863482,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 4345, 24576, 251.66, 88"
+    },
+    "gemma3:4b": {
+      "tag": {
+        "name": "gemma3:4b",
+        "model": "gemma3:4b",
+        "modified_at": "2026-10-18T13:50:55.4658962+03:00",
+        "size": 3350272403,
+        "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+        "details": {
+          "parent_model": "dhiltgen/gemma3:4b-it-q4_K_M-llamacpp",
+          "format": "gguf",
+          "family": "gemma3",
+          "families": [
+            "gemma3",
+            "clip"
+          ],
+          "parameter_size": "3.9B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 131072,
+          "embedding_length": 2560,
+          "runner": "llamacpp"
+        },
+        "capabilities": [
+          "completion",
+          "vision"
+        ]
+      },
+      "details": {
+        "parent_model": "dhiltgen/gemma3:4b-it-q4_K_M-llamacpp",
+        "format": "gguf",
+        "family": "gemma3",
+        "families": [
+          "gemma3",
+          "clip"
+        ],
+        "parameter_size": "3.9B",
+        "quantization_level": "Q4_K_M",
+        "runner": "llamacpp"
+      },
+      "model_info": {
+        "gemma3.attention.head_count": 8,
+        "gemma3.attention.head_count_kv": 4,
+        "gemma3.attention.key_length": 256,
+        "gemma3.attention.layer_norm_rms_epsilon": 1e-06,
+        "gemma3.attention.sliding_window": 1024,
+        "gemma3.attention.value_length": 256,
+        "gemma3.block_count": 34,
+        "gemma3.context_length": 131072,
+        "gemma3.embedding_length": 2560,
+        "gemma3.feed_forward_length": 10240,
+        "gemma3.rope.freq_base": 1000000,
+        "gemma3.rope.scaling.factor": 8,
+        "gemma3.rope.scaling.type": "linear",
+        "general.architecture": "gemma3",
+        "general.file_type": 15,
+        "general.parameter_count": 3880101888,
+        "general.quantization_version": 2,
+        "tokenizer.ggml.add_bos_token": true,
+        "tokenizer.ggml.add_eos_token": false,
+        "tokenizer.ggml.add_padding_token": false,
+        "tokenizer.ggml.add_unknown_token": false,
+        "tokenizer.ggml.bos_token_id": 2,
+        "tokenizer.ggml.eos_token_id": 1,
+        "tokenizer.ggml.eos_token_ids": [
+          1,
+          106
+        ],
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "llama",
+        "tokenizer.ggml.padding_token_id": 0,
+        "tokenizer.ggml.pre": "default",
+        "tokenizer.ggml.scores": [],
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": [],
+        "tokenizer.ggml.unknown_token_id": 3
+      },
+      "capabilities": [
+        "completion",
+        "vision"
+      ],
+      "preflight_prompt_tokens": 4355,
+      "warmup_s": 6.691474299994297,
+      "loaded": {
+        "models": [
+          {
+            "name": "gemma3:4b",
+            "model": "gemma3:4b",
+            "size": 3042422291,
+            "digest": "68ceab7e468a31c988b44d5a4984a0e21f58c4f7158c6ce29c1804babac38df7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3",
+                "clip"
+              ],
+              "parameter_size": "3.9B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:14:58.7217623+03:00",
+            "size_vram": 3042422291,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 5227, 24576, 264.21, 90"
+    },
+    "qwen3-vl:8b": {
+      "tag": {
+        "name": "qwen3-vl:8b",
+        "model": "qwen3-vl:8b",
+        "modified_at": "2026-07-27T16:27:55.4361847+03:00",
+        "size": 6140415879,
+        "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "8.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3vl",
+        "families": [
+          "qwen3vl"
+        ],
+        "parameter_size": "8.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen3vl",
+        "general.file_type": 15,
+        "general.parameter_count": 8767123696,
+        "general.quantization_version": 2,
+        "qwen3vl.attention.head_count": 32,
+        "qwen3vl.attention.head_count_kv": 8,
+        "qwen3vl.attention.key_length": 128,
+        "qwen3vl.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen3vl.attention.value_length": 128,
+        "qwen3vl.block_count": 36,
+        "qwen3vl.context_length": 262144,
+        "qwen3vl.embedding_length": 4096,
+        "qwen3vl.feed_forward_length": 12288,
+        "qwen3vl.rope.freq_base": 5000000,
+        "qwen3vl.vision.attention.head_count": 16,
+        "qwen3vl.vision.attention.layer_norm_epsilon": 1e-06,
+        "qwen3vl.vision.block_count": 27,
+        "qwen3vl.vision.deepstack_visual_indexes": [
+          8,
+          16,
+          24
+        ],
+        "qwen3vl.vision.embedding_length": 1152,
+        "qwen3vl.vision.image_mean": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "qwen3vl.vision.image_std": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "qwen3vl.vision.longest_edge": 16777216,
+        "qwen3vl.vision.num_channels": 3,
+        "qwen3vl.vision.patch_size": 16,
+        "qwen3vl.vision.rope.freq_base": 10000,
+        "qwen3vl.vision.shortest_edge": 65536,
+        "qwen3vl.vision.spatial_merge_size": 2,
+        "qwen3vl.vision.temporal_patch_size": 2,
+        "tokenizer.ggml.add_eos_token": false,
+        "tokenizer.ggml.add_padding_token": false,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.eos_token_ids": [
+          151645,
+          151643
+        ],
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.scores": [],
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ],
+      "preflight_prompt_tokens": 5394,
+      "warmup_s": 13.50744219997432,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 6770875432,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T14:08:17.2944522+03:00",
+            "size_vram": 6770875432,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 9238, 24576, 234.90, 95"
+    },
+    "qwen2.5-coder:14b": {
+      "tag": {
+        "name": "qwen2.5-coder:14b",
+        "model": "qwen2.5-coder:14b",
+        "modified_at": "2026-05-12T13:36:00.143427+03:00",
+        "size": 8988124298,
+        "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "insert"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen2",
+        "general.base_model.0.name": "Qwen2.5 Coder 14B",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-14B",
+        "general.base_model.count": 1,
+        "general.basename": "Qwen2.5-Coder",
+        "general.file_type": 15,
+        "general.finetune": "Instruct",
+        "general.languages": [
+          "en"
+        ],
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen2.5-Coder-14B-Instruct/blob/main/LICENSE",
+        "general.parameter_count": 14770033664,
+        "general.quantization_version": 2,
+        "general.size_label": "14B",
+        "general.tags": [
+          "code",
+          "codeqwen",
+          "chat",
+          "qwen",
+          "qwen-coder",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "qwen2.attention.head_count": 40,
+        "qwen2.attention.head_count_kv": 8,
+        "qwen2.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen2.block_count": 48,
+        "qwen2.context_length": 32768,
+        "qwen2.embedding_length": 5120,
+        "qwen2.feed_forward_length": 13824,
+        "qwen2.rope.freq_base": 1000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "insert"
+      ],
+      "preflight_prompt_tokens": 5415,
+      "warmup_s": 11.772900799987838,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen2.5-coder:14b",
+            "model": "qwen2.5-coder:14b",
+            "size": 10425372507,
+            "digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "14.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:20:02.0982371+03:00",
+            "size_vram": 10425372507,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 11304, 24576, 307.51, 97"
+    },
+    "qwen3:14b": {
+      "tag": {
+        "name": "qwen3:14b",
+        "model": "qwen3:14b",
+        "modified_at": "2026-07-14T10:51:14.4468056+03:00",
+        "size": 9276198565,
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen3",
+        "general.basename": "Qwen3",
+        "general.file_type": 15,
+        "general.parameter_count": 14768307200,
+        "general.quantization_version": 2,
+        "general.size_label": "14B",
+        "general.type": "model",
+        "qwen3.attention.head_count": 40,
+        "qwen3.attention.head_count_kv": 8,
+        "qwen3.attention.key_length": 128,
+        "qwen3.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen3.attention.value_length": 128,
+        "qwen3.block_count": 40,
+        "qwen3.context_length": 40960,
+        "qwen3.embedding_length": 5120,
+        "qwen3.feed_forward_length": 17408,
+        "qwen3.rope.freq_base": 1000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "preflight_prompt_tokens": 5402,
+      "warmup_s": 13.730677000014111,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen3:14b",
+            "model": "qwen3:14b",
+            "size": 10489430015,
+            "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "14.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:40:42.2972889+03:00",
+            "size_vram": 10489430015,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 11416, 24576, 266.04, 97"
+    },
+    "qwen3:30b": {
+      "tag": {
+        "name": "qwen3:30b",
+        "model": "qwen3:30b",
+        "modified_at": "2026-07-14T10:49:00.2641315+03:00",
+        "size": 18556699314,
+        "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3moe",
+          "families": [
+            "qwen3moe"
+          ],
+          "parameter_size": "30.5B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 2048,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3moe",
+        "families": [
+          "qwen3moe"
+        ],
+        "parameter_size": "30.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen3moe",
+        "general.basename": "Qwen3",
+        "general.file_type": 15,
+        "general.finetune": "Thinking",
+        "general.parameter_count": 30532122624,
+        "general.quantization_version": 2,
+        "general.size_label": "30B-A3B",
+        "general.type": "model",
+        "general.version": "2507",
+        "qwen3moe.attention.head_count": 32,
+        "qwen3moe.attention.head_count_kv": 4,
+        "qwen3moe.attention.key_length": 128,
+        "qwen3moe.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen3moe.attention.value_length": 128,
+        "qwen3moe.block_count": 48,
+        "qwen3moe.context_length": 262144,
+        "qwen3moe.embedding_length": 2048,
+        "qwen3moe.expert_count": 128,
+        "qwen3moe.expert_feed_forward_length": 768,
+        "qwen3moe.expert_used_count": 8,
+        "qwen3moe.feed_forward_length": 6144,
+        "qwen3moe.rope.freq_base": 10000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "preflight_prompt_tokens": 5396,
+      "warmup_s": 18.03852309996728,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen3:30b",
+            "model": "qwen3:30b",
+            "size": 19277482556,
+            "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3moe",
+              "families": [
+                "qwen3moe"
+              ],
+              "parameter_size": "30.5B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:29:17.8976072+03:00",
+            "size_vram": 19277482556,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 19765, 24576, 185.34, 95"
+    },
+    "qwen2.5-coder:32b": {
+      "tag": {
+        "name": "qwen2.5-coder:32b",
+        "model": "qwen2.5-coder:32b",
+        "modified_at": "2026-05-11T12:31:58.7055271+03:00",
+        "size": 19851349898,
+        "digest": "b92d6a0bd47ee79114298de0177bf920c05a706d12633950b3936778492bef41",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "32.8B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 5120,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "insert"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "32.8B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen2",
+        "general.base_model.0.name": "Qwen2.5 Coder 32B",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B",
+        "general.base_model.count": 1,
+        "general.basename": "Qwen2.5-Coder",
+        "general.file_type": 15,
+        "general.finetune": "Instruct",
+        "general.languages": [
+          "en"
+        ],
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/LICENSE",
+        "general.parameter_count": 32763876352,
+        "general.quantization_version": 2,
+        "general.size_label": "32B",
+        "general.tags": [
+          "code",
+          "codeqwen",
+          "chat",
+          "qwen",
+          "qwen-coder",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "qwen2.attention.head_count": 40,
+        "qwen2.attention.head_count_kv": 8,
+        "qwen2.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen2.block_count": 64,
+        "qwen2.context_length": 32768,
+        "qwen2.embedding_length": 5120,
+        "qwen2.feed_forward_length": 27648,
+        "qwen2.rope.freq_base": 1000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "insert"
+      ],
+      "preflight_prompt_tokens": 5415,
+      "warmup_s": 24.127468100050464,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen2.5-coder:32b",
+            "model": "qwen2.5-coder:32b",
+            "size": 21775106702,
+            "digest": "b92d6a0bd47ee79114298de0177bf920c05a706d12633950b3936778492bef41",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "32.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T19:32:53.6056592+03:00",
+            "size_vram": 21775106702,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 22164, 24576, 351.17, 98"
+    },
+    "phi3.5:3.8b": {
+      "tag": {
+        "name": "phi3.5:3.8b",
+        "model": "phi3.5:3.8b",
+        "modified_at": "2026-10-18T14:01:38.9560379+03:00",
+        "size": 2176178843,
+        "digest": "61819fb370a3c1a9be6694869331e5f85f867a079e9271d66cb223acb81d04ba",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "phi3",
+          "families": [
+            "phi3"
+          ],
+          "parameter_size": "3.8B",
+          "quantization_level": "Q4_0",
+          "context_length": 131072,
+          "embedding_length": 3072,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "phi3",
+        "families": [
+          "phi3"
+        ],
+        "parameter_size": "3.8B",
+        "quantization_level": "Q4_0"
+      },
+      "model_info": {
+        "general.architecture": "phi3",
+        "general.basename": "Phi-3.5",
+        "general.file_type": 2,
+        "general.finetune": "instruct",
+        "general.languages": [
+          "multilingual"
+        ],
+        "general.license": "mit",
+        "general.license.link": "https://huggingface.co/microsoft/Phi-3.5-mini-instruct/resolve/main/LICENSE",
+        "general.parameter_count": 3821079648,
+        "general.quantization_version": 2,
+        "general.size_label": "mini",
+        "general.tags": [
+          "nlp",
+          "code",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "phi3.attention.head_count": 32,
+        "phi3.attention.head_count_kv": 32,
+        "phi3.attention.layer_norm_rms_epsilon": 1e-05,
+        "phi3.attention.sliding_window": 262144,
+        "phi3.block_count": 32,
+        "phi3.context_length": 131072,
+        "phi3.embedding_length": 3072,
+        "phi3.feed_forward_length": 8192,
+        "phi3.rope.dimension_count": 96,
+        "phi3.rope.freq_base": 10000,
+        "phi3.rope.scaling.attn_factor": 1.1902381,
+        "phi3.rope.scaling.original_context_length": 4096,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.add_eos_token": false,
+        "tokenizer.ggml.bos_token_id": 1,
+        "tokenizer.ggml.eos_token_id": 32000,
+        "tokenizer.ggml.model": "llama",
+        "tokenizer.ggml.padding_token_id": 32000,
+        "tokenizer.ggml.pre": "default",
+        "tokenizer.ggml.scores": [],
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": [],
+        "tokenizer.ggml.unknown_token_id": 0
+      },
+      "capabilities": [
+        "completion"
+      ],
+      "preflight_prompt_tokens": 5345,
+      "warmup_s": 3.7267427999759093,
+      "loaded": {
+        "models": [
+          {
+            "name": "phi3.5:3.8b",
+            "model": "phi3.5:3.8b",
+            "size": 5509061017,
+            "digest": "61819fb370a3c1a9be6694869331e5f85f867a079e9271d66cb223acb81d04ba",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "phi3",
+              "families": [
+                "phi3"
+              ],
+              "parameter_size": "3.8B",
+              "quantization_level": "Q4_0"
+            },
+            "expires_at": "2026-10-18T19:17:18.1339718+03:00",
+            "size_vram": 5509061017,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 6614, 24576, 336.91, 95"
+    }
+  }
+}

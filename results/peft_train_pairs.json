@@ -1,0 +1,898 @@
+[
+  {
+    "qid": "train:1998",
+    "docid": "142980#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1035",
+    "docid": "8028#0",
+    "label": 1,
+    "input_tokens": 225,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:4525",
+    "docid": "4432420#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4614",
+    "docid": "1855914#6",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3728",
+    "docid": "343416#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:197",
+    "docid": "7707401#3",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2346",
+    "docid": "326661#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:113",
+    "docid": "2633553#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:127",
+    "docid": "53346#6",
+    "label": 1,
+    "input_tokens": 160,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:40",
+    "docid": "885051#90",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3890",
+    "docid": "319426#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2152",
+    "docid": "223738#2",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4035",
+    "docid": "6513813#26",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1035",
+    "docid": "3909249#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2460",
+    "docid": "1121455#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3157",
+    "docid": "186724#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4855",
+    "docid": "223057#8",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1854",
+    "docid": "4441037#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3958",
+    "docid": "15500#24",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3370",
+    "docid": "4635472#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1073",
+    "docid": "5236775#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2652",
+    "docid": "202075#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2696",
+    "docid": "312516#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4383",
+    "docid": "742590#2",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4855",
+    "docid": "7882#0",
+    "label": 1,
+    "input_tokens": 245,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:3157",
+    "docid": "7647014#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2718",
+    "docid": "533972#19",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4383",
+    "docid": "4876730#13",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2023",
+    "docid": "30744#1",
+    "label": 1,
+    "input_tokens": 251,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:3005",
+    "docid": "23625#11",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4614",
+    "docid": "7338581#12",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1511",
+    "docid": "536#19",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3958",
+    "docid": "15500#20",
+    "label": 0,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1336",
+    "docid": "368211#25",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3005",
+    "docid": "106858#31",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4178",
+    "docid": "2155514#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:423",
+    "docid": "1846993#13",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4518",
+    "docid": "33319#11",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2100",
+    "docid": "17883#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2185",
+    "docid": "3158017#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:40",
+    "docid": "3591444#0",
+    "label": 1,
+    "input_tokens": 254,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:2696",
+    "docid": "312516#28",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1533",
+    "docid": "81#19",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3985",
+    "docid": "273842#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:423",
+    "docid": "1846993#5",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1529",
+    "docid": "805284#4",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1336",
+    "docid": "368211#7",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2816",
+    "docid": "241363#83",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4525",
+    "docid": "54416#40",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4724",
+    "docid": "3233199#0",
+    "label": 0,
+    "input_tokens": 237,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:5161",
+    "docid": "1206498#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1480",
+    "docid": "46837#0",
+    "label": 1,
+    "input_tokens": 199,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:2252",
+    "docid": "3714472#19",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2718",
+    "docid": "5410683#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1705",
+    "docid": "54673#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4566",
+    "docid": "1258540#9",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4206",
+    "docid": "54167#12",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2652",
+    "docid": "3671099#5",
+    "label": 0,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3728",
+    "docid": "402758#7",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2906",
+    "docid": "172410#15",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2791",
+    "docid": "35304#100",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3967",
+    "docid": "944632#25",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:197",
+    "docid": "1871#68",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3269",
+    "docid": "1625504#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3890",
+    "docid": "72614#51",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:482",
+    "docid": "33763#2",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3264",
+    "docid": "4200958#9",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4724",
+    "docid": "53505#5",
+    "label": 1,
+    "input_tokens": 255,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:4574",
+    "docid": "43494#29",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:482",
+    "docid": "33763#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1297",
+    "docid": "1821925#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1133",
+    "docid": "53590#8",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3553",
+    "docid": "6725818#6",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1112",
+    "docid": "244541#39",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3553",
+    "docid": "40401#85",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2152",
+    "docid": "1270435#0",
+    "label": 0,
+    "input_tokens": 251,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:2460",
+    "docid": "38#94",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1544",
+    "docid": "278555#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2816",
+    "docid": "34228#1",
+    "label": 1,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4178",
+    "docid": "961176#4",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2185",
+    "docid": "51#2",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4566",
+    "docid": "1484875#58",
+    "label": 0,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1104",
+    "docid": "387890#3",
+    "label": 1,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3269",
+    "docid": "1804443#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2252",
+    "docid": "204937#33",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4136",
+    "docid": "43908#80",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1480",
+    "docid": "46837#6",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1998",
+    "docid": "142980#80",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1705",
+    "docid": "4761959#6",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1529",
+    "docid": "3951112#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:5161",
+    "docid": "1206498#2",
+    "label": 0,
+    "input_tokens": 179,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:3341",
+    "docid": "4847515#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:113",
+    "docid": "321541#2",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3264",
+    "docid": "272322#1",
+    "label": 1,
+    "input_tokens": 210,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:4574",
+    "docid": "43494#17",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2144",
+    "docid": "2304804#92",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:127",
+    "docid": "1072803#4",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4206",
+    "docid": "2101648#16",
+    "label": 0,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1544",
+    "docid": "4857496#98",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4518",
+    "docid": "33319#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1297",
+    "docid": "1822322#3",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1304",
+    "docid": "5019794#4",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4596",
+    "docid": "3333626#0",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1133",
+    "docid": "6577254#4",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2906",
+    "docid": "423022#2",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2346",
+    "docid": "6704008#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2791",
+    "docid": "35304#44",
+    "label": 1,
+    "input_tokens": 248,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:3846",
+    "docid": "201228#29",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2023",
+    "docid": "18321#48",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1112",
+    "docid": "244541#1",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1533",
+    "docid": "246847#78",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3341",
+    "docid": "914009#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4136",
+    "docid": "43908#4",
+    "label": 0,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2144",
+    "docid": "2311815#2",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:4596",
+    "docid": "121126#5",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1854",
+    "docid": "2394108#0",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1073",
+    "docid": "3652768#8",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3846",
+    "docid": "4401998#142",
+    "label": 1,
+    "input_tokens": 255,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3967",
+    "docid": "2484440#11",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:6525",
+    "docid": "1790389#0",
+    "label": 1,
+    "input_tokens": 244,
+    "passage_truncated": false
+  },
+  {
+    "qid": "train:4035",
+    "docid": "6513813#7",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1304",
+    "docid": "24777#8",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:6525",
+    "docid": "1790389#28",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3370",
+    "docid": "2851704#18",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:2100",
+    "docid": "1628601#13",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1104",
+    "docid": "6275640#1",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:1511",
+    "docid": "226679#9",
+    "label": 0,
+    "input_tokens": 256,
+    "passage_truncated": true
+  },
+  {
+    "qid": "train:3985",
+    "docid": "147120#9",
+    "label": 1,
+    "input_tokens": 256,
+    "passage_truncated": true
+  }
+]

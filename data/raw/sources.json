@@ -1,0 +1,12 @@
+{
+  "corpus_repo": "sohey1024/miracl-ru-corpus",
+  "corpus_revision": "1fd7b335ab9be859040f664efb07b9665d4bf8ee",
+  "official_revision": "5be20db9509754dadad47689368639fcec739c00",
+  "files": {
+    "corpus.parquet": "https://huggingface.co/datasets/sohey1024/miracl-ru-corpus/resolve/1fd7b335ab9be859040f664efb07b9665d4bf8ee/data/train-00000-of-00001.parquet",
+    "topics.miracl-v1.0-ru-train.tsv": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/topics/topics.miracl-v1.0-ru-train.tsv",
+    "qrels.miracl-v1.0-ru-train.tsv": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/qrels/qrels.miracl-v1.0-ru-train.tsv",
+    "topics.miracl-v1.0-ru-dev.tsv": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/topics/topics.miracl-v1.0-ru-dev.tsv",
+    "qrels.miracl-v1.0-ru-dev.tsv": "https://huggingface.co/datasets/miracl/miracl/resolve/5be20db9509754dadad47689368639fcec739c00/miracl-v1.0-ru/qrels/qrels.miracl-v1.0-ru-dev.tsv"
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "history": [
+    {
+      "stage": "validation_remaining",
+      "status": "running",
+      "time_unix": 1792339223.6462197
+    },
+    {
+      "stage": "validation_remaining",
+      "status": "passed",
+      "time_unix": 1792339317.0926816
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "running",
+      "time_unix": 1792339317.0986817
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "passed",
+      "time_unix": 1792339320.2680972
+    },
+    {
+      "stage": "test_all_models",
+      "status": "running",
+      "time_unix": 1792339320.319094
+    },
+    {
+      "stage": "test_all_models",
+      "status": "passed",
+      "time_unix": 1792341027.7113903
+    },
+    {
+      "stage": "application_classification",
+      "status": "running",
+      "time_unix": 1792341027.8762543
+    },
+    {
+      "stage": "application_classification",
+      "status": "passed",
+      "time_unix": 1792341186.5834353
+    },
+    {
+      "stage": "analysis_all",
+      "status": "running",
+      "time_unix": 1792341186.5904353
+    },
+    {
+      "stage": "analysis_all",
+      "status": "passed",
+      "time_unix": 1792341194.4044285
+    },
+    {
+      "stage": "search_application",
+      "status": "running",
+      "time_unix": 1792341194.4094286
+    },
+    {
+      "stage": "search_application",
+      "status": "passed",
+      "time_unix": 1792341237.7793355
+    },
+    {
+      "stage": "peft_packages",
+      "status": "running",
+      "time_unix": 1792341253.5143137
+    },
+    {
+      "stage": "peft_packages",
+      "status": "passed",
+      "time_unix": 1792341262.0131116
+    },
+    {
+      "stage": "peft_cuda_check",
+      "status": "running",
+      "time_unix": 1792341262.0191116
+    },
+    {
+      "stage": "failed",
+      "status": "error",
+      "time_unix": 1792341289.9602683
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "running",
+      "time_unix": 1792341331.3462892
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "passed",
+      "time_unix": 1792341336.196257
+    },
+    {
+      "stage": "analysis_all",
+      "status": "running",
+      "time_unix": 1792341336.4442577
+    },
+    {
+      "stage": "analysis_all",
+      "status": "passed",
+      "time_unix": 1792341341.255703
+    },
+    {
+      "stage": "search_application",
+      "status": "running",
+      "time_unix": 1792341341.2627027
+    },
+    {
+      "stage": "search_application",
+      "status": "passed",
+      "time_unix": 1792341344.9037898
+    },
+    {
+      "stage": "peft_packages",
+      "status": "running",
+      "time_unix": 1792341347.1417165
+    },
+    {
+      "stage": "peft_packages",
+      "status": "passed",
+      "time_unix": 1792341347.2451103
+    },
+    {
+      "stage": "peft_cuda_check",
+      "status": "running",
+      "time_unix": 1792341347.2511132
+    },
+    {
+      "stage": "peft_cuda_check",
+      "status": "passed",
+      "time_unix": 1792341353.4399195
+    },
+    {
+      "stage": "peft_real_training",
+      "status": "running",
+      "time_unix": 1792341353.5126433
+    },
+    {
+      "stage": "peft_real_training",
+      "status": "passed",
+      "time_unix": 1792341405.4278297
+    },
+    {
+      "stage": "unit_tests",
+      "status": "running",
+      "time_unix": 1792341405.4574997
+    },
+    {
+      "stage": "unit_tests",
+      "status": "passed",
+      "time_unix": 1792341407.060484
+    },
+    {
+      "stage": "compile_all",
+      "status": "running",
+      "time_unix": 1792341407.0664837
+    },
+    {
+      "stage": "compile_all",
+      "status": "passed",
+      "time_unix": 1792341407.1925428
+    },
+    {
+      "stage": "independent_numeric_checks",
+      "status": "running",
+      "time_unix": 1792341407.1982272
+    },
+    {
+      "stage": "independent_numeric_checks",
+      "status": "passed",
+      "time_unix": 1792341408.6309144
+    },
+    {
+      "stage": "failed",
+      "status": "error",
+      "time_unix": 1792341437.2259157
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "running",
+      "time_unix": 1792341495.9014049
+    },
+    {
+      "stage": "freeze_selection",
+      "status": "passed",
+      "time_unix": 1792341501.98138
+    },
+    {
+      "stage": "analysis_all",
+      "status": "running",
+      "time_unix": 1792341502.228515
+    },
+    {
+      "stage": "analysis_all",
+      "status": "passed",
+      "time_unix": 1792341507.0270617
+    },
+    {
+      "stage": "search_application",
+      "status": "running",
+      "time_unix": 1792341507.0330608
+    },
+    {
+      "stage": "search_application",
+      "status": "passed",
+      "time_unix": 1792341514.8435361
+    },
+    {
+      "stage": "unit_tests",
+      "status": "running",
+      "time_unix": 1792341515.0288658
+    },
+    {
+      "stage": "unit_tests",
+      "status": "passed",
+      "time_unix": 1792341516.514023
+    },
+    {
+      "stage": "compile_all",
+      "status": "running",
+      "time_unix": 1792341516.5200245
+    },
+    {
+      "stage": "compile_all",
+      "status": "passed",
+      "time_unix": 1792341516.6320276
+    },
+    {
+      "stage": "independent_numeric_checks",
+      "status": "running",
+      "time_unix": 1792341516.6380243
+    },
+    {
+      "stage": "independent_numeric_checks",
+      "status": "passed",
+      "time_unix": 1792341518.0457194
+    },
+    {
+      "stage": "document_marker",
+      "status": "running",
+      "time_unix": 1792341536.4002664
+    },
+    {
+      "stage": "document_marker",
+      "status": "passed",
+      "time_unix": 1792341536.580547
+    },
+    {
+      "stage": "build_report",
+      "status": "running",
+      "time_unix": 1792341536.588547
+    },
+    {
+      "stage": "build_report",
+      "status": "passed",
+      "time_unix": 1792341537.3780224
+    },
+    {
+      "stage": "word_export",
+      "status": "running",
+      "time_unix": 1792341537.384022
+    },
+    {
+      "stage": "word_export",
+      "status": "passed",
+      "time_unix": 1792341545.5936747
+    },
+    {
+      "stage": "render_png",
+      "status": "running",
+      "time_unix": 1792341545.5996745
+    },
+    {
+      "stage": "render_png",
+      "status": "passed",
+      "time_unix": 1792341549.8788083
+    },
+    {
+      "stage": "pdf_text",
+      "status": "running",
+      "time_unix": 1792341549.8848093
+    },
+    {
+      "stage": "failed",
+      "status": "error",
+      "time_unix": 1792341549.891813
+    },
+    {
+      "stage": "build_report",
+      "status": "running",
+      "time_unix": 1792341659.6447494
+    },
+    {
+      "stage": "build_report",
+      "status": "passed",
+      "time_unix": 1792341660.315119
+    },
+    {
+      "stage": "word_export",
+      "status": "running",
+      "time_unix": 1792341660.3221211
+    },
+    {
+      "stage": "word_export",
+      "status": "passed",
+      "time_unix": 1792341667.7721436
+    },
+    {
+      "stage": "render_png",
+      "status": "running",
+      "time_unix": 1792341667.7791457
+    },
+    {
+      "stage": "render_png",
+      "status": "passed",
+      "time_unix": 1792341672.0329409
+    },
+    {
+      "stage": "pdf_text",
+      "status": "running",
+      "time_unix": 1792341672.0397751
+    },
+    {
+      "stage": "pdf_text",
+      "status": "passed",
+      "time_unix": 1792341672.9139647
+    },
+    {
+      "stage": "git_init",
+      "status": "running",
+      "time_unix": 1792341672.9329686
+    },
+    {
+      "stage": "git_init",
+      "status": "passed",
+      "time_unix": 1792341673.1621327
+    },
+    {
+      "stage": "git_add",
+      "status": "running",
+      "time_unix": 1792341673.1691303
+    }
+  ],
+  "stage": "git_add",
+  "status": "running",
+  "updated_unix": 1792341673.1691303,
+  "details": {
+    "command": [
+      "C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe",
+      "add",
+      "."
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    "BM25 known term",
+    "OOV empty result",
+    "strict action schema",
+    "RRF reciprocal ranks and deterministic ties",
+    "TREC unjudged=0 and judged coverage",
+    "feedback explicit stop",
+    "feedback repeat stop",
+    "feedback invalid schema stop",
+    "max3 searches and2 actions",
+    "timeout preserves already retrieved hits",
+    "analyzer selected_model/selected_mode schema",
+    "chat forwards custom action schema as API format"
+  ]
+}

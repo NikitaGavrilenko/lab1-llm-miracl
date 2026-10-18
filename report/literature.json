@@ -1,0 +1,682 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-18",
+  "title": "Обзор retrieval, LLM-переформулировки и поисковых агентов",
+  "policy": "Описание источников и авторский анализ; опубликованные численные результаты не переносятся в таблицы лабораторного эксперимента.",
+  "papers": [
+    {
+      "id": 1,
+      "key": "MIRACL",
+      "authors": "Xinyu Zhang, Nandan Thakur, Odunayo Ogundepo, Ehsan Kamalloo, David Alfonso-Hermelo, Xiaoguang Li, Qun Liu, Mehdi Rezagholizadeh, Jimmy Lin",
+      "title": "MIRACL: A Multilingual Retrieval Dataset Covering 18 Diverse Languages",
+      "year": 2023,
+      "venue": "Transactions of the Association for Computational Linguistics, 11, 1114–1131",
+      "doi": "10.1162/tacl_a_00595",
+      "url": "https://aclanthology.org/2023.tacl-1.63/",
+      "code_url": "https://github.com/project-miracl/miracl",
+      "category": "Данные и оценка",
+      "task": "Монолингвальный поиск релевантных фрагментов Wikipedia на 18 языках.",
+      "architecture": "Единый набор запросов, корпуса и бинарных qrels; сравниваются BM25, mDPR, гибридные и многоязычные методы.",
+      "data": "Wikipedia; запросы и оценки релевантности размечены носителями языка. Русский язык представлен отдельными train/dev.",
+      "protocol": "Полноценный поиск по корпусу соответствующего языка; обучение на train и оценка на фиксированном dev/test.",
+      "metrics": [
+        "nDCG@10",
+        "Recall@100"
+      ],
+      "finding": "Набор позволяет сравнивать retrieval на разных языках; гибридный поиск является важным ориентиром.",
+      "limitation": "Разметка релевантности не задаёт цепочки действий, необходимое число шагов и эталонный ответ. Неполные qrels не означают, что каждый неразмеченный документ нерелевантен.",
+      "replication": "Индексировать фиксированный русский корпус, хранить его хеш и qrels, сравнить исходный запрос с LLM-переформулировкой.",
+      "connection": "Основной датасет лабораторной; измеряет качество поиска, а не доказанную способность к multi-hop reasoning.",
+      "domestic": false
+    },
+    {
+      "id": 2,
+      "key": "BEIR",
+      "authors": "Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, Iryna Gurevych",
+      "title": "BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models",
+      "year": 2021,
+      "venue": "NeurIPS 2021 Datasets and Benchmarks",
+      "doi": null,
+      "url": "https://openreview.net/forum?id=wCu6T5xFjeJ",
+      "code_url": "https://github.com/beir-cellar/beir",
+      "category": "Данные и оценка",
+      "task": "Проверка переноса retrieval-моделей между доменами и задачами.",
+      "architecture": "Сопоставление лексических, разреженных, плотных, late-interaction методов и rerankers на общем наборе.",
+      "data": "18 разнородных корпусов: QA, научные тексты, аргументация, проверка фактов и другие задачи.",
+      "protocol": "Zero-shot перенос без настройки на тестовые qrels каждого целевого набора.",
+      "metrics": [
+        "nDCG@10",
+        "Recall@k"
+      ],
+      "finding": "BM25 остаётся полезной устойчивой базой; более сложный метод не гарантирует лучший перенос.",
+      "limitation": "Преимущественно англоязычные задачи; среднее по разным наборам скрывает отдельные провалы.",
+      "replication": "Сохранить сильную поисковую базу и парные результаты по запросам; не выбирать модель только по одному среднему.",
+      "connection": "Основа единого протокола и осторожного вывода о переносе на отдельный срез.",
+      "domestic": false
+    },
+    {
+      "id": 3,
+      "key": "DPR",
+      "authors": "Vladimir Karpukhin, Barlas Oğuz, Sewon Min, Patrick Lewis, Ledell Wu, Sergey Edunov, Danqi Chen, Wen-tau Yih",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "year": 2020,
+      "venue": "EMNLP 2020, 6769–6781",
+      "doi": "10.18653/v1/2020.emnlp-main.550",
+      "url": "https://aclanthology.org/2020.emnlp-main.550/",
+      "code_url": "https://github.com/facebookresearch/DPR",
+      "category": "Одношаговый retrieval",
+      "task": "Поиск фрагментов с ответом для open-domain QA.",
+      "architecture": "Два BERT-энкодера для вопроса и фрагмента; скалярное произведение и индекс плотных векторов.",
+      "data": "Wikipedia; Natural Questions, TriviaQA и другие QA-наборы.",
+      "protocol": "Контрастивное обучение на положительных парах, in-batch и сложных отрицательных примерах; отдельно оцениваются retrieval и reader.",
+      "metrics": [
+        "Top-k passage retrieval accuracy",
+        "Exact Match ответа"
+      ],
+      "finding": "Обучаемые плотные представления дают сильный retrieval при наличии подходящих обучающих пар.",
+      "limitation": "Top-k accuracy наличия ответа отличается от Recall@k по всем qrels; обучение англоязычного DPR не гарантирует качество на русском.",
+      "replication": "Использовать многоязычный энкодер как независимую поисковую базу при наличии ресурсов.",
+      "connection": "Показывает границу между поиском кандидатов и генерацией ответа.",
+      "domestic": false
+    },
+    {
+      "id": 4,
+      "key": "RAG",
+      "authors": "Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, Douwe Kiela",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "year": 2020,
+      "venue": "NeurIPS 2020, Advances in Neural Information Processing Systems 33",
+      "doi": null,
+      "url": "https://papers.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+      "code_url": "https://github.com/huggingface/transformers/blob/v4.40.2/src/transformers/models/rag/modeling_rag.py",
+      "category": "Retrieval + генерация",
+      "task": "Генерация ответа с доступом к внешним знаниям.",
+      "architecture": "DPR и BART; RAG-Sequence и RAG-Token по-разному маргинализуют извлечённые документы.",
+      "data": "Индекс Wikipedia и несколько knowledge-intensive QA/генеративных задач.",
+      "protocol": "Дообучение retrieval-augmented модели и сравнение с параметрическими и extractive QA-системами.",
+      "metrics": [
+        "Exact Match в QA",
+        "Метрики соответствующей downstream-задачи"
+      ],
+      "finding": "Внешняя память может улучшить knowledge-intensive задачи и позволяет обновлять используемый корпус.",
+      "limitation": "Генеративное качество не тождественно retrieval-качеству. Оригинальная архитектура не задаёт автономную многошаговую политику поиска.",
+      "replication": "Оценивать поисковый этап отдельно; для QA добавить верифицируемые ответы и цитаты.",
+      "connection": "Базовая схема для ВКР, которую последовательно расширяют агенты.",
+      "domestic": false,
+      "code_note": "Проверен конкретный исходный файл реализации RAG в фиксированной версии Transformers; текущая папка examples/research_projects/rag не подтвердилась."
+    },
+    {
+      "id": 5,
+      "key": "Baleen",
+      "authors": "Omar Khattab, Christopher Potts, Matei Zaharia",
+      "title": "Baleen: Robust Multi-Hop Reasoning at Scale via Condensed Retrieval",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2101.00436",
+      "code_url": "https://github.com/stanford-futuredata/Baleen",
+      "category": "Многошаговый retrieval",
+      "task": "Сбор нескольких фрагментов доказательств для QA и проверки утверждений.",
+      "architecture": "Condensed retrieval: сжатие найденных фактов после шага, focused late-interaction retriever FLIPR и latent hop ordering.",
+      "data": "HotpotQA и HoVer; Wikipedia.",
+      "protocol": "Последовательное извлечение свидетельств; на HoVer различаются утверждения с 2–4 переходами; выполняются абляции числа шагов.",
+      "metrics": [
+        "Retrieval@100: доля запросов со всеми нужными фрагментами",
+        "Passage EM/F1",
+        "Sentence EM/F1",
+        "Verification Accuracy"
+      ],
+      "finding": "Сжатый контекст и обучение порядка переходов позволяют строить настоящий многошаговый поиск.",
+      "limitation": "Нужны наборы с составными свидетельствами и существенный индекс; нельзя заменить полный протокол ранжированием заранее подложенного ответа.",
+      "replication": "Логировать запрос, наблюдение и новые документы после каждого шага; для проверки multi-hop использовать HotpotQA/HoVer.",
+      "connection": "Аргумент против объявления MIRACL-reranker многошаговым агентом.",
+      "domestic": false
+    },
+    {
+      "id": 6,
+      "key": "HyDE",
+      "authors": "Luyu Gao, Xueguang Ma, Jimmy Lin, Jamie Callan",
+      "title": "Precise Zero-Shot Dense Retrieval without Relevance Labels",
+      "year": 2023,
+      "venue": "ACL 2023, 1762–1777",
+      "doi": "10.18653/v1/2023.acl-long.99",
+      "url": "https://aclanthology.org/2023.acl-long.99/",
+      "code_url": "https://github.com/texttron/hyde",
+      "category": "Генерация поискового представления",
+      "task": "Dense retrieval без разметки релевантности целевой задачи.",
+      "architecture": "LLM создаёт гипотетический ответный документ; Contriever кодирует его и ищет реальные документы.",
+      "data": "BEIR/TREC и неанглоязычные retrieval-задачи.",
+      "protocol": "Zero-shot генератор и необучаемый на qrels целевой задачи энкодер; сравнение с исходным dense retrieval.",
+      "metrics": [
+        "nDCG@10",
+        "Recall@k"
+      ],
+      "finding": "Сгенерированный текст может служить промежуточным поисковым представлением, даже если содержит неточные факты.",
+      "limitation": "Гипотетический документ не является доказательством; ошибка LLM способна сместить поиск. HyDE — не reranking и сам по себе не агент.",
+      "replication": "При доступном dense-индексе сравнить исходный запрос и embedding гипотетического текста на одних qrels.",
+      "connection": "Мотивирует проверку генерации поисковых запросов и разделение генеративной правдоподобности и retrieval-метрик.",
+      "domestic": false
+    },
+    {
+      "id": 7,
+      "key": "Rewrite-Retrieve-Read",
+      "authors": "Xinbei Ma, Yeyun Gong, Pengcheng He, Hai Zhao, Nan Duan",
+      "title": "Query Rewriting in Retrieval-Augmented Large Language Models",
+      "year": 2023,
+      "venue": "EMNLP 2023, 5303–5315",
+      "doi": "10.18653/v1/2023.emnlp-main.322",
+      "url": "https://aclanthology.org/2023.emnlp-main.322/",
+      "code_url": "https://github.com/xbmxb/RAG-query-rewriting",
+      "category": "Переформулировка запроса",
+      "task": "Согласование пользовательского вопроса с поисковиком и фиксированным LLM-reader.",
+      "architecture": "LLM-переформулировщик → web retrieval → reader; небольшой rewriter может обучаться по обратной связи reader.",
+      "data": "HotpotQA, AmbigNQ, PopQA и MMLU.",
+      "protocol": "Сопоставляются direct, retrieve-then-read, frozen LLM rewriter и trainable rewriter при фиксированном reader.",
+      "metrics": [
+        "Exact Match",
+        "F1 ответа"
+      ],
+      "finding": "Адаптация самого запроса представляет отдельный способ улучшения retrieval-augmented системы.",
+      "limitation": "Основные метрики относятся к ответу, а не к MIRACL qrels; web-корпус меняется, а ошибка reader влияет на reward.",
+      "replication": "Фиксировать локальный корпус и поисковик, сравнить zero-shot и few-shot rewrite; qrels не передавать LLM.",
+      "connection": "Ближайшая методическая основа компактного эксперимента с восьмью LLM.",
+      "domestic": false,
+      "title_note": "Заголовок в метаданных ACL использует 'in'; в PDF на первой странице используется 'for'. В библиографии сохранена форма каталога."
+    },
+    {
+      "id": 8,
+      "key": "RankGPT",
+      "authors": "Weiwei Sun, Lingyong Yan, Xinyu Ma, Shuaiqiang Wang, Pengjie Ren, Zhumin Chen, Dawei Yin, Zhaochun Ren",
+      "title": "Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents",
+      "year": 2023,
+      "venue": "EMNLP 2023, 14918–14937",
+      "doi": "10.18653/v1/2023.emnlp-main.923",
+      "url": "https://aclanthology.org/2023.emnlp-main.923/",
+      "code_url": "https://github.com/sunnweiwei/RankGPT",
+      "category": "Reranking",
+      "task": "Переупорядочивание уже найденных фрагментов.",
+      "architecture": "Listwise permutation generation; окно кандидатов перемещается по исходному списку BM25; отдельно изучается дистилляция.",
+      "data": "TREC DL19/20, BEIR, Mr.TyDi и NovelEval.",
+      "protocol": "Общие исходные кандидаты, сравнение инструкций и абляции порядка, размера окна и повторных проходов.",
+      "metrics": [
+        "nDCG@1/5/10",
+        "Число токенов и API-запросов",
+        "Стоимость"
+      ],
+      "finding": "Listwise LLM-reranking может быть эффективным; исходный порядок кандидатов заметно влияет на результат.",
+      "limitation": "Reranker не находит документ вне набора кандидатов. Слово agents в названии не доказывает multi-step tool use.",
+      "replication": "Получать кандидатов поиском, не подмешивать gold; отдельно сообщать candidate recall, ошибки формата и fallback.",
+      "connection": "Позволяет корректно оценить предыдущую реализацию и её потолок качества.",
+      "domestic": false
+    },
+    {
+      "id": 9,
+      "key": "ReAct",
+      "authors": "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Duan, Izhak Shafran, Karthik Narasimhan, Yuan Cao",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "year": 2023,
+      "venue": "ICLR 2023",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2210.03629",
+      "code_url": "https://github.com/ysymyth/ReAct",
+      "category": "Агентное взаимодействие",
+      "task": "Решение задач с последовательными действиями во внешней среде.",
+      "architecture": "Цикл reasoning → action → observation; следующая команда зависит от полученного наблюдения.",
+      "data": "HotpotQA, FEVER, ALFWorld, WebShop.",
+      "protocol": "Few-shot траектории и сравнение с reasoning-only/action-only; в статье также рассматривается обучение на успешных траекториях.",
+      "metrics": [
+        "Exact Match в QA",
+        "Accuracy проверки фактов",
+        "Success rate интерактивных задач"
+      ],
+      "finding": "Сочетание наблюдений и действий даёт практическую схему tool-using LLM.",
+      "limitation": "Чувствительность к примерам, среде и длине траектории; успешность действий нельзя оценить одной ranking-метрикой.",
+      "replication": "Сохранить полный журнал вызовов инструмента, бюджет шагов и критерий остановки.",
+      "connection": "Задаёт минимальную границу содержательного агента для ВКР.",
+      "domestic": false
+    },
+    {
+      "id": 10,
+      "key": "Search-R1",
+      "authors": "Bowen Jin, Hansi Zeng, Zhenrui Yue, Jinsung Yoon, Sercan Ö. Arık, Dong Wang, Hamed Zamani, Jiawei Han",
+      "title": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning",
+      "year": 2025,
+      "venue": "COLM 2025; arXiv:2503.09516v5 от 05.08.2025",
+      "doi": "10.48550/arXiv.2503.09516",
+      "url": "https://arxiv.org/abs/2503.09516",
+      "code_url": "https://github.com/PeterGriffinJin/Search-R1",
+      "category": "RL для поиска",
+      "task": "Обучение LLM самостоятельно вызывать поиск внутри рассуждения.",
+      "architecture": "PPO/GRPO с поисковым окружением; внешние найденные токены исключаются из loss; reward по правильности ответа.",
+      "data": "Обучение NQ + HotpotQA; оценка NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, MuSiQue, Bamboogle.",
+      "protocol": "Общие retriever, корпус, число извлекаемых фрагментов, тренировочные данные и семейства моделей; анализ base/instruct и числа вызовов.",
+      "metrics": [
+        "Exact Match",
+        "Длина ответа",
+        "Валидные вызовы поиска"
+      ],
+      "finding": "Поисковую политику можно постобучать по конечному ответу без размеченной цепочки reasoning.",
+      "limitation": "Англоязычные QA и существенные ресурсы RL; результат нельзя автоматически переносить на русский MIRACL.",
+      "replication": "Сначала проверить inference на доступном checkpoint; RL требует отдельного QA-набора с ответами и вычислительного бюджета.",
+      "connection": "Непосредственный ориентир для будущего постобучения модели ВКР.",
+      "domestic": false,
+      "version_note": "Не переносить проценты улучшения из старой v1: заголовок/авторы/числа в поисковых выдержках и v5 различаются. Здесь численные результаты не цитируются.",
+      "sources": [
+        "https://arxiv.org/html/2503.09516v5",
+        "https://openreview.net/attachment?id=Rwhi91ideu&name=pdf"
+      ]
+    },
+    {
+      "id": 11,
+      "key": "ReSearch",
+      "authors": "Mingyang Chen, Tianpeng Li, Haoze Sun, Yijie Zhou, Chenzheng Zhu, Fan Yang, Zenan Zhou, Weipeng Chen, Haofen Wang, Jeff Z. Pan, Wen Zhang, Huajun Chen",
+      "title": "ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning",
+      "year": 2025,
+      "venue": "NeurIPS 2025; arXiv:2503.19470v3",
+      "doi": "10.48550/arXiv.2503.19470",
+      "url": "https://arxiv.org/abs/2503.19470",
+      "code_url": "https://github.com/Agent-RL/ReCall",
+      "category": "RL для поиска",
+      "task": "Многошаговые QA с чередованием поиска и reasoning.",
+      "architecture": "RL-политика Qwen2.5; reward включает F1 ответа и корректность формата.",
+      "data": "MuSiQue train; HotpotQA, 2WikiMultiHopQA, MuSiQue dev и Bamboogle test; Wikipedia 2018.",
+      "protocol": "Open-ended retrieval без готовых исходных контекстов QA; сравнение с No RAG, Naive RAG, Iter-RetGen и IRCoT.",
+      "metrics": [
+        "Exact Match",
+        "LLM-as-a-judge correctness"
+      ],
+      "finding": "Поиск включается в обучаемую траекторию, а не служит только предварительной обработкой.",
+      "limitation": "F1 reward не совпадает с итоговой EM; LLM-judge добавляет зависимость от судьи. Эксперимент не русскоязычный.",
+      "replication": "Отделять reward обучения от независимой оценки; явно хранить search-budget и полные наблюдения.",
+      "connection": "Обосновывает отдельные данные и протокол для multi-step части ВКР.",
+      "domestic": false,
+      "code_note": "Проверенный исходный URL https://github.com/Agent-RL/ReSearch перенаправляется в объединённый ReCall."
+    },
+    {
+      "id": 12,
+      "key": "LoRA",
+      "authors": "Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "year": 2022,
+      "venue": "ICLR 2022",
+      "doi": null,
+      "url": "https://openreview.net/forum?id=nZeVKeeFYf9",
+      "code_url": "https://github.com/microsoft/LoRA",
+      "category": "PEFT",
+      "task": "Адаптация большой предобученной модели с малым числом обучаемых параметров.",
+      "architecture": "Базовые веса заморожены; обучаются низкоранговые добавки к матрицам Transformer.",
+      "data": "В статье языковые и генеративные бенчмарки с RoBERTa, DeBERTa, GPT-2 и GPT-3.",
+      "protocol": "Сопоставление с полным fine-tuning и другими адаптерами; исследование ранга и размещения обновлений.",
+      "metrics": [
+        "GLUE Accuracy/Matthews/Pearson по задаче",
+        "Метрики генерации",
+        "Число обучаемых параметров",
+        "Память"
+      ],
+      "finding": "Адаптация возможна без обновления всех весов; при слиянии адаптера не требуется отдельный дополнительный блок inference.",
+      "limitation": "Экономия памяти не доказывает качество на retrieval и не устраняет необходимость отдельной validation.",
+      "replication": "Обучать адаптер только на train, подбирать параметры на validation и сохранять конфигурацию целевых модулей.",
+      "connection": "Подход к доступному SFT поискового rewriter в лабораторной и ВКР.",
+      "domestic": false
+    },
+    {
+      "id": 13,
+      "key": "QLoRA",
+      "authors": "Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, Luke Zettlemoyer",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "year": 2023,
+      "venue": "NeurIPS 2023",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2305.14314",
+      "code_url": "https://github.com/artidoro/qlora",
+      "category": "PEFT + квантизация",
+      "task": "Дообучение LLM при ограниченной видеопамяти.",
+      "architecture": "Замороженная база в 4-битном NF4, trainable LoRA; double quantization и paged optimizers.",
+      "data": "Instruction-tuning корпуса и наборы оценки диалоговых моделей; семейство Guanaco.",
+      "protocol": "Сравнение precision и способов квантизации, данных и размеров моделей при дообучении.",
+      "metrics": [
+        "5-shot MMLU Accuracy",
+        "Потребление GPU-памяти",
+        "Оценка диалоговых ответов (human/GPT-4)"
+      ],
+      "finding": "Квантизированная замороженная база снижает память, нужную для адаптации.",
+      "limitation": "Часть оценки зависит от автоматического судьи; для конкретного GPU и backend совместимость и память проверяются экспериментом.",
+      "replication": "Если NF4-backend доступен, сопоставить один и тот же адаптерный протокол с FP16 LoRA; иначе честно выполнить обычный LoRA.",
+      "connection": "Возможное, но не обязательное расширение PEFT для моделей, помещающихся в оборудование.",
+      "domestic": false
+    },
+    {
+      "id": 14,
+      "key": "ruMTEB",
+      "authors": "Artem Snegirev, Maria Tikhonova, Anna Maksimova, Alena Fenogenova, Aleksandr Abramov",
+      "title": "The Russian-focused embedders’ exploration: ruMTEB benchmark and Russian embedding model design",
+      "year": 2025,
+      "venue": "NAACL 2025, 236–254",
+      "doi": "10.18653/v1/2025.naacl-long.12",
+      "url": "https://aclanthology.org/2025.naacl-long.12/",
+      "code_url": "https://github.com/embeddings-benchmark/mteb/tree/1.14.12",
+      "category": "Русскоязычная оценка",
+      "task": "Оценка русскоязычных embeddings в нескольких классах задач.",
+      "architecture": "ruMTEB и ru-en-RoSBERTa; адаптация словаря, контрастивное обучение и смешение русских/английских данных.",
+      "data": "23 набора в 7 категориях; retrieval включает MIRACL, RuBQ и RiaNews.",
+      "protocol": "Единая реализация MTEB, корректные префиксы и pooling по моделям; раздельные retrieval/reranking-задачи.",
+      "metrics": [
+        "nDCG@10 для retrieval",
+        "MAP@10 для reranking, кроме MIRACL",
+        "nDCG@10 для MIRACL reranking",
+        "Метрики остальных категорий"
+      ],
+      "finding": "Русскоязычную модель следует оценивать непосредственно на русских задачах, а retrieval и reranking различать.",
+      "limitation": "Это embedding-бенчмарк, а не оценка агента; обучение некоторых моделей уже включает MIRACL train.",
+      "replication": "Использовать зафиксированную реализацию и учитывать известную тренировочную экспозицию MIRACL.",
+      "connection": "Отечественное исследование и прямое основание для русскоязычного протокола.",
+      "domestic": true,
+      "code_note": "В статье указана версия MTEB 1.14.12 и интеграционные PR #815/#881; PR #815 также проверен.",
+      "author_note": "Нормализован порядок имени Anna Maksimova; метаданные ACL показывают Maksimova Anna."
+    },
+    {
+      "id": 15,
+      "key": "RuBQ 2.0",
+      "authors": "Ivan Rybin, Vladislav Korablinov, Pavel Efimov, Pavel Braslavski",
+      "title": "RuBQ 2.0: An Innovated Russian Question Answering Dataset",
+      "year": 2021,
+      "venue": "ESWC 2021, Lecture Notes in Computer Science 12731, 532–547",
+      "doi": "10.1007/978-3-030-77385-4_32",
+      "url": "https://publications.hse.ru/chapters/489140352",
+      "code_url": "https://github.com/vladislavneon/RuBQ",
+      "category": "Русскоязычная QA",
+      "task": "Русскоязычные KBQA, чтение фрагментов и гибридные QA.",
+      "architecture": "Размеченные вопросы, SPARQL к Wikidata, ответы и ответосодержащие фрагменты Wikipedia.",
+      "data": "2910 русских вопросов разной сложности; версия 2.0 расширяет исходный RuBQ.",
+      "protocol": "Отдельные KBQA и MRC baseline; оценка ответа и соответствия данным задачи.",
+      "metrics": [
+        "Качество ответа в KBQA и MRC (численные baseline здесь не переносятся)"
+      ],
+      "finding": "Добавление текстовых свидетельств связывает русскую KBQA с paragraph retrieval и ODQA.",
+      "limitation": "SPARQL-сложность не равна числу поисковых вызовов LLM; составная QA-разметка требует отдельного аудита.",
+      "replication": "Использовать как независимый русский QA-срез с ответами, проверив пересечения текстов и формулировок.",
+      "connection": "Отечественный ресурс для следующего этапа ВКР, когда понадобится оценка ответов.",
+      "domestic": true,
+      "source_note": "PDF OpenReview в web-open закрыт browser-challenge; использованы доступные авторские аннотации, авторский репозиторий, страница НИУ ВШЭ и официальный список ESWC 2021. Не утверждается полное чтение этой статьи.",
+      "sources": [
+        "https://github.com/vladislavneon/RuBQ",
+        "https://publications.hse.ru/chapters/489140352",
+        "https://2021.eswc-conferences.org/full-list-of-accepted-papers-for-eswc-2021/"
+      ]
+    }
+  ],
+  "narrative": [
+    "Базовая retrieval-литература [1–3] показывает, что поисковик нужно оценивать по реальному корпусу и фиксированным qrels. MIRACL даёт русскоязычный материал, BEIR обосновывает необходимость устойчивого baseline и анализа переноса, а DPR отделяет поиск фрагментов от последующей работы reader.",
+    "RAG [4] добавляет генератор к внешней памяти. Для ВКР важно не смешивать качество сформированного ответа и полноту извлечения. Даже корректная переформулировка не гарантирует ответ, а убедительный ответ не доказывает нахождение нужного свидетельства.",
+    "HyDE и Rewrite-Retrieve-Read [6–7] показывают два разных пути использования LLM до поиска: генерировать гипотетический документ для плотного энкодера или менять непосредственно запрос. Второй путь доступнее для локального опыта с фиксированным поисковиком. При этом опубликованные QA-метрики не заменяют MIRACL qrels.",
+    "RankGPT [8] относится к reranking. Его наблюдение о зависимости от порядка кандидатов важно для аудита прежней реализации. Если каждому запросу заранее гарантировать правильный документ среди нескольких лёгких отрицательных, получится искусственно облегчённая задача. Candidate recall задаёт потолок последующего ранжирования.",
+    "Baleen и ReAct [5, 9] дают основания называть поиск многошаговым: новый шаг учитывает ранее найденное. Search-R1 и ReSearch [10–11] делают такую политику объектом обучения. Их multi-hop QA-результаты нельзя автоматически воспроизвести на MIRACL, где нет эталонных траекторий и ответов.",
+    "LoRA и QLoRA [12–13] позволяют постобучать доступные модели при ограниченной памяти. Они не являются способом повысить retrieval без отдельного опыта. Необходимы train/validation/test, контроль данных и оценка адаптированной модели по тому же протоколу.",
+    "Отечественные ruMTEB и RuBQ 2.0 [14–15] связывают исследование с русским языком. ruMTEB явно различает retrieval и reranking и использует MIRACL. RuBQ добавляет ответы и структурные запросы, поэтому полезен для следующего этапа QA; сложность SPARQL не заменяет проверку реальных действий агента."
+  ],
+  "matrix": [
+    {
+      "id": 1,
+      "work": "MIRACL (2023)",
+      "role": "Данные и оценка",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Русский представлен",
+      "training": "Не требуется для базового применения",
+      "metrics": "nDCG@10; Recall@100",
+      "limitation": "Разметка релевантности не задаёт цепочки действий, необходимое число шагов и эталонный ответ. Неполные qrels не означают, что каждый неразмеченный документ нерелевантен."
+    },
+    {
+      "id": 2,
+      "work": "BEIR (2021)",
+      "role": "Данные и оценка",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Не требуется для базового применения",
+      "metrics": "nDCG@10; Recall@k",
+      "limitation": "Преимущественно англоязычные задачи; среднее по разным наборам скрывает отдельные провалы."
+    },
+    {
+      "id": 3,
+      "work": "DPR (2020)",
+      "role": "Одношаговый retrieval",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "Top-k passage retrieval accuracy; Exact Match ответа",
+      "limitation": "Top-k accuracy наличия ответа отличается от Recall@k по всем qrels; обучение англоязычного DPR не гарантирует качество на русском."
+    },
+    {
+      "id": 4,
+      "work": "RAG (2020)",
+      "role": "Retrieval + генерация",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "Exact Match в QA; Метрики соответствующей downstream-задачи",
+      "limitation": "Генеративное качество не тождественно retrieval-качеству. Оригинальная архитектура не задаёт автономную многошаговую политику поиска."
+    },
+    {
+      "id": 5,
+      "work": "Baleen (2021)",
+      "role": "Многошаговый retrieval",
+      "search_or_rank": "Несколько действий / шагов",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "Retrieval@100: доля запросов со всеми нужными фрагментами; Passage EM/F1; Sentence EM/F1; Verification Accuracy",
+      "limitation": "Нужны наборы с составными свидетельствами и существенный индекс; нельзя заменить полный протокол ранжированием заранее подложенного ответа."
+    },
+    {
+      "id": 6,
+      "work": "HyDE (2023)",
+      "role": "Генерация поискового представления",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Не требуется для базового применения",
+      "metrics": "nDCG@10; Recall@k",
+      "limitation": "Гипотетический документ не является доказательством; ошибка LLM способна сместить поиск. HyDE — не reranking и сам по себе не агент."
+    },
+    {
+      "id": 7,
+      "work": "Rewrite-Retrieve-Read (2023)",
+      "role": "Переформулировка запроса",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Опционально",
+      "metrics": "Exact Match; F1 ответа",
+      "limitation": "Основные метрики относятся к ответу, а не к MIRACL qrels; web-корпус меняется, а ошибка reader влияет на reward."
+    },
+    {
+      "id": 8,
+      "work": "RankGPT (2023)",
+      "role": "Reranking",
+      "search_or_rank": "Готовые кандидаты",
+      "russian": "Русский представлен",
+      "training": "Не требуется для базового применения",
+      "metrics": "nDCG@1/5/10; Число токенов и API-запросов; Стоимость",
+      "limitation": "Reranker не находит документ вне набора кандидатов. Слово agents в названии не доказывает multi-step tool use."
+    },
+    {
+      "id": 9,
+      "work": "ReAct (2023)",
+      "role": "Агентное взаимодействие",
+      "search_or_rank": "Несколько действий / шагов",
+      "russian": "Не основной фокус",
+      "training": "Не требуется для базового применения",
+      "metrics": "Exact Match в QA; Accuracy проверки фактов; Success rate интерактивных задач",
+      "limitation": "Чувствительность к примерам, среде и длине траектории; успешность действий нельзя оценить одной ranking-метрикой."
+    },
+    {
+      "id": 10,
+      "work": "Search-R1 (2025)",
+      "role": "RL для поиска",
+      "search_or_rank": "Несколько действий / шагов",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "Exact Match; Длина ответа; Валидные вызовы поиска",
+      "limitation": "Англоязычные QA и существенные ресурсы RL; результат нельзя автоматически переносить на русский MIRACL."
+    },
+    {
+      "id": 11,
+      "work": "ReSearch (2025)",
+      "role": "RL для поиска",
+      "search_or_rank": "Несколько действий / шагов",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "Exact Match; LLM-as-a-judge correctness",
+      "limitation": "F1 reward не совпадает с итоговой EM; LLM-judge добавляет зависимость от судьи. Эксперимент не русскоязычный."
+    },
+    {
+      "id": 12,
+      "work": "LoRA (2022)",
+      "role": "PEFT",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "GLUE Accuracy/Matthews/Pearson по задаче; Метрики генерации; Число обучаемых параметров; Память",
+      "limitation": "Экономия памяти не доказывает качество на retrieval и не устраняет необходимость отдельной validation."
+    },
+    {
+      "id": 13,
+      "work": "QLoRA (2023)",
+      "role": "PEFT + квантизация",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Не основной фокус",
+      "training": "Есть в исходной работе",
+      "metrics": "5-shot MMLU Accuracy; Потребление GPU-памяти; Оценка диалоговых ответов (human/GPT-4)",
+      "limitation": "Часть оценки зависит от автоматического судьи; для конкретного GPU и backend совместимость и память проверяются экспериментом."
+    },
+    {
+      "id": 14,
+      "work": "ruMTEB (2025)",
+      "role": "Русскоязычная оценка",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Да",
+      "training": "Есть в исходной работе",
+      "metrics": "nDCG@10 для retrieval; MAP@10 для reranking, кроме MIRACL; nDCG@10 для MIRACL reranking; Метрики остальных категорий",
+      "limitation": "Это embedding-бенчмарк, а не оценка агента; обучение некоторых моделей уже включает MIRACL train."
+    },
+    {
+      "id": 15,
+      "work": "RuBQ 2.0 (2021)",
+      "role": "Русскоязычная QA",
+      "search_or_rank": "Данные, один поиск или адаптация",
+      "russian": "Да",
+      "training": "Не требуется для базового применения",
+      "metrics": "Качество ответа в KBQA и MRC (численные baseline здесь не переносятся)",
+      "limitation": "SPARQL-сложность не равна числу поисковых вызовов LLM; составная QA-разметка требует отдельного аудита."
+    }
+  ],
+  "research_gap": {
+    "statement": "В рассмотренных работах качество поиска, reranking и обучение поисковой политики оцениваются в разных условиях. Для локального прототипа остаётся прикладной вопрос: какая доступная LLM лучше оценивает релевантность русских пассажей с учётом качества, калибровки заявленной уверенности и ресурсов, и переносится ли этот выбор на последовательное уточнение поискового запроса.",
+    "research_question": "Какая из восьми локальных LLM даёт лучший компромисс Macro-F1, MCC, Brier, latency и памяти на MIRACL ru и как выбранная на validation модель работает при поиске в отдельном ограниченном корпусе?",
+    "hypotheses": [
+      "Few-shot улучшает Macro-F1 относительно zero-shot при общем тесте; эффект проверяется парным bootstrap по запросам, без заранее предполагаемого выигрыша.",
+      "Выбор по качеству, заявленной уверенности и ресурсам может отличаться от выбора по одному Macro-F1.",
+      "Поиск с обратной связью может увеличить полноту, но также терять ограничения и ухудшать nDCG; эффект проверяется отдельно на 20 новых запросах."
+    ],
+    "boundaries": [
+      "MIRACL проверяет ad hoc retrieval; число релевантных документов не является эталонным числом reasoning hops.",
+      "Многошаговым инструментальным поиском можно называть только протокол, где последующий запрос зависит от реального наблюдения предыдущего вызова; его reasoning-качество требует отдельного multi-hop QA-набора.",
+      "Reranking заранее сформированных кандидатов оценивается отдельно от retrieval по корпусу.",
+      "Сокращённый корпус и малый тест допустимы как пилот при общей выборке и явной маркировке; метрики несопоставимы с полным MIRACL leaderboard.",
+      "Классификатор получает все размеченные кандидаты без меток; это условная оценка релевантности. В поисковом эксперименте qrels не подаются модели, а пассажи не добавляются в выдачу по эталонной метке.",
+      "Identity fallback оценивается как часть системы; отдельно сообщаются доля срабатываний и метрики успешных LLM-вызовов, чтобы fallback не маскировал отсутствие эффекта."
+    ],
+    "next_vkr": "Сначала выбрать rewriter с воспроизводимым компромиссом качества и ресурсов. Затем перейти к датасету с ответами и несколькими свидетельствами, логированию search/observation/stop и SFT/LoRA либо RL политики. Для постобучения не использовать held-out MIRACL dev/test."
+  },
+  "search_log": {
+    "date": "2026-10-18",
+    "type": "Целенаправленный PRISMA-подобный журнал; не систематический обзор и не PRISMA-compliant meta-analysis",
+    "scope": "Академические первоисточники и авторские репозитории; публикации 2020–2025, проверенные 18.10.2026. Поиск не претендует на исчерпывающее покрытие 2026 года.",
+    "search_services": [
+      "web search",
+      "ACL Anthology",
+      "arXiv",
+      "OpenReview",
+      "официальные proceedings и сайты авторов",
+      "GitHub авторов"
+    ],
+    "queries": [
+      "MIRACL A Multilingual Retrieval Dataset Covering 18 Diverse Languages ACL 2023 github",
+      "Baleen Robust Multi-Hop Reasoning at Scale 2021 EMNLP arxiv",
+      "ruMTEB Russian massive text embedding benchmark paper",
+      "Search-R1 Training LLMs to Reason and Leverage Search Engines Reinforcement Learning github",
+      "RuBQ 2.0 Enhanced Dataset Question Answering Russian knowledge base paper github",
+      "Query Rewriting Retrieval Augmented Large Language Models 2023 emnlp github",
+      "ReSearch Learning to Reason with Search LLMs reinforcement learning arxiv github",
+      "BEIR heterogeneous benchmark zero shot evaluation information retrieval 2021 github",
+      "Precise Zero-Shot Dense Retrieval without Relevance Labels HyDE ACL 2023 github",
+      "Is ChatGPT Good at Search Investigating Large Language Models as Re-Ranking Agents EMNLP 2023 RankGPT github",
+      "ReAct Synergizing Reasoning Acting Language Models ICLR 2023 github",
+      "LoRA Low Rank Adaptation Large Language Models ICLR 2022 github",
+      "QLoRA Efficient Finetuning Quantized LLMs NeurIPS 2023 github",
+      "Retrieval Augmented Generation Knowledge Intensive NLP Tasks NeurIPS 2020 github",
+      "RuBQ 2.0 An Innovated Russian Question Answering Dataset 2021 authors ESWC",
+      "Search-R1 COLM 2025 site.openreview.net"
+    ],
+    "criteria": {
+      "include": [
+        "Оригинальная научная работа с доступным первоисточником или авторской аннотацией",
+        "Прямая связь с retrieval, reranking, query rewriting, tool use, PEFT или русскоязычной оценкой",
+        "Проверяемые название, авторы, год и ссылка; отдельно указан объём проверки"
+      ],
+      "exclude": [
+        "Вторичный обзор при наличии оригинальных исследований",
+        "Дублирование версии одного ресурса",
+        "Слабая связь с доступным экспериментом при лимите 15",
+        "Случайные блоги и агрегаторы не используются как доказательства"
+      ]
+    },
+    "counts": {
+      "unique_scientific_candidates_explicitly_screened": 20,
+      "included": 15,
+      "excluded": 5,
+      "total_search_hits": null,
+      "duplicate_search_hits": null,
+      "full_text_completely_read": null
+    },
+    "count_note": "20 — это перечисленные вручную кандидаты, а не объём поисковой выдачи. Число показанных системой результатов и дублей не подсчитывалось; полное чтение всех PDF не заявляется.",
+    "reading_depth": "Для включённых работ сверены библиографические метаданные/аннотации и релевантные разделы либо авторский код. Полнотекстовые фрагменты протокола и метрик прочитаны для MIRACL, DPR, RAG, Baleen, HyDE, Rewrite-Retrieve-Read, RankGPT, ReAct, Search-R1, ReSearch, LoRA, QLoRA, ruMTEB; BEIR проверен по primary abstract/proceedings и авторскому коду. Для RuBQ 2.0 использованы авторская аннотация и репозиторий; подробные численные baseline не цитируются.",
+    "excluded": [
+      {
+        "title": "R-Search: Empowering LLM Reasoning with Search via Multi-Reward Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2506.04185",
+        "screening": "Рассмотрена аннотация в поисковой выдаче",
+        "decision": "Не включена в 15: ещё одна RL search-работа; Search-R1 и ReSearch дают достаточное покрытие этого класса для лабораторной."
+      },
+      {
+        "title": "RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain Question Answering",
+        "url": "https://aclanthology.org/2021.naacl-main.466/",
+        "screening": "Рассмотрена аннотация в поисковой выдаче",
+        "decision": "Не включена: оптимизация обучения dense retriever менее близка текущему сравнению LLM-rewriter, чем DPR и HyDE."
+      },
+      {
+        "title": "RAG and RAU: A Survey on Retrieval-Augmented Language Model in Natural Language Processing",
+        "url": "https://arxiv.org/abs/2404.19543",
+        "screening": "Рассмотрена аннотация в поисковой выдаче",
+        "decision": "Не включена: вторичный обзор; для ключевых выводов выбраны оригинальные исследования."
+      },
+      {
+        "title": "Can Retriever-Augmented Language Models Reason? The Blame Game Between the Retriever and the Language Model",
+        "url": "https://aclanthology.org/2023.findings-emnlp.1036/",
+        "screening": "Рассмотрена аннотация в поисковой выдаче",
+        "decision": "Не включена из-за лимита 15: ограничения reasoning уже обсуждаются через Baleen, ReAct и search-RL."
+      },
+      {
+        "title": "RuBQ: A Russian Dataset for Question Answering over Wikidata",
+        "url": "https://arxiv.org/abs/2005.10659",
+        "screening": "Рассмотрена аннотация и авторский репозиторий, содержащий обе версии",
+        "decision": "Не включена отдельной строкой: выбрана расширенная RuBQ 2.0; версии не считаются независимыми подтверждениями."
+      }
+    ],
+    "corrections": [
+      "Baleen: arXiv:2101.00436 действительно соответствует статье; venue NeurIPS 2021, а не EMNLP.",
+      "MIRACL: финальная журнальная статья — TACL 2023, ACL Anthology 2023.tacl-1.63; arXiv 2210.09984 носит раннее название Making a MIRACL.",
+      "Query Rewriting: название ACL-каталога содержит in; заголовок PDF содержит for; это одна статья, не два исследования.",
+      "Search-R1: v5 содержит восемь авторов и обновлённые формулировки результатов; venue COLM 2025 подтверждён PDF proceedings.",
+      "ReSearch: arXiv v3 отмечает принятие в NeurIPS 2025; авторский GitHub перенаправляет в ReCall.",
+      "ruMTEB: финальная публикация NAACL 2025; arXiv впервые размещён в 2024. Эти даты нельзя подменять друг другом.",
+      "Не смешивать MIRACLReranking в MTEB с полноценным MIRACL retrieval. Одинаковое название метрики не делает протоколы сопоставимыми."
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv*/
+models/
+.workflow/render_probe/
+report/qa/
+results/search_index.npz
+*.tmp
+
+*.zip
+.workflow/full_run.lock

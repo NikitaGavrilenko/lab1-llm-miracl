@@ -1,0 +1,18 @@
+{
+  "status": "validation_running",
+  "completed": [
+    "source_material_audit",
+    "literature15",
+    "MIRACL_preparation_and_split",
+    "pilot",
+    "protocol_freeze"
+  ],
+  "next": [
+    "select_on_validation",
+    "eight_model_test",
+    "application_search",
+    "LoRA",
+    "report_render",
+    "independent_audit"
+  ]
+}

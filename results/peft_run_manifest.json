@@ -1,0 +1,56 @@
+{
+  "config": {
+    "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "model_dir": "models/Qwen2.5-0.5B-Instruct",
+    "license": "Apache-2.0",
+    "adapter_dir": "adapters/qwen25_05b_relevance_lora",
+    "seed": 42,
+    "cpu_threads": 4,
+    "max_input_tokens": 256,
+    "train_batch_size": 2,
+    "eval_batch_size": 4,
+    "lora_r": 8,
+    "learning_rate": 0.0001,
+    "max_steps": 64,
+    "epochs": 1,
+    "threshold": 0.5,
+    "model_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "method_source": "https://huggingface.co/docs/peft/en/quicktour",
+    "purpose": "Separate actual LoRA control, not part of 8-model Ollama ranking; fixed settings without test tuning",
+    "training_selection": "one random judged 0 and one judged 1 per train query; seed42; at most 128 pairs",
+    "probability": "softmax of next-token logits restricted to tokens 0 and 1, no verbalized confidence",
+    "calibration": "raw uncalibrated conditional binary token probability; ECE/Brier descriptive",
+    "device": "cuda"
+  },
+  "config_sha256": "e6db22978c0d4e9b34b8f1733c67e86453f1a9e493eb79f9c7dc8171eaec4cf2",
+  "split_sha256": {
+    "train": "30973be55a8b9cdc5d5c184459ac886b4680defdb67966f1725cb10f3c7f8b55",
+    "validation": "e7f4bdcf9fe3731e2e23b647d938b78e209fc2b98cfe42cddb5238ecefcafbe6",
+    "test": "0ee0d422c8b5bfd12b5468554e2510d476fe0eb37e778eff10df33f51114e55f",
+    "application": "4785dd79cd8fc1aebc59a0f2a33092b70d822f1b5a13b8e562bdc08bd5fe7978"
+  },
+  "counts": {
+    "validation": 168,
+    "test": 416,
+    "application": 207
+  },
+  "train_pairs": 128,
+  "label_token_ids": [
+    15,
+    16
+  ],
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "versions": {
+    "torch": "2.7.1+cu128",
+    "transformers": "4.51.3",
+    "peft": "0.15.2",
+    "accelerate": "1.6.0",
+    "numpy": "2.2.6",
+    "psutil": "7.0.0"
+  },
+  "device": "cuda",
+  "cuda_available": true,
+  "caveat": "Independent 0.5B LoRA pilot, different 256-token pairwise protocol; not a ninth row in Ollama ranking"
+}

@@ -1,0 +1,47 @@
+{
+  "prediction_records": 1072,
+  "ignored_live_final_line": 0,
+  "identical_duplicate_records": 0,
+  "excluded_model_records": {},
+  "completeness": [
+    {
+      "split": "application",
+      "expected": 20,
+      "observed": 20,
+      "complete": true,
+      "missing_count": 0,
+      "missing": []
+    },
+    {
+      "split": "test",
+      "expected": 704,
+      "observed": 704,
+      "complete": true,
+      "missing_count": 0,
+      "missing": []
+    },
+    {
+      "split": "validation",
+      "expected": 320,
+      "observed": 320,
+      "complete": true,
+      "missing_count": 0,
+      "missing": []
+    }
+  ],
+  "definitions": {
+    "threshold": 0.5,
+    "bootstrap_replicates": 2000,
+    "bootstrap_unit": "qid",
+    "scores": "self-verbalized, jointly conditioned on all candidates; not token posteriors",
+    "operational": "Abstention=2; Macro-F1 labels [0,1], zero_division=0; invalid incurs false negatives",
+    "calibration": "Brier/ECE/AUROC/MCC valid responses only; coverage reported",
+    "ranking": "binary qrels on fixed judged pool; invalid empty ranking scores zero",
+    "latency": "wall time per query, all candidate scores in one call; failures without response have missing latency",
+    "resource": "model-specific resident size_vram from api/ps; not peak GPU memory",
+    "uncertainty": "Bootstrap captures query sampling uncertainty conditional on fixed model, prompt and corpus",
+    "baselines": "Full prepared split only; compare to model groups only when counts are complete"
+  },
+  "raw_file_sha256_snapshot": "724fa48ed114559dfbf56c31e374151a3a975fc05eee97a33d00c6f88703877a",
+  "selection_status": "existing_selection_preserved"
+}

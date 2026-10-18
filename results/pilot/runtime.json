@@ -1,0 +1,123 @@
+{
+  "python": "3.10.20 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:42:35) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+  "ollama_version": {
+    "version": "0.40.4"
+  },
+  "gpu_initial": "NVIDIA GeForce RTX 3090, 2406, 24576, 38.93, 13",
+  "models": {
+    "qwen2.5-coder:1.5b": {
+      "tag": {
+        "name": "qwen2.5-coder:1.5b",
+        "model": "qwen2.5-coder:1.5b",
+        "modified_at": "2026-05-11T12:34:00.3643812+03:00",
+        "size": 986062089,
+        "digest": "d7372fd828518a4d38b1eb196c673c31a85f2ed302b3d1e406c4c2d1b64a0668",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "1.5B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 32768,
+          "embedding_length": 1536,
+          "runner": "ggml"
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "insert"
+        ]
+      },
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "1.5B",
+        "quantization_level": "Q4_K_M"
+      },
+      "model_info": {
+        "general.architecture": "qwen2",
+        "general.base_model.0.name": "Qwen2.5 Coder 1.5B",
+        "general.base_model.0.organization": "Qwen",
+        "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B",
+        "general.base_model.count": 1,
+        "general.basename": "Qwen2.5-Coder",
+        "general.file_type": 15,
+        "general.finetune": "Instruct",
+        "general.languages": [
+          "en"
+        ],
+        "general.license": "apache-2.0",
+        "general.license.link": "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct/blob/main/LICENSE",
+        "general.parameter_count": 1543714304,
+        "general.quantization_version": 2,
+        "general.size_label": "1.5B",
+        "general.tags": [
+          "code",
+          "codeqwen",
+          "chat",
+          "qwen",
+          "qwen-coder",
+          "text-generation"
+        ],
+        "general.type": "model",
+        "qwen2.attention.head_count": 12,
+        "qwen2.attention.head_count_kv": 2,
+        "qwen2.attention.layer_norm_rms_epsilon": 1e-06,
+        "qwen2.block_count": 28,
+        "qwen2.context_length": 32768,
+        "qwen2.embedding_length": 1536,
+        "qwen2.feed_forward_length": 8960,
+        "qwen2.rope.freq_base": 1000000,
+        "tokenizer.ggml.add_bos_token": false,
+        "tokenizer.ggml.bos_token_id": 151643,
+        "tokenizer.ggml.eos_token_id": 151645,
+        "tokenizer.ggml.merges": [],
+        "tokenizer.ggml.model": "gpt2",
+        "tokenizer.ggml.padding_token_id": 151643,
+        "tokenizer.ggml.pre": "qwen2",
+        "tokenizer.ggml.token_type": [],
+        "tokenizer.ggml.tokens": []
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "insert"
+      ],
+      "warmup_s": 3.0616607000119984,
+      "loaded": {
+        "models": [
+          {
+            "name": "qwen2.5-coder:1.5b",
+            "model": "qwen2.5-coder:1.5b",
+            "size": 1367059988,
+            "digest": "d7372fd828518a4d38b1eb196c673c31a85f2ed302b3d1e406c4c2d1b64a0668",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "1.5B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-10-18T14:03:26.023434+03:00",
+            "size_vram": 1367059988,
+            "context_length": 8192,
+            "runner": "llamacpp"
+          }
+        ]
+      },
+      "gpu_loaded": "NVIDIA GeForce RTX 3090, 2653, 24576, 129.69, 16"
+    }
+  }
+}

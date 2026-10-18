@@ -1,0 +1,43 @@
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\run_experiment.py', '--splits', 'validation', '--models', 'phi3.5:3.8b']
+MODEL phi3.5:3.8b
+phi3.5:3.8b validation zero-shot 1 16 main valid True sec 1.68
+phi3.5:3.8b validation zero-shot 1 16 paraphrase valid True sec 1.64
+phi3.5:3.8b validation zero-shot 2 16 main valid True sec 1.7
+phi3.5:3.8b validation zero-shot 2 16 paraphrase valid True sec 1.77
+phi3.5:3.8b validation zero-shot 3 16 main valid True sec 1.77
+phi3.5:3.8b validation zero-shot 3 16 paraphrase valid True sec 1.72
+phi3.5:3.8b validation zero-shot 4 16 main valid True sec 2.15
+phi3.5:3.8b validation zero-shot 4 16 paraphrase valid True sec 1.8
+phi3.5:3.8b validation zero-shot 5 16 main valid True sec 2.09
+phi3.5:3.8b validation zero-shot 5 16 paraphrase valid True sec 1.98
+phi3.5:3.8b validation zero-shot 6 16 main valid True sec 1.52
+phi3.5:3.8b validation zero-shot 6 16 paraphrase valid True sec 1.41
+phi3.5:3.8b validation zero-shot 7 16 main valid True sec 1.51
+phi3.5:3.8b validation zero-shot 7 16 paraphrase valid True sec 1.66
+phi3.5:3.8b validation zero-shot 8 16 main valid True sec 1.53
+phi3.5:3.8b validation zero-shot 8 16 paraphrase valid True sec 1.61
+phi3.5:3.8b validation zero-shot 9 16 main valid True sec 1.76
+phi3.5:3.8b validation zero-shot 10 16 main valid True sec 1.5
+phi3.5:3.8b validation zero-shot 11 16 main valid True sec 1.35
+phi3.5:3.8b validation zero-shot 12 16 main valid True sec 1.43
+phi3.5:3.8b validation zero-shot 13 16 main valid True sec 1.71
+phi3.5:3.8b validation zero-shot 14 16 main valid True sec 1.6
+phi3.5:3.8b validation zero-shot 15 16 main valid True sec 1.49
+phi3.5:3.8b validation zero-shot 16 16 main valid True sec 1.36
+phi3.5:3.8b validation few-shot 1 16 main valid True sec 1.7
+phi3.5:3.8b validation few-shot 2 16 main valid True sec 1.91
+phi3.5:3.8b validation few-shot 3 16 main valid True sec 1.84
+phi3.5:3.8b validation few-shot 4 16 main valid True sec 2.05
+phi3.5:3.8b validation few-shot 5 16 main valid True sec 2.14
+phi3.5:3.8b validation few-shot 6 16 main valid True sec 1.72
+phi3.5:3.8b validation few-shot 7 16 main valid True sec 1.69
+phi3.5:3.8b validation few-shot 8 16 main valid True sec 1.8
+phi3.5:3.8b validation few-shot 9 16 main valid True sec 1.9
+phi3.5:3.8b validation few-shot 10 16 main valid True sec 1.73
+phi3.5:3.8b validation few-shot 11 16 main valid True sec 1.65
+phi3.5:3.8b validation few-shot 12 16 main valid True sec 1.69
+phi3.5:3.8b validation few-shot 13 16 main valid True sec 1.69
+phi3.5:3.8b validation few-shot 14 16 main valid True sec 1.77
+phi3.5:3.8b validation few-shot 15 16 main valid True sec 1.68
+phi3.5:3.8b validation few-shot 16 16 main valid True sec 1.6

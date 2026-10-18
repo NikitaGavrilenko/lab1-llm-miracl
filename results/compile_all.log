@@ -1,0 +1,4 @@
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'compileall', '-q', 'src']
+
+RUN ['D:\\Anaconda3\\envs\\ml\\python.exe', '-m', 'compileall', '-q', 'src']

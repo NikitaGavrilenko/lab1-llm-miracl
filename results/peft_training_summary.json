@@ -1,0 +1,11 @@
+{
+  "steps": 64,
+  "available_examples": 128,
+  "consumed_examples": 128,
+  "elapsed_s": 9.848742400004994,
+  "rss_observed_peak_bytes": 1697968128,
+  "total_parameters": 494573440,
+  "trainable_parameters": 540672,
+  "objective": "binary cross-entropy over next-token logits for 0 and 1; no full-vocabulary LM loss",
+  "method": "unquantized float32 LoRA, not QLoRA; one fixed pass, no checkpoint selection"
+}
