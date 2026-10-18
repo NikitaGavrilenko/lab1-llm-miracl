@@ -1,5 +1,5 @@
 {
-  "status": "verified_complete_except_remote_url",
+  "status": "verified_complete",
   "completed": [
     "source_material_audit",
     "literature15",
@@ -9,5 +9,5 @@
   ],
   "next": [],
   "stage": "final_visual_and_artifact_audit",
-  "updated_unix": 1792342442.1930482
+  "updated_unix": 1792348701.1268764
 }

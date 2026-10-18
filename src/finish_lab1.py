@@ -238,7 +238,7 @@ def write_readme():
     s=load(LAB/'results/selection.json')
     text=f'''# Лабораторная 1 — MIRACL ru
 
-Итоговый отчёт: report/Lab1_MIRACL_final.docx. Данные: data/prepared/passport.json.
+Итоговый отчёт: [Word](report/Lab1_MIRACL_final.docx), [PDF](report/Lab1_MIRACL_final.pdf). Данные: data/prepared/passport.json.
 Сырые ответы и метрики: results/. Матрица 15 работ: report/literature_matrix.csv.
 
 Восемь конкретных локальных LLM сравниваются в zero-shot и two-shot на 40 общих запросах / 416 judgments. Это оценка релевантности и условный reranking, не полнокорпусный retrieval. Отдельно выполнены последовательный поиск на 20 новых запросах по 41007 пассажам и настоящая LoRA малой Qwen0.5B.
@@ -291,6 +291,7 @@ def render_report():
     qa=LAB/'report/qa';qa.mkdir(parents=True,exist_ok=True)
     run('word_export',['powershell.exe','-NoProfile','-ExecutionPolicy','Bypass','-File',LAB/'src/export_word_pdf.ps1',
         '-InputDocx',LAB/'report/Lab1_MIRACL_final.docx','-OutputPdf',qa/'report.pdf'])
+    shutil.copy2(qa/'report.pdf', LAB/'report/Lab1_MIRACL_final.pdf')
     poppler=DEPS/'native/poppler/Library/bin'
     run('render_png',[poppler/'pdftoppm.exe','-r','120','-png',qa/'report.pdf',qa/'page'])
     extractor=LAB/'src/extract_pdf_text.py'

@@ -139,9 +139,9 @@
     {
       "id": "R20",
       "requirement": "Ссылка на реальный репозиторий студента либо честно обозначенная локальная копия",
-      "expected_evidence": "Local Git repository and Lab1_MIRACL_submission.zip; remote URL is not configured",
-      "status": "partial_remote_repository_url",
-      "note": "Public repository URL is the only unfulfilled formal item; complete local Git copy and archive supplied."
+      "expected_evidence": "https://github.com/NikitaGavrilenko/lab1-llm-miracl; local Git repository and full submission archive",
+      "status": "passed",
+      "note": "Published repository: https://github.com/NikitaGavrilenko/lab1-llm-miracl"
     },
     {
       "id": "R21",

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "repository": "https://github.com/NikitaGavrilenko/lab1-llm-miracl",
+  "public_access_without_auth": true,
+  "verified_commit": "6acc4649d4d4de66ab0915ee9235049abaeae2d8",
+  "verified_file_sha256": {
+    "README.md": "cccd9a6c6221ba90a5d5b134f3c012c65cfa09d2f574b566f64509cba00ff08e",
+    "report/Lab1_MIRACL_final.docx": "163ab113a42dbc9c8dea05820107ab37987e37a93550f0b7d271584c6f56a1df",
+    "report/Lab1_MIRACL_final.pdf": "fd819ed429703fe49010e25d34a00094995dcfc3fc708cbb322fdfdb41de01e7",
+    "configs/protocol.json": "0bd693c69b204161b5d55c22fdb34f34ca781332aeda0f1307801f6cec555842",
+    "results/summary.json": "011a1655bd0a09bfdca537f50df3757fea29371f71259b6fa55b43fee770cc6d",
+    "results/selection.json": "160d1164febe5359f339ce66bab8174d5a965e44fc5ddce88b81b86ffec69652"
+  },
+  "checked_at_utc": "2026-10-18T18:38:20.149695+00:00",
+  "note": "Subsequent audit metadata commits preserve these experimental and report files.",
+  "text_hash_convention": "Git canonical blobs with LF; local Windows CRLF normalized only for text comparison."
+}

@@ -63,6 +63,7 @@ review = {
 }
 save('report/qa/visual_review.json', review)
 render = load('report/qa/render_checks.json')
+render['pdf_sha256'] = sha(pdf)
 render['visual_review'] = 'passed_all_19_pages'
 save('report/qa/render_checks.json', render)
 

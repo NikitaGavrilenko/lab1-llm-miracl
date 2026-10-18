@@ -1,5 +1,5 @@
 {
-  "status": "verified_submission_with_remote_url_exception",
+  "status": "verified_submission",
   "numeric_checks": true,
   "unit_tests_passed": 14,
   "search_selftests_passed": 12,
@@ -28,7 +28,7 @@
       "page-18.png",
       "page-19.png"
     ],
-    "pdf_sha256": "1da62b01d615dd4ccb44ae0f6bbf3b3cc4909e49aafa681d2da85f555cda5eae",
+    "pdf_sha256": "fd819ed429703fe49010e25d34a00094995dcfc3fc708cbb322fdfdb41de01e7",
     "word_opened_successfully": true,
     "visual_review": "passed_all_19_pages"
   },
@@ -39,13 +39,11 @@
     "calibration_test.png",
     "search_comparison.png"
   ],
-  "docx_sha256": "fc747250de6833d235972b16ac90ed9e400a96751801554cc69d8ab90b6f056e",
-  "pdf_sha256": "1da62b01d615dd4ccb44ae0f6bbf3b3cc4909e49aafa681d2da85f555cda5eae",
+  "docx_sha256": "163ab113a42dbc9c8dea05820107ab37987e37a93550f0b7d271584c6f56a1df",
+  "pdf_sha256": "fd819ed429703fe49010e25d34a00094995dcfc3fc708cbb322fdfdb41de01e7",
   "requirements": {
-    "passed": 21,
-    "partial": [
-      "R20: remote public repository URL unavailable"
-    ]
+    "passed": 22,
+    "partial": []
   },
   "scope_limits": [
     "Judged-pool relevance classification and conditional reranking are not full-corpus retrieval.",
