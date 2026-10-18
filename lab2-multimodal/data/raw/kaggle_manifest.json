@@ -1,0 +1,59 @@
+{
+  "verified_at_utc": "2026-10-18T10:49:56.519531+00:00",
+  "source": "Public Kaggle dataset API; files downloaded and inspected locally",
+  "sources": [
+    {
+      "role": "news",
+      "ref": "rdolphin/financial-news-with-ticker-level-sentiment",
+      "version": 1,
+      "page_url": "https://www.kaggle.com/datasets/rdolphin/financial-news-with-ticker-level-sentiment",
+      "download_url": "https://www.kaggle.com/api/v1/datasets/download/rdolphin/financial-news-with-ticker-level-sentiment",
+      "versioned_download_url": "https://www.kaggle.com/api/v1/datasets/download/rdolphin/financial-news-with-ticker-level-sentiment?datasetVersionNumber=1",
+      "metadata_url": "https://www.kaggle.com/api/v1/datasets/view/rdolphin/financial-news-with-ticker-level-sentiment",
+      "file_list_url": "https://www.kaggle.com/api/v1/datasets/list/rdolphin/financial-news-with-ticker-level-sentiment",
+      "authentication_required_observed": false,
+      "declared_license": "MIT",
+      "archive_path": "data\\raw\\news.zip",
+      "archive_bytes": 2266290,
+      "archive_sha256": "0ae51125ef1920476d2854c7fdb97e08daf85628adf04b2a1fdefd4333a55dfd",
+      "extracted_path": "data\\raw\\kaggle\\polygon_news_sample.json",
+      "extracted_bytes": 10141272,
+      "extracted_sha256": "7e657dfc6dfba46b59700b44dcfdbea4f5c53d9445be21652ea95944b8a58274",
+      "observed_date_range": [
+        "2023-01-01T13:48:00Z",
+        "2023-12-31T10:28:00Z"
+      ],
+      "observed_rows": 5548
+    },
+    {
+      "role": "prices",
+      "ref": "jacksaleeby/s-and-p500-historical-data",
+      "version": 1,
+      "page_url": "https://www.kaggle.com/datasets/jacksaleeby/s-and-p500-historical-data",
+      "download_url": "https://www.kaggle.com/api/v1/datasets/download/jacksaleeby/s-and-p500-historical-data",
+      "versioned_download_url": "https://www.kaggle.com/api/v1/datasets/download/jacksaleeby/s-and-p500-historical-data?datasetVersionNumber=1",
+      "metadata_url": "https://www.kaggle.com/api/v1/datasets/view/jacksaleeby/s-and-p500-historical-data",
+      "file_list_url": "https://www.kaggle.com/api/v1/datasets/list/jacksaleeby/s-and-p500-historical-data",
+      "authentication_required_observed": false,
+      "declared_license": "CC BY-SA 4.0",
+      "archive_path": "data\\raw\\prices.zip",
+      "archive_bytes": 41459425,
+      "archive_sha256": "63ddf1181fb2b0b94dbf7763bae5f103d806626c79cdfce88397decb6db9930c",
+      "extracted_path": "data\\raw\\kaggle\\SP500_Historical_Data.csv",
+      "extracted_bytes": 142643767,
+      "extracted_sha256": "82f3ab3ab6821c54b67a555c1f52c60dc4c162923499f2a1403c51d08944722a",
+      "observed_date_range": [
+        "2000-01-03",
+        "2026-02-20"
+      ],
+      "observed_rows": 2703531
+    }
+  ],
+  "limitations": [
+    "Download used latest endpoint; metadata states only version 1 exists; versioned URL recorded for reproducibility.",
+    "MIT and CC BY-SA are uploader declarations, not independently verified rights grants by publishers or Yahoo Finance.",
+    "News title provenance does not prove original unmodified publisher headline or historical data-vendor availability at published_utc.",
+    "Paper reports 5530 articles but actual version-1 JSON contains 5548 unique IDs.",
+    "Price universe uses February 2026 current constituents and carries survivorship bias."
+  ]
+}

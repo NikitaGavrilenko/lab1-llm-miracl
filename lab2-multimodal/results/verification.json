@@ -1,0 +1,27 @@
+{
+  "source_sha256": "pass",
+  "causal_split_and_alignment": "pass",
+  "articles_disjoint_across_splits": "pass",
+  "all_images_valid": 3925,
+  "metrics_and_saved_inference": "pass",
+  "max_prediction_reload_error": 2.9752349806067002e-08,
+  "target_labels_recomputed": "pass",
+  "coverage": {
+    "price_ticker_sessions_2023": 113166,
+    "sessions_with_sampled_headline": 3974,
+    "fraction_without_sampled_headline": 0.9648834455578531,
+    "interpretation": "Absence from a random news sample does not establish absence of real news."
+  },
+  "requirements": {
+    "literature": 15,
+    "main_schemes": 8,
+    "pairwise_retrained": 3,
+    "bootstrap_lengths": [
+      5,
+      10,
+      20
+    ],
+    "future_leak_checks": "pass",
+    "caveat": "Positive fusion improvement was not achieved; negative result is retained."
+  }
+}

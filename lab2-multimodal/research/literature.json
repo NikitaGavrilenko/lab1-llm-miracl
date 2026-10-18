@@ -1,0 +1,538 @@
+[
+  {
+    "id": "clip2021",
+    "title": "Learning Transferable Visual Models From Natural Language Supervision",
+    "authors": [
+      "Alec Radford",
+      "Jong Wook Kim",
+      "Chris Hallacy",
+      "Aditya Ramesh",
+      "Gabriel Goh",
+      "Sandhini Agarwal",
+      "Girish Sastry",
+      "Amanda Askell",
+      "Pamela Mishkin",
+      "Jack Clark",
+      "Gretchen Krueger",
+      "Ilya Sutskever"
+    ],
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2103.00020",
+    "architecture": "Два энкодера изображения и текста; симметричная контрастивная цель.",
+    "data": "400 млн интернет-пар изображение–текст; перенос на более 30 визуальных наборов.",
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "metrics": {
+      "names": [
+        "zero-shot top-1 accuracy",
+        "image-text retrieval recall"
+      ],
+      "reported_result": "Численные результаты не переносились: зависят от энкодера и набора."
+    },
+    "limitations": "Совпадение текста и изображения не равно численному прогнозу; графики финансов — другой домен.",
+    "reproducibility": {
+      "status": "Код и веса опубликованы; исходный полный обучающий корпус недоступен как готовый воспроизводимый набор.",
+      "code_url": "https://github.com/openai/CLIP"
+    },
+    "relevance": "Обосновывает совместное пространство T/I и retrieval; не доказывает пользу графика для предсказания доходности."
+  },
+  {
+    "id": "flamingo2022",
+    "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
+    "authors": [
+      "Jean-Baptiste Alayrac",
+      "Jeff Donahue",
+      "Pauline Luc",
+      "Antoine Miech",
+      "Iain Barr",
+      "Yana Hasson",
+      "Karel Lenc",
+      "Arthur Mensch",
+      "Katie Millican",
+      "Malcolm Reynolds",
+      "Roman Ring",
+      "Eliza Rutherford",
+      "Serkan Cabi",
+      "Tengda Han",
+      "Zhitao Gong",
+      "Sina Samangooei",
+      "Marianne Monteiro",
+      "Jacob Menick",
+      "Sebastian Borgeaud",
+      "Andrew Brock",
+      "Aida Nematzadeh",
+      "Sahand Sharifzadeh",
+      "Mikolaj Binkowski",
+      "Ricardo Barreira",
+      "Oriol Vinyals",
+      "Andrew Zisserman",
+      "Karen Simonyan"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2204.14198",
+    "architecture": "Замороженные визуальный энкодер и LM; Perceiver Resampler и обучаемые gated cross-attention слои.",
+    "data": "M3W, LTIP, ALIGN, VTP; image/video question answering и captioning.",
+    "modalities": [
+      "text",
+      "image",
+      "video"
+    ],
+    "metrics": {
+      "names": [
+        "VQA accuracy",
+        "CIDEr",
+        "classification accuracy"
+      ],
+      "reported_result": "Разные метрики для разных задач; единый общий score не вводится."
+    },
+    "limitations": "Масштабные закрытые данные и веса ограничивают повторение оригинала; few-shot visual QA не эквивалентно прогнозу рынка.",
+    "reproducibility": {
+      "status": "Архитектура описана; оригинальная полная система не является открытым воспроизводимым baseline."
+    },
+    "relevance": "Мотивирует cross-attention между последовательностями разных модальностей."
+  },
+  {
+    "id": "blip2_2023",
+    "title": "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models",
+    "authors": [
+      "Junnan Li",
+      "Dongxu Li",
+      "Silvio Savarese",
+      "Steven Hoi"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2301.12597",
+    "architecture": "Q-Former соединяет замороженный image encoder с замороженной LLM; двухэтапное обучение.",
+    "data": "Image-text pretraining; VQAv2, image captioning и image-text retrieval.",
+    "modalities": [
+      "text",
+      "image"
+    ],
+    "metrics": {
+      "names": [
+        "VQA score",
+        "CIDEr",
+        "retrieval recall"
+      ],
+      "reported_result": "Не приводится численный score без фиксации варианта backbone и режима."
+    },
+    "limitations": "Качество общего VQA не гарантирует чтение точных цен и малых подписей на графике.",
+    "reproducibility": {
+      "status": "Публичные модели и реализация LAVIS; повторение полного предобучения существенно дороже инференса.",
+      "code_url": "https://github.com/salesforce/LAVIS"
+    },
+    "relevance": "Практический пример адаптера между модальностями без полного дообучения backbone."
+  },
+  {
+    "id": "tapas2020",
+    "title": "TaPas: Weakly Supervised Table Parsing via Pre-training",
+    "authors": [
+      "Jonathan Herzig",
+      "Pawel Krzysztof Nowak",
+      "Thomas Müller",
+      "Francesco Piccinno",
+      "Julian Eisenschlos"
+    ],
+    "year": 2020,
+    "url": "https://aclanthology.org/2020.acl-main.398/",
+    "architecture": "BERT с табличными embeddings; выбор ячеек и операции агрегации без генерации логической формы.",
+    "data": "Таблицы Wikipedia; SQA, WikiSQL, WikiTQ.",
+    "modalities": [
+      "text",
+      "table"
+    ],
+    "metrics": {
+      "names": [
+        "denotation accuracy",
+        "sequence accuracy"
+      ],
+      "reported_result": "Аннотация статьи: SQA 67.2 против 55.1; WikiTQ с transfer learning 48.7.",
+      "source_location": "Abstract"
+    },
+    "limitations": "Ограниченные операции и длина таблицы; вопрос–ответ по известным значениям не есть экстраполяция временного ряда.",
+    "reproducibility": {
+      "status": "Код, модели и инструкции доступны.",
+      "code_url": "https://github.com/google-research/tapas"
+    },
+    "relevance": "Обосновывает сохранение структуры числового входа N и отличие T+таблица от простой склейки строк."
+  },
+  {
+    "id": "timellm2024",
+    "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+    "authors": [
+      "Ming Jin",
+      "Shiyu Wang",
+      "Lintao Ma",
+      "Zhixuan Chu",
+      "James Y. Zhang",
+      "Xiaoming Shi",
+      "Pin-Yu Chen",
+      "Yuxuan Liang",
+      "Yuan-Fang Li",
+      "Shirui Pan",
+      "Qingsong Wen"
+    ],
+    "year": 2024,
+    "preprint_year": 2023,
+    "url": "https://arxiv.org/abs/2310.01728",
+    "architecture": "Числовые patches перепрограммируются через текстовые prototypes; Prompt-as-Prefix; frozen LLM и выходная проекция.",
+    "data": "ETT, Electricity, Traffic, Weather, ILI, M4 и другие forecasting benchmarks.",
+    "modalities": [
+      "time_series",
+      "text_prompt"
+    ],
+    "metrics": {
+      "names": [
+        "MSE",
+        "MAE",
+        "SMAPE",
+        "MASE",
+        "OWA"
+      ],
+      "reported_result": "ETTh1, горизонт 96: MSE 0.362, MAE 0.392.",
+      "source_location": "arXiv v2, Table 10; long-term supervised setting"
+    },
+    "limitations": "Промпт не обязательно содержит независимые новости; требуются обучение адаптера и существенная память; результаты одного режима не переносятся на zero-shot.",
+    "reproducibility": {
+      "status": "Код доступен; статья сообщает три повтора и A100-80G.",
+      "code_url": "https://github.com/KimMeen/Time-LLM"
+    },
+    "relevance": "Пример T/N alignment, но для lab2 достаточно меньшего числового энкодера; повторение всей LLM не обязательно."
+  },
+  {
+    "id": "llmtime2023",
+    "title": "Large Language Models Are Zero-Shot Time Series Forecasters",
+    "authors": [
+      "Nate Gruver",
+      "Marc Finzi",
+      "Shikai Qiu",
+      "Andrew Gordon Wilson"
+    ],
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2310.07820",
+    "architecture": "LLMTime: нормализация и сериализация чисел в цифры; autoregressive sampling и восстановление непрерывных плотностей.",
+    "data": "Darts, подмножество Monash, Informer datasets; синтетические ряды.",
+    "modalities": [
+      "time_series_as_text",
+      "optional_text_context"
+    ],
+    "metrics": {
+      "names": [
+        "MAE",
+        "CRPS",
+        "negative log-likelihood"
+      ],
+      "reported_result": "Численный итог не агрегируется между разными наборами."
+    },
+    "limitations": "Чувствительность к токенизации, калибровке и длине контекста; генерация чисел не является независимой текстовой модальностью.",
+    "reproducibility": {
+      "status": "Код опубликован; повтор старых proprietary API-моделей зависит от их доступности.",
+      "code_url": "https://github.com/ngruver/llmtime"
+    },
+    "relevance": "Обосновывает baseline N-as-text и необходимость отделить изменение представления от появления новой информации."
+  },
+  {
+    "id": "mult2019",
+    "title": "Multimodal Transformer for Unaligned Multimodal Language Sequences",
+    "authors": [
+      "Yao-Hung Hubert Tsai",
+      "Shaojie Bai",
+      "Paul Pu Liang",
+      "J. Zico Kolter",
+      "Louis-Philippe Morency",
+      "Ruslan Salakhutdinov"
+    ],
+    "year": 2019,
+    "url": "https://aclanthology.org/P19-1656/",
+    "architecture": "MulT: направленный pairwise crossmodal attention для последовательностей с разной частотой.",
+    "data": "CMU-MOSI, CMU-MOSEI, IEMOCAP; aligned и unaligned режимы.",
+    "modalities": [
+      "language",
+      "vision",
+      "audio"
+    ],
+    "metrics": {
+      "names": [
+        "accuracy",
+        "F1",
+        "MAE",
+        "correlation"
+      ],
+      "reported_result": "Метрики зависят от набора и задачи; финансовые результаты отсутствуют."
+    },
+    "limitations": "Аудиовизуальная речь отличается от асинхронных финансовых новостей; attention сам по себе не обеспечивает причинную временную доступность.",
+    "reproducibility": {
+      "status": "Авторы опубликовали код.",
+      "code_url": "https://github.com/yaohungt/Multimodal-Transformer"
+    },
+    "relevance": "Главный архитектурный источник для cross-attention; в финансах требуется отдельная маска cutoff."
+  },
+  {
+    "id": "tfn2017",
+    "title": "Tensor Fusion Network for Multimodal Sentiment Analysis",
+    "authors": [
+      "Amir Zadeh",
+      "Minghai Chen",
+      "Soujanya Poria",
+      "Erik Cambria",
+      "Louis-Philippe Morency"
+    ],
+    "year": 2017,
+    "url": "https://aclanthology.org/D17-1115/",
+    "architecture": "Отдельные subnetworks; внешнее произведение дополненных единицей embeddings; prediction head.",
+    "data": "CMU-MOSI, анализ сентимента видеовысказываний.",
+    "modalities": [
+      "language",
+      "vision",
+      "audio"
+    ],
+    "metrics": {
+      "names": [
+        "binary accuracy",
+        "F1",
+        "5-class accuracy",
+        "MAE",
+        "correlation"
+      ],
+      "reported_result": "Численные scores не копируются без режима задачи."
+    },
+    "limitations": "Внешнее произведение резко увеличивает размерность; малые финансовые данные повышают риск переобучения.",
+    "reproducibility": {
+      "status": "Публичная страница авторов со статьёй и ресурсами.",
+      "project_url": "https://declare-lab.github.io/projects/tensor-fusion-network/"
+    },
+    "relevance": "Показывает явное моделирование попарных и тройных взаимодействий; полезно как теория, сложнее простой concat."
+  },
+  {
+    "id": "stocknet2018",
+    "title": "Stock Movement Prediction from Tweets and Historical Prices",
+    "authors": [
+      "Yumo Xu",
+      "Shay B. Cohen"
+    ],
+    "year": 2018,
+    "url": "https://aclanthology.org/P18-1183/",
+    "architecture": "StockNet: recurrent variational model, latent factors, temporal auxiliary objective; trading-day alignment.",
+    "data": "Твиты и исторические цены 88 акций.",
+    "modalities": [
+      "text",
+      "historical_prices"
+    ],
+    "metrics": {
+      "names": [
+        "accuracy",
+        "Matthews correlation coefficient"
+      ],
+      "reported_result": "HEDGEFUNDANALYST: accuracy 58.23%, MCC 0.080796; text-only FUNDAMENTALANALYST: 58.23%, MCC 0.071704.",
+      "source_location": "Table 1, p. 7 PDF"
+    },
+    "limitations": "Твиты не эквивалентны новостям; равная accuracy мультимодальной и текстовой моделей не доказывает отсутствие/наличие вклада цен по всем метрикам.",
+    "reproducibility": {
+      "status": "Авторы предоставляют отдельные data/code ресурсы; старый стек потребует адаптации.",
+      "project_url": "https://github.com/yumoxu/stocknet-dataset"
+    },
+    "relevance": "Прямой T+N baseline и пример, почему вклад модальности надо оценивать парно и несколькими метриками."
+  },
+  {
+    "id": "fintral2024",
+    "title": "FinTral: A Family of GPT-4 Level Multimodal Financial Large Language Models",
+    "authors": [
+      "Gagan Bhatia",
+      "El Moatez Billah Nagoudi",
+      "Hasan Cavusoglu",
+      "Muhammad Abdul-Mageed"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2402.10986",
+    "architecture": "Mistral-7B, domain pretraining, instruction tuning/DPO; visual variant с CLIP; tools и retrieval.",
+    "data": "FinSet; 25 evaluation datasets, включая FinQA, ChartQA, FinVQA и stock movement tasks.",
+    "modalities": [
+      "text",
+      "numbers",
+      "tables",
+      "image"
+    ],
+    "metrics": {
+      "names": [
+        "accuracy",
+        "exact match",
+        "entity F1",
+        "ROUGE",
+        "human evaluation"
+      ],
+      "reported_result": "Единого числа качества для всех задач нет; рекламное сравнение с GPT-4 не принимается за результат lab2."
+    },
+    "limitations": "Различаются варианты модели, наличие tools/retrieval и задачи; это не контролируемый factorial T/N/I эксперимент.",
+    "reproducibility": {
+      "status": "Репозиторий авторов открыт; полноту всех весов и корпусов перед запуском нужно проверять отдельно.",
+      "code_url": "https://github.com/UBC-NLP/fintral"
+    },
+    "relevance": "Связывает финансовые модальности с инструментами и evidence retrieval; не заменяет абляции lab2."
+  },
+  {
+    "id": "findver2024",
+    "title": "FinDVer: Explainable Claim Verification over Long and Hybrid-content Financial Documents",
+    "authors": [
+      "Yilun Zhao",
+      "Yitao Long",
+      "Tintin Jiang",
+      "Chengye Wang",
+      "Weiyuan Chen",
+      "Hongjun Liu",
+      "Xiangru Tang",
+      "Yiming Zhang",
+      "Chen Zhao",
+      "Arman Cohan"
+    ],
+    "year": 2024,
+    "url": "https://aclanthology.org/2024.emnlp-main.818/",
+    "architecture": "Benchmark claim verification; сравнение long-context и RAG систем с объяснениями и evidence.",
+    "data": "Версия arXiv v1: 2400 claims, три поднабора, 523 исходных SEC-документа. Текущая аннотация ACL указывает 4000 и четыре поднабора: версии не смешивать.",
+    "modalities": [
+      "text",
+      "tables"
+    ],
+    "metrics": {
+      "names": [
+        "entailment classification accuracy",
+        "evidence retrieval recall",
+        "manual explanation error analysis"
+      ],
+      "reported_result": "arXiv v1, Table 3: GPT-4o RAG+CoT, средняя test accuracy 76.2%.",
+      "source_location": "https://arxiv.org/html/2411.05764v1",
+      "note": "Человеческие 93.3% измерены отдельно на 60 claims; это не прямой парный test comparison. Автоматическая explanation metric не приписывается статье."
+    },
+    "limitations": "Проверяет claims, не прогнозирует рынок; text/table input. ACL abstract и arXiv v1 различаются по объёму и числу subsets.",
+    "reproducibility": {
+      "status": "Публичны данные, код и разметка теста.",
+      "code_url": "https://github.com/yilunzhao/FinDVer"
+    },
+    "relevance": "Наиболее прямая связь с ВКР: retrieval подтверждающих фрагментов и проверяемое обоснование ответа."
+  },
+  {
+    "id": "chartqa2022",
+    "title": "ChartQA: A Benchmark for Question Answering about Charts with Visual and Logical Reasoning",
+    "authors": [
+      "Ahmed Masry",
+      "Do Xuan Long",
+      "Jia Qing Tan",
+      "Shafiq Joty",
+      "Enamul Hoque"
+    ],
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2203.10244",
+    "architecture": "VisionTaPas и VL-T5 объединяют визуальные признаки графика и его data table.",
+    "data": "9.6 тыс. human-written и 23.1 тыс. generated вопросов по реальным графикам.",
+    "modalities": [
+      "text_question",
+      "chart_image",
+      "table"
+    ],
+    "metrics": {
+      "names": [
+        "relaxed accuracy"
+      ],
+      "reported_result": "VisionTaPas ChartQA test: 61.84% с gold table и 45.52% без неё.",
+      "source_location": "Table 5; числовые ответы допускают 5% отклонение, текстовые требуют exact match."
+    },
+    "limitations": "Чтение существующего графика отличается от прогноза; OCR и извлечение таблицы вносят ошибки.",
+    "reproducibility": {
+      "status": "Открытые данные и код.",
+      "code_url": "https://github.com/vis-nlp/ChartQA"
+    },
+    "relevance": "Обосновывает контроль того, добавляет ли I доступные сведения или только другое представление N."
+  },
+  {
+    "id": "gradientblending2020",
+    "title": "What Makes Training Multi-Modal Classification Networks Hard?",
+    "authors": [
+      "Weiyao Wang",
+      "Du Tran",
+      "Matt Feiszli"
+    ],
+    "year": 2020,
+    "preprint_year": 2019,
+    "url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_What_Makes_Training_Multi-Modal_Classification_Networks_Hard_CVPR_2020_paper.pdf",
+    "architecture": "Gradient Blending балансирует модальности с учётом их переобучения и обобщения.",
+    "data": "Kinetics, ego-centric action recognition, acoustic event detection.",
+    "modalities": [
+      "RGB_video",
+      "optical_flow",
+      "audio"
+    ],
+    "metrics": {
+      "names": [
+        "top-1 accuracy",
+        "task-dependent classification metrics"
+      ],
+      "reported_result": "Kinetics, Table 1: RGB 72.6%, RGB+audio late-concat 71.4%.",
+      "source_location": "Table 1; это baseline illustration, не score Gradient Blending."
+    },
+    "limitations": "Выводы получены для video classification; финансовый перенос требует эксперимента.",
+    "reproducibility": {
+      "status": "Открытая статья; воспроизводимость исходного полного обучения в этом обзоре не проверялась."
+    },
+    "relevance": "Основание сильных unimodal baselines, контроля ёмкости модели и отрицательного эффекта добавления модальности."
+  },
+  {
+    "id": "unimodalbias2024",
+    "title": "Understanding Unimodal Bias in Multimodal Deep Linear Networks",
+    "authors": [
+      "Yedi Zhang",
+      "Peter E. Latham",
+      "Andrew Saxe"
+    ],
+    "year": 2024,
+    "preprint_year": 2023,
+    "url": "https://proceedings.mlr.press/v235/zhang24aa.html",
+    "architecture": "Теория динамики обучения deep linear networks; early/intermediate/late fusion; проверки nonlinear сетей.",
+    "data": "Синтетические задачи и noisy MNIST.",
+    "modalities": [
+      "two_input_streams"
+    ],
+    "metrics": {
+      "names": [
+        "unimodal phase duration",
+        "generalization error",
+        "unimodal accuracy learning trajectories"
+      ],
+      "reported_result": "Не объявляется универсальная величина bias: она зависит от глубины fusion и статистики данных."
+    },
+    "limitations": "Теоретические гарантии линейного случая не следует автоматически приписывать LLM или финансовому рынку.",
+    "reproducibility": {
+      "status": "Код и полный текст доступны.",
+      "code_url": "https://github.com/yedizhang/unimodal-bias"
+    },
+    "relevance": "Поясняет, почему наличие T/N/I входов не доказывает использование каждого; нужны ablation и perturbation."
+  },
+  {
+    "id": "earlyfusion2020",
+    "title": "On the Benefits of Early Fusion in Multimodal Representation Learning",
+    "authors": [
+      "George Barnum",
+      "Sabera Talukder",
+      "Yisong Yue"
+    ],
+    "year": 2020,
+    "url": "https://arxiv.org/abs/2011.07191",
+    "architecture": "Convolutional LSTM с управляемым местом fusion.",
+    "data": "Пары MNIST и Free Spoken Digit Dataset с искусственным белым шумом.",
+    "modalities": [
+      "image",
+      "audio"
+    ],
+    "metrics": {
+      "names": [
+        "classification accuracy over signal-to-noise grid"
+      ],
+      "reported_result": "Численный единый выигрыш не заявляется: сравнение меняется с уровнем шума."
+    },
+    "limitations": "Искусственные пары цифр и белый шум; результат не даёт универсального ранжирования early/late fusion.",
+    "reproducibility": {
+      "status": "Описаны данные, архитектура и гиперпараметры; ссылка на код в прочитанном PDF не найдена."
+    },
+    "relevance": "Мотивирует controlled noise tests. Корректное название — Early Fusion; ссылка на якобы одноимённую Late Fusion работу не подставляется."
+  }
+]

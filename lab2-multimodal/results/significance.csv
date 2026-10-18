@@ -1,0 +1,6 @@
+model,baseline,delta_macro_f1,p_one_sided,p_holm
+early_fusion,numeric_only,-0.012883347803000156,0.841796875,1.0
+late_mean,numeric_only,-0.03923985414386777,0.966796875,1.0
+late_weighted,numeric_only,0.0,1.0,1.0
+intermediate_mlp,numeric_only,-0.11075861388742264,0.994140625,1.0
+attention_fusion,numeric_only,-0.15150550428229947,0.998046875,1.0

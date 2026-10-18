@@ -1,0 +1,55 @@
+{
+  "raw_articles": 5548,
+  "article_ticker_pairs": 4281,
+  "raw_price_rows": 2703531,
+  "raw_price_tickers": 472,
+  "price_missing_cells": 0,
+  "price_duplicate_keys": 0,
+  "duplicate_titles": 79,
+  "transferred_to_later_session": 1413,
+  "objects": 3925,
+  "tickers": 453,
+  "splits": {
+    "train": {
+      "n": 2275,
+      "days": 143,
+      "start": "2023-01-03",
+      "end": "2023-07-28",
+      "positive_rate": 0.5375824175824175
+    },
+    "val": {
+      "n": 689,
+      "days": 42,
+      "start": "2023-08-01",
+      "end": "2023-09-28",
+      "positive_rate": 0.48040638606676345
+    },
+    "test": {
+      "n": 688,
+      "days": 42,
+      "start": "2023-10-02",
+      "end": "2023-11-29",
+      "positive_rate": 0.5348837209302325
+    },
+    "application": {
+      "n": 273,
+      "days": 21,
+      "start": "2023-12-01",
+      "end": "2024-01-02",
+      "positive_rate": 0.6117216117216118
+    }
+  },
+  "exclusions": {
+    "no_price_ticker": 8952,
+    "duplicate_title": 79,
+    "purged_label_across_split": 54,
+    "missing_history_or_session": 6
+  },
+  "feature_dimensions": {
+    "T": 64,
+    "N": 100,
+    "I": 64
+  },
+  "pca_explained_variance": 0.6361381411552429,
+  "preparation_seconds": 19.300836299953517
+}

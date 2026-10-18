@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "best_unimodal_validation": "numeric_only",
+  "best_fusion_validation": "late_weighted",
+  "best_overall_validation": "numeric_only",
+  "validation_f1": {
+    "text_only": 0.47229945772992715,
+    "numeric_only": 0.52516911889058,
+    "image_only": 0.4651367664503524,
+    "early_fusion": 0.506355702486367,
+    "late_mean": 0.464750436978054,
+    "late_weighted": 0.52516911889058,
+    "intermediate_mlp": 0.37903542624731357,
+    "attention_fusion": 0.32450980392156864
+  },
+  "delta_ci_block5": [
+    0.0,
+    0.0
+  ],
+  "delta_ci_block10": [
+    0.0,
+    0.0
+  ],
+  "primary_p_block10": 1.0,
+  "best_genuine_fusion_validation": "early_fusion",
+  "test_days": 42,
+  "bootstrap_repeats": 1200,
+  "permutation_method": "exhaustive paired block swaps",
+  "permutation_configurations_block5": 512,
+  "permutation_configurations_block10": 32,
+  "wall_seconds": 42.62968479999108,
+  "cpu_seconds": 44.359375,
+  "versions": {
+    "python": "3.10.20",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2",
+    "torch": "2.12.1+cpu",
+    "scipy": "1.15.3"
+  },
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "logical_cpus": 16,
+    "gpu": false,
+    "threads": 2
+  }
+}

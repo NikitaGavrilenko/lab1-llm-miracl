@@ -1,0 +1,10 @@
+data/raw/kaggle/
+data/raw/*.zip
+data/images/
+vendor/
+qa/
+.workflow/
+__pycache__/
+*.pyc
+~$*
+.venv*/

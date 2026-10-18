@@ -1,0 +1,209 @@
+{
+  "purpose": "Документирует фактические константы src/prepare.py, src/models.py и src/run.py. Эти скрипты не читают config.json; для изменения эксперимента нужно править код и пересоздать результаты.",
+  "runtime": {
+    "python": "3.10.20",
+    "device": "cpu",
+    "torch_threads": 2
+  },
+  "data": {
+    "manifest": "data/raw/kaggle_manifest.json",
+    "unit": "ticker × NYSE anchor session",
+    "text": "Только заголовки; точные дубликаты id/title исключаются, заголовки в рамках объекта объединяются через [SEP].",
+    "calendar": "XNYS",
+    "publication_cutoff": "Ближайшее закрытие NYSE не раньше published_utc; после закрытия/в выходной перенос на следующую сессию.",
+    "target": "int(AdjClose(next_session)/AdjClose(anchor_session)-1 > 0)",
+    "lookback_sessions": 20,
+    "history_rows_required": 21,
+    "boundary_policy": "Удалить объект, если target_session попадает в другую часть разбиения.",
+    "splits": {
+      "train": {
+        "anchor_start": "2023-01-03",
+        "anchor_end": "2023-07-28",
+        "n": 2275
+      },
+      "validation": {
+        "anchor_start": "2023-08-01",
+        "anchor_end": "2023-09-28",
+        "n": 689
+      },
+      "test": {
+        "anchor_start": "2023-10-02",
+        "anchor_end": "2023-11-29",
+        "n": 688
+      },
+      "application": {
+        "anchor_start": "2023-12-01",
+        "anchor_end": "2024-01-02",
+        "n": 273,
+        "last_news_date": "2023-12-31",
+        "last_target_date": "2024-01-03"
+      }
+    }
+  },
+  "features": {
+    "fit_on": "train only",
+    "T": {
+      "method": "TF-IDF + TruncatedSVD",
+      "dimensions": 64,
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.98,
+      "max_features": 15000,
+      "sublinear_tf": true,
+      "strip_accents": "unicode",
+      "random_state": 42
+    },
+    "N": {
+      "dimensions": 100,
+      "shape": [
+        20,
+        5
+      ],
+      "channels": [
+        "log adjusted open / previous adjusted close",
+        "log adjusted high / previous adjusted close",
+        "log adjusted low / previous adjusted close",
+        "log adjusted close / previous adjusted close",
+        "log volume / previous volume"
+      ]
+    },
+    "I": {
+      "method": "OHLCV candlestick 96x96 RGB -> resize32x32 -> PCA",
+      "dimensions": 64,
+      "random_state": 42,
+      "svd_solver": "randomized",
+      "independent_source": false,
+      "note": "График того же ценового/объёмного окна, производное представление рыночного ряда."
+    },
+    "model_scalers": "StandardScaler fitted on train separately for each branch"
+  },
+  "models": {
+    "main8": [
+      "text_only",
+      "numeric_only",
+      "image_only",
+      "early_fusion",
+      "late_mean",
+      "late_weighted",
+      "intermediate_mlp",
+      "attention_fusion"
+    ],
+    "retrained_pairwise": [
+      "TN",
+      "TI",
+      "NI"
+    ],
+    "logistic": {
+      "C_candidates": [
+        0.01,
+        0.1,
+        1
+      ],
+      "solver": "lbfgs",
+      "max_iter": 1000,
+      "selection": "validation macro-F1"
+    },
+    "late_mean": {
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    },
+    "late_weighted": {
+      "simplex_step": 0.1,
+      "candidate_count": 66,
+      "selection": "validation macro-F1",
+      "vertices_allowed": true
+    },
+    "neural": {
+      "projection_size": 16,
+      "hidden_size": 32,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "optimizer": "Adam",
+      "loss": "BCEWithLogitsLoss",
+      "max_epochs": 100,
+      "patience": 10,
+      "min_delta": 0.00001,
+      "checkpoint_selection": "validation BCE only",
+      "modality_dropout": 0.15,
+      "attention_definition": "Learned-query attention pooling across three projected modality tokens; not pairwise cross-attention."
+    },
+    "threshold": 0.5,
+    "refit_train_plus_validation": false
+  },
+  "evaluation": {
+    "primary_seed": 42,
+    "neural_sensitivity_seeds": [
+      7,
+      42,
+      123
+    ],
+    "selection_split": "validation",
+    "metrics": [
+      "macro_f1",
+      "mcc",
+      "auroc",
+      "brier",
+      "accuracy",
+      "ece"
+    ],
+    "ece_bins": 10,
+    "bootstrap": {
+      "repeats": 1200,
+      "unit": "date blocks, all tickers of date kept together",
+      "block_sessions": [
+        5,
+        10,
+        20
+      ],
+      "seed_formula": "42 + block_sessions",
+      "confidence_level": 0.95
+    },
+    "permutation": {
+      "method": "Exhaustive paired block swaps when <=15 blocks; otherwise 4999 Monte Carlo draws.",
+      "block_sessions": 5,
+      "sensitivity_block_sessions": 10,
+      "alternative": "fusion macro-F1 > selected unimodal macro-F1",
+      "multiplicity": "Holm over five fusion comparisons"
+    },
+    "missingness": {
+      "entire_modality": [
+        "T",
+        "N",
+        "I"
+      ],
+      "random_probability_per_modality": 0.3,
+      "random_seed": 123,
+      "note": "Отсутствующий key или полностью нулевая строка raw feature означает missing; genuine all-zero неразличима."
+    },
+    "latency": {
+      "scope": "Inference from cached features; excludes raw data reading, TF-IDF/SVD/PCA and chart rendering.",
+      "warmup": 10,
+      "max_samples": 200
+    },
+    "multicriteria": {
+      "role": "Descriptive test summary, not model selection",
+      "minmax_normalization": "within the eight tested schemes",
+      "weights": {
+        "macro_f1": 0.45,
+        "auroc": 0.2,
+        "negative_brier": 0.15,
+        "missing_modality_macro_f1": 0.1,
+        "negative_p95_latency": 0.1
+      }
+    }
+  },
+  "artifacts": {
+    "dataset": "data/dataset.csv",
+    "features": "data/features.npz",
+    "models": "results/models.joblib",
+    "metrics": "results/metrics.csv",
+    "report": "report_lab2.docx"
+  }
+}
