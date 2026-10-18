@@ -1,0 +1,13 @@
+build_report running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\build_report.py']}
+build_report passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\build_report.log'}
+word_export running {'command': ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\export_word_pdf.ps1', '-InputDocx', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\Lab1_MIRACL_final.docx', '-OutputPdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf']}
+word_export passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\word_export.log'}
+render_png running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe', '-r', '120', '-png', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\page']}
+render_png passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\render_png.log'}
+pdf_text running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\src\\extract_pdf_text.py', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.pdf', 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\qa\\report.txt']}
+pdf_text passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\pdf_text.log'}
+git_add running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', 'add', '.']}
+git_add passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\git_add.log'}
+git_commit running {'command': ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', '-c', 'user.name=Lab1 research artifact', '-c', 'user.email=lab1@localhost', 'commit', '-m', 'Complete measured MIRACL lab artifacts']}
+git_commit passed {'log': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\git_commit.log'}
+all_automatic_stages complete_visual_review_pending {'report': 'D:\\Projects\\University_Current\\lab1-llm-miracl\\report\\Lab1_MIRACL_final.docx'}

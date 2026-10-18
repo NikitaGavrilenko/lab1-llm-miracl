@@ -1,5 +1,5 @@
 {
-  "status": "validation_running",
+  "status": "verified_complete_except_remote_url",
   "completed": [
     "source_material_audit",
     "literature15",
@@ -7,12 +7,7 @@
     "pilot",
     "protocol_freeze"
   ],
-  "next": [
-    "select_on_validation",
-    "eight_model_test",
-    "application_search",
-    "LoRA",
-    "report_render",
-    "independent_audit"
-  ]
+  "next": [],
+  "stage": "final_visual_and_artifact_audit",
+  "updated_unix": 1792342398.270993
 }

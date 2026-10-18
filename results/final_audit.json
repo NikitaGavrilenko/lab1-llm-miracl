@@ -1,6 +1,10 @@
 {
+  "status": "verified_submission_with_remote_url_exception",
   "numeric_checks": true,
-  "unit_tests": "passed; see results/unit_tests.log",
+  "unit_tests_passed": 14,
+  "search_selftests_passed": 12,
+  "independent_audit": "results/final_independent_audit.json",
+  "independent_verdict": "no_P1_P2_defects_found",
   "word_render": {
     "pages": 19,
     "png_files": [
@@ -26,9 +30,27 @@
     ],
     "pdf_sha256": "1da62b01d615dd4ccb44ae0f6bbf3b3cc4909e49aafa681d2da85f555cda5eae",
     "word_opened_successfully": true,
-    "visual_review": "pending_primary_agent"
+    "visual_review": "passed_all_19_pages"
   },
-  "independent_critique": "D:\\Projects\\University_Current\\lab1-llm-miracl\\results\\independent_model_review.json",
-  "visual_review": "pending_primary_agent",
-  "status": "automatic_pipeline_complete_visual_review_pending"
+  "visual_review": "passed_all_19_pages",
+  "docx_tables_checked": 14,
+  "source_figures_checked": [
+    "comparison_test.png",
+    "calibration_test.png",
+    "search_comparison.png"
+  ],
+  "docx_sha256": "fc747250de6833d235972b16ac90ed9e400a96751801554cc69d8ab90b6f056e",
+  "pdf_sha256": "1da62b01d615dd4ccb44ae0f6bbf3b3cc4909e49aafa681d2da85f555cda5eae",
+  "requirements": {
+    "passed": 21,
+    "partial": [
+      "R20: remote public repository URL unavailable"
+    ]
+  },
+  "scope_limits": [
+    "Judged-pool relevance classification and conditional reranking are not full-corpus retrieval.",
+    "Search uses 41007 historically judged passages and incomplete qrels, not the full MIRACL corpus.",
+    "Separate 0.5B LoRA control uses a different 256-token protocol; 92.1% test passages truncated.",
+    "One shared Wikipedia article has different train/test passages; no passage or near-text overlap."
+  ]
 }
