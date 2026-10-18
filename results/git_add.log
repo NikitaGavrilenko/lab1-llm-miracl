@@ -23,3 +23,7 @@ warning: in the working copy of 'results/peft_packages.log', LF will be replaced
 warning: in the working copy of 'src/analyze_results.py', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'src/finish_lab1.py', LF will be replaced by CRLF the next time Git touches it
 warning: in the working copy of 'tests/test_metrics.py', LF will be replaced by CRLF the next time Git touches it
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', 'add', '.']
+warning: in the working copy of 'results/git_add.log', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'results/git_commit.log', LF will be replaced by CRLF the next time Git touches it

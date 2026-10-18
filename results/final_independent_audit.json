@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-18",
+  "verdict": "no_P1_P2_defects_found",
+  "scope": "Independent raw-data/numeric/protocol/report-text audit; no new external source review or visual page review",
+  "findings": [],
+  "independent_checks": {
+    "raw_prediction_records": 1072,
+    "classification_groups": 34,
+    "classification_metrics": [
+      "Macro-F1",
+      "MCC",
+      "Brier",
+      "ECE10",
+      "AUROC"
+    ],
+    "maximum_absolute_difference": 5.551115123125783e-17,
+    "judged_ranking_metrics_verified": true,
+    "all_34_cluster_macro_f1_cis_verified": true,
+    "paired_macro_f1_cis_verified": true,
+    "validation_utility_recomputed": 0.6925027082939877,
+    "selection_canonical_protocol_hash_matches": true,
+    "selection_before_first_test": true,
+    "search_rankings_checked": 60,
+    "search_ndcg_recall_and_paired_ci_verified": true,
+    "peft_groups_checked": 6,
+    "peft_f1_brier_verified": true,
+    "actual_lora_steps": 64,
+    "corpus_equals_official_qrel_union": true,
+    "corpus_size": 41007,
+    "cross_split_docid_exact_near_text_and_query_overlap": 0
+  },
+  "observations": [
+    {
+      "severity": "limitation",
+      "topic": "article_overlap",
+      "count": 1,
+      "article_id": "233230",
+      "title": "История Бельгии",
+      "train_pair": [
+        "train:1104",
+        "233230#13"
+      ],
+      "test_pair": [
+        "dev:6530",
+        "233230#1"
+      ],
+      "interpretation": "Different passages, no duplicate pair; no claim of article-level disjointness should be made."
+    },
+    {
+      "severity": "limitation",
+      "topic": "peft_truncation",
+      "test_fraction": 0.9206730769230769,
+      "max_input_tokens": 256,
+      "recommendation": "State fraction explicitly in Word; primary agent informed."
+    },
+    {
+      "severity": "formal_partial",
+      "topic": "repository_url",
+      "interpretation": "No remote URL; honest local Git/archive delivery. Do not mark literal public-link requirement fully satisfied."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R01",
+      "status": "content_pass"
+    },
+    {
+      "id": "R02",
+      "status": "content_pass"
+    },
+    {
+      "id": "R03",
+      "status": "content_pass"
+    },
+    {
+      "id": "R04",
+      "status": "content_pass"
+    },
+    {
+      "id": "R05",
+      "status": "content_pass"
+    },
+    {
+      "id": "R06",
+      "status": "content_pass"
+    },
+    {
+      "id": "R07",
+      "status": "content_pass"
+    },
+    {
+      "id": "R08",
+      "status": "content_pass"
+    },
+    {
+      "id": "R09",
+      "status": "content_pass"
+    },
+    {
+      "id": "R10",
+      "status": "content_pass"
+    },
+    {
+      "id": "R11",
+      "status": "content_pass"
+    },
+    {
+      "id": "R12",
+      "status": "content_pass"
+    },
+    {
+      "id": "R13",
+      "status": "content_pass"
+    },
+    {
+      "id": "R14",
+      "status": "content_pass"
+    },
+    {
+      "id": "R15",
+      "status": "content_pass"
+    },
+    {
+      "id": "R16",
+      "status": "content_pass"
+    },
+    {
+      "id": "R17",
+      "status": "content_pass"
+    },
+    {
+      "id": "R18",
+      "status": "content_pass"
+    },
+    {
+      "id": "R19",
+      "status": "content_pass"
+    },
+    {
+      "id": "R20",
+      "status": "partial_local_repository_only"
+    },
+    {
+      "id": "R21",
+      "status": "content_pass"
+    },
+    {
+      "id": "R22",
+      "status": "pending_primary_visual_review"
+    }
+  ],
+  "visual_review": {
+    "performed_by_this_auditor": false,
+    "status": "Primary agent is reviewing all rendered pages"
+  },
+  "files_written": [
+    "results/final_independent_audit.md",
+    "results/final_independent_audit.json"
+  ]
+}

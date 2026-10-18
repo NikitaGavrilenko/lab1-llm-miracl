@@ -136,3 +136,9 @@ RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependenci
  create mode 100644 tests/test_metrics.py
  create mode 100644 "\320\233\320\260\320\261\320\276\321\200\320\260\321\202\320\276\321\200\320\275\320\260\321\217 1.docx"
  create mode 100644 "\320\236\321\202\321\207\321\221\321\202_\320\273\320\260\320\261\320\276\321\200\320\260\321\202\320\276\321\200\320\275\320\260\321\217_1_MIRACL.docx"
+
+RUN ['C:\\Users\\Nick\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\git\\cmd\\git.exe', '-c', 'user.name=Lab1 research artifact', '-c', 'user.email=lab1@localhost', 'commit', '-m', 'Complete measured MIRACL lab artifacts']
+[main 71479d9] Complete measured MIRACL lab artifacts
+ 13 files changed, 10386 insertions(+), 2 deletions(-)
+ create mode 100644 report/submission_manifest.json
+ create mode 100644 results/git_commit.log

@@ -253,6 +253,23 @@ def build():
     doc.core_properties.title='Лабораторная работа 1 Сравнение LLM на MIRACL ru'
     doc.core_properties.subject='Прикладные задачи машинного обучения'
     doc.core_properties.author='Студент группы ПМ23-2'
+    # Remove theme font overrides and the template's decorative title border.
+    for style in doc.styles:
+        for fonts in style._element.iter(qn('w:rFonts')):
+            for attr in ['asciiTheme','hAnsiTheme','eastAsiaTheme','cstheme']:
+                fonts.attrib.pop(qn('w:'+attr),None)
+        for border in list(style._element.iter(qn('w:pBdr'))):
+            border.getparent().remove(border)
+    for fonts in doc._element.iter(qn('w:rFonts')):
+        for attr in ['asciiTheme','hAnsiTheme','eastAsiaTheme','cstheme']:
+            fonts.attrib.pop(qn('w:'+attr),None)
+    for border in list(doc._element.iter(qn('w:pBdr'))):
+        border.getparent().remove(border)
+    for t in doc.tables:
+        if len(t.rows)<=5:
+            for row in t.rows[:-1]:
+                for cell in row.cells:
+                    for par in cell.paragraphs:par.paragraph_format.keep_with_next=True
     doc.save(OUT)
     (ROOT/'report/tables_export.json').write_text(json.dumps(table_log,ensure_ascii=False,indent=2),encoding='utf-8')
     print(OUT)
